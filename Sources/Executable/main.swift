@@ -1,5 +1,3 @@
-// swift-tools-version: 5.8
-
 // Copyright Dave Verwer, Sven A. Schmidt, and other contributors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import PackageDescription
+import Foundation
 
-let package = Package(
-    name: "GeneratePackageYML",
-    platforms: [.macOS(.v13)],
-    products: [
-        .executable(name: "generate-package-yml", targets: ["Executable"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0"),
-    ],
-    targets: [
-        .executableTarget(name: "Executable", dependencies: ["GeneratePackageYML"]),
-        .target(name: "GeneratePackageYML", dependencies: [
-            .product(name: "ArgumentParser", package: "swift-argument-parser")
-        ])
-    ]
-)
+import GeneratePackageYML
+
+
+let group = DispatchGroup()
+group.enter()
+
+Task {
+    defer { group.leave() }
+    await GeneratePackageYML.main()
+}
+
+group.wait()
