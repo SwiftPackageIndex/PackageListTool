@@ -26,12 +26,14 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var packageIDs: [PackageID]
 
     public func run() async throws {
+        var packages = [SPI.Package]()
         for packageID in packageIDs {
-            let pkg = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
+            print("Fetching package: \(packageID)...")
+            let apiPackage = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
                 .fetchPackage(owner: packageID.owner, repository: packageID.repository)
-            //        let pkg = SPI.APIPackage.example
-            //        dump(pkg)
-            dump(SPI.Package(from: pkg))
+            print("OK")
+            let pkg = SPI.Package(from: apiPackage)
+            packages.append(pkg)
         }
     }
 
@@ -39,7 +41,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
 }
 
 
-struct PackageID: ExpressibleByArgument {
+struct PackageID: ExpressibleByArgument, CustomStringConvertible {
     var owner: String
     var repository: String
 
@@ -49,4 +51,6 @@ struct PackageID: ExpressibleByArgument {
         self.owner = parts[0]
         self.repository = parts[1]
     }
+
+    var description: String { "\(owner)/\(repository)" }
 }
