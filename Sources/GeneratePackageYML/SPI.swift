@@ -31,7 +31,7 @@ struct SPI {
         var req = URLRequest(url: url)
         req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
         let (data, _) = try await URLSession.shared.data(for: req)
-        print(String(decoding: data, as: UTF8.self))
+        //        print(String(decoding: data, as: UTF8.self))
         return try Self.decoder.decode(APIPackage.self, from: data)
     }
 }

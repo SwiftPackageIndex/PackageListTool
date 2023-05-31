@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import ArgumentParser
+import Yams
 
 
 public struct GeneratePackageYML: AsyncParsableCommand {
@@ -26,20 +27,32 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var packageIDs: [PackageID]
 
     public func run() async throws {
+        var packages = [SPI.Package]()
         for packageID in packageIDs {
-            let pkg = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
+            print("Fetching package: \(packageID)...")
+            let apiPackage = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
                 .fetchPackage(owner: packageID.owner, repository: packageID.repository)
-            //        let pkg = SPI.APIPackage.example
-            //        dump(pkg)
-            dump(SPI.Package(from: pkg))
+            print("OK")
+            let pkg = SPI.Package(from: apiPackage)
+            packages.append(pkg)
         }
+        print(try YAMLEncoder().encode(PackageList(packages: packages)))
     }
 
     public init() { }
 }
 
 
-struct PackageID: ExpressibleByArgument {
+struct PackageList: Codable {
+    // Extend with additional properties as needed (and make configurable via CLI args or so)
+    //   var name: String
+    //   var anchor: String
+    //   var description: String
+    var packages: [SPI.Package]
+}
+
+
+struct PackageID: ExpressibleByArgument, CustomStringConvertible {
     var owner: String
     var repository: String
 
@@ -49,4 +62,6 @@ struct PackageID: ExpressibleByArgument {
         self.owner = parts[0]
         self.repository = parts[1]
     }
+
+    var description: String { "\(owner)/\(repository)" }
 }
