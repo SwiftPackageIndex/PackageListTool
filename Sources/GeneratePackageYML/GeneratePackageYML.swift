@@ -16,12 +16,28 @@ import ArgumentParser
 
 
 public struct GeneratePackageYML: AsyncParsableCommand {
+    @Option(name: .shortAndLong)
+    var packageID: PackageID
+
     public func run() async throws {
-        let pkg = try await SPI.fetchPackage(owner: "sindresorhus", repository: "Settings")
+        let pkg = try await SPI.fetchPackage(owner: packageID.owner, repository: packageID.repository)
         //        let pkg = SPI.APIPackage.example
         //        dump(pkg)
         dump(SPI.Package(from: pkg))
     }
 
     public init() { }
+}
+
+
+struct PackageID: ExpressibleByArgument {
+    var owner: String
+    var repository: String
+
+    init?(argument: String) {
+        let parts = argument.split(separator: "/").map(String.init)
+        guard parts.count == 2 else { return nil }
+        self.owner = parts[0]
+        self.repository = parts[1]
+    }
 }
