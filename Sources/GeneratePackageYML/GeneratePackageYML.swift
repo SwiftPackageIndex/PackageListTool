@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import ArgumentParser
+import Yams
 
 
 public struct GeneratePackageYML: AsyncParsableCommand {
@@ -35,9 +36,19 @@ public struct GeneratePackageYML: AsyncParsableCommand {
             let pkg = SPI.Package(from: apiPackage)
             packages.append(pkg)
         }
+        print(try YAMLEncoder().encode(PackageList(packages: packages)))
     }
 
     public init() { }
+}
+
+
+struct PackageList: Codable {
+    // Extend with additional properties as needed (and make configurable via CLI args or so)
+    //   var name: String
+    //   var anchor: String
+    //   var description: String
+    var packages: [SPI.Package]
 }
 
 
