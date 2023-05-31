@@ -16,22 +16,22 @@
 import Foundation
 
 
-extension SPI {
-#warning("make configurable")
-    static let token = "api-token"
+struct SPI {
+    var baseURL: String
+    var apiToken: String
+
     static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }
 
-    static func fetchPackage(owner: String, repository: String) async throws -> APIPackage {
-#warning("make configurable")
-        let url = URL(string: "http://localhost:8080/api/packages/\(owner)/\(repository)")!
+    func fetchPackage(owner: String, repository: String) async throws -> APIPackage {
+        let url = URL(string: "\(baseURL)/api/packages/\(owner)/\(repository)")!
         var req = URLRequest(url: url)
-        req.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
         let (data, _) = try await URLSession.shared.data(for: req)
         print(String(decoding: data, as: UTF8.self))
-        return try decoder.decode(APIPackage.self, from: data)
+        return try Self.decoder.decode(APIPackage.self, from: data)
     }
 }

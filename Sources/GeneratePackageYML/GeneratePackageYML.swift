@@ -16,12 +16,19 @@ import ArgumentParser
 
 
 public struct GeneratePackageYML: AsyncParsableCommand {
+    @Option(name: .long)
+    var apiBaseURL: String = "https://swiftpackageindex.com"
+
+    @Option(name: .long)
+    var apiToken: String
+
     @Option(name: .shortAndLong, parsing: .upToNextOption)
     var packageIDs: [PackageID]
 
     public func run() async throws {
         for packageID in packageIDs {
-            let pkg = try await SPI.fetchPackage(owner: packageID.owner, repository: packageID.repository)
+            let pkg = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
+                .fetchPackage(owner: packageID.owner, repository: packageID.repository)
             //        let pkg = SPI.APIPackage.example
             //        dump(pkg)
             dump(SPI.Package(from: pkg))
