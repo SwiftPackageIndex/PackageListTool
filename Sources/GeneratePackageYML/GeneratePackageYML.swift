@@ -16,5 +16,12 @@ import ArgumentParser
 
 
 public struct GeneratePackageYML: AsyncParsableCommand {
+    public func run() async throws {
+        let pkg = try await SPI.fetchPackage(owner: "sindresorhus", repository: "Settings")
+        //        let pkg = SPI.APIPackage.example
+        //        dump(pkg)
+        dump(SPI.Package(from: pkg))
+    }
+
     public init() { }
 }
