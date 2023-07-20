@@ -12,17 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import Foundation
-
-import PackageListTool
+import ArgumentParser
 
 
-let group = DispatchGroup()
-group.enter()
+public struct PackageListTool: AsyncParsableCommand {
+    public static var configuration = CommandConfiguration(
+        abstract: "Package list generation tool",
+        subcommands: [
+            GeneratePackageYML.self,
+        ]
+    )
 
-Task {
-    defer { group.leave() }
-    await PackageListTool.main()
+    public init() { }
 }
-
-group.wait()
