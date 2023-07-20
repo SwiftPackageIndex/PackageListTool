@@ -38,7 +38,7 @@ public struct GenerateDescriptions: AsyncParsableCommand {
         }
 
         for packageID in packageIDs {
-            let filepath = outdir + "/" + packageID.filename + ".txt"
+            let filepath = outdir + "/" + packageID.descriptionFilename
             if FileManager.default.fileExists(atPath: filepath) {
                 print("Description exists at path '\(filepath)', skipping generation ...")
             } else {
