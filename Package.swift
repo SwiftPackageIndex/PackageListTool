@@ -17,7 +17,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "GeneratePackageYML",
+    name: "PackageListTool",
     platforms: [.macOS(.v13)],
     products: [
         .executable(name: "package-list-tool", targets: ["Executable"])
