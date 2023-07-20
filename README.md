@@ -1,42 +1,26 @@
 # PackageListTool
 
-Invoke as follows:
+This tool allows creating package list YML files. It performs the following steps:
+
+1. Fetch package summary descriptions from OpenAI's API for a list of package IDs (in this context: owner/repo pairs).
+2. These summaries are stored in a given directory at paths `outdir/owner-repo.txt` and will not be regnerated if a file already exists with that name.
+3. Fetch package metadata from the SPI API and merge it with the package summary.
+
+Steps 1+2:
+
+```
+package-list-tool generate-descriptions -p apple/swift-argument-parser sindresorhus/settings \
+    --open-ai-api-token $OPENAI_TOKEN \
+    --github-api-token $GITHUB_TOKEN \
+    -o ./descriptions
+```
+
+Step 3:
 
 ```
 package-list-tool generate-package-yml -p apple/swift-argument-parser sindresorhus/settings \
-  --spi-api-token api-token \
-  --api-base-url http://localhost:8080
+  --spi-api-token $SPI_API_TOKEN \
+  --descriptions-directory ./descriptions \
+  -o packages.yml
 ```
 
-Example output:
-
-```
-Fetching package: apple/swift-argument-parser...
-OK
-Fetching package: sindresorhus/settings...
-OK
-packages:
-- name: swift-argument-parser
-  description: Straightforward, type-safe argument parsing for Swift
-  swiftCompatibility: 5.5+
-  platformCompatibility:
-  - linux
-  - macos
-  activity: In development for 3 years ago, with activity as late as 2023-05-19 18:03:39
-    +0000.
-  authors: Written by Nate Cook and 84 other contributors.
-  license: Apache 2.0
-  stars: '2974'
-  url: https://github.com/apple/swift-argument-parser.git
-- name: Settings
-  description: "\u2699 Add a settings window to your macOS app in minutes"
-  swiftCompatibility: 5.7+
-  platformCompatibility:
-  - macos
-  activity: In development for 4 years ago, with activity as late as 2023-05-17 13:35:06
-    +0000.
-  authors: Written by Sindre Sorhus and 13 other contributors.
-  license: MIT
-  stars: '1272'
-  url: https://github.com/sindresorhus/Settings.git
-  ```

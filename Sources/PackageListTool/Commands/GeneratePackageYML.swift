@@ -31,6 +31,9 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     @Option(name: .shortAndLong)
     var descriptionsDirectory: String = "./descriptions"
 
+    @Option(name: .shortAndLong)
+    var output: String = "packages.yml"
+
     public func run() async throws {
         var packages = [API.YMLPackage]()
         for packageID in packageIDs {
@@ -44,7 +47,8 @@ public struct GeneratePackageYML: AsyncParsableCommand {
             let pkg = API.YMLPackage(from: apiPackage)
             packages.append(pkg)
         }
-        print(try YAMLEncoder().encode(PackageList(packages: packages)))
+        let content = try YAMLEncoder().encode(PackageList(packages: packages))
+        try Data(content.utf8).write(to: URL(filePath: output))
     }
 
     public init() { }

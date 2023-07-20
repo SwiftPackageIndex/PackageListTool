@@ -10,3 +10,4 @@ DerivedData/
 .vscode/
 .swiftpm/
 descriptions/
+packages.yml
