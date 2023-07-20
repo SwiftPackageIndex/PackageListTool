@@ -14,6 +14,7 @@
 
 import ArgumentParser
 import CleverBird
+import Foundation
 
 
 public struct GenerateDescriptions: AsyncParsableCommand {
@@ -26,22 +27,39 @@ public struct GenerateDescriptions: AsyncParsableCommand {
     @Option(name: .long)
     var openAIApiToken: String
 
+    @Option(name: .shortAndLong)
+    var outdir: String = "./descriptions"
+
     public func run() async throws {
         let openAIAPIConnection = OpenAIAPIConnection(apiKey: openAIApiToken)
 
+        if FileManager.default.fileExists(atPath: outdir) == false {
+            try FileManager.default.createDirectory(atPath: outdir, withIntermediateDirectories: true)
+        }
+
         for packageID in packageIDs {
-            print("Generating description: \(packageID)")
+            let filepath = outdir + "/" + packageID.filename + ".txt"
+            if FileManager.default.fileExists(atPath: filepath) {
+                print("Description exists at path '\(filepath)', skipping generation ...")
+            } else {
+                print("Generating description: \(packageID) ...")
 
-            let readme = try await Github.fetchReadme(packageID: packageID, githubApiToken: githubApiToken)
-            print("Readme length:", readme.count)
-            print("Message length:", readme.trimmedToMaxMessage.count)
+                let readme = try await Github.fetchReadme(packageID: packageID, githubApiToken: githubApiToken)
+                print("Readme length:", readme.count)
+                print("Message length:", readme.trimmedToMaxMessage.count)
 
-            let chatThread = ChatThread(connection: openAIAPIConnection,
-                                        model: .gpt35Turbo)
-                .addSystemMessage(Self.systemPrompt)
-                .addUserMessage(readme.trimmedToMaxMessage)
-            let result = try await chatThread.complete()
-            print("Result:", result.content ?? "none")
+                let chatThread = ChatThread(connection: openAIAPIConnection,
+                                            model: .gpt35Turbo)
+                    .addSystemMessage(Self.systemPrompt)
+                    .addUserMessage(readme.trimmedToMaxMessage)
+                let result = try await chatThread.complete()
+                if let content = result .content {
+                    print("Result:", content)
+                    try Data(content.utf8).write(to: URL(filePath: filepath))
+                } else {
+                    print("No content returned.")
+                }
+            }
         }
     }
 

@@ -64,4 +64,6 @@ struct PackageID: ExpressibleByArgument, CustomStringConvertible {
     }
 
     var description: String { "\(owner)/\(repository)" }
+
+    var filename: String { "\(owner)-\(repository)".lowercased() }
 }
