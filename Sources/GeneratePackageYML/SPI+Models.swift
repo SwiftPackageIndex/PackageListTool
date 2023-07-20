@@ -199,11 +199,12 @@ extension SPI {
     }
 
     enum PlatformCompatibility: String, Codable, Comparable {
-        case ios
+        case iOS
         case linux
-        case macos
-        case tvos
-        case watchos
+        case macOS
+        case tvOS
+        case visionOS
+        case watchOS
         static func < (lhs: Self, rhs: Self) -> Bool { lhs.rawValue < rhs.rawValue }
     }
 

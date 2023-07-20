@@ -57,7 +57,7 @@ extension SPI.APIPackage {
               history: .init(createdAt: .example,
                              commitCount: 433, commitCountURL: "https://github.com/foo/bar/commits/main",
                              releaseCount: 5, releaseCountURL: "https://github.com/foo/bar/releases"),
-              platformCompatibility: [.macos, .linux],
+              platformCompatibility: [.macOS, .linux],
               license: .mit,
               stars: 1234,
               swiftVersionCompatibility: [.init(major: 5, minor: 8, patch: 0), .init(major: 5, minor: 7, patch: 0)],
