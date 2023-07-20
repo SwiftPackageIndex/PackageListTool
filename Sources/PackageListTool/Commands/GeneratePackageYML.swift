@@ -21,7 +21,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var apiBaseURL: String = "https://swiftpackageindex.com"
 
     @Option(name: .long)
-    var apiToken: String
+    var spiApiToken: String
 
     @Option(name: .shortAndLong, parsing: .upToNextOption)
     var packageIDs: [PackageID]
@@ -30,7 +30,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
         var packages = [API.YMLPackage]()
         for packageID in packageIDs {
             print("Fetching package: \(packageID)...")
-            let apiPackage = try await API(baseURL: apiBaseURL, apiToken: apiToken)
+            let apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
                 .fetchPackage(owner: packageID.owner, repository: packageID.repository)
             print("OK")
             let pkg = API.YMLPackage(from: apiPackage)
@@ -64,4 +64,6 @@ struct PackageID: ExpressibleByArgument, CustomStringConvertible {
     }
 
     var description: String { "\(owner)/\(repository)" }
+
+    var filename: String { "\(owner)-\(repository)".lowercased() }
 }

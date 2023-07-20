@@ -4,7 +4,7 @@ Invoke as follows:
 
 ```
 package-list-tool generate-package-yml -p apple/swift-argument-parser sindresorhus/settings \
-  --api-token api-token \
+  --api-token spi-api-token \
   --api-base-url http://localhost:8080
 ```
 

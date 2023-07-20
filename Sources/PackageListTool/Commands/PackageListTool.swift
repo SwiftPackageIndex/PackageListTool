@@ -19,6 +19,7 @@ public struct PackageListTool: AsyncParsableCommand {
     public static var configuration = CommandConfiguration(
         abstract: "Package list generation tool",
         subcommands: [
+            GenerateDescriptions.self,
             GeneratePackageYML.self,
         ]
     )
