@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-extension SPI {
+extension API {
     struct APIPackage: Codable {
         var activity: Activity
         var authors: AuthorMetadata
@@ -29,7 +29,7 @@ extension SPI {
 }
 
 
-extension SPI.APIPackage {
+extension API.APIPackage {
     var activityClause: String {
         let clause = "In development for \(relativeDate: history.createdAt)"
         if let latest = [activity.lastIssueClosedAt, activity.lastPullRequestClosedAt].compactMap({ $0 }).sorted().last {
@@ -50,7 +50,7 @@ extension SPI.APIPackage {
 }
 
 
-extension SPI.APIPackage {
+extension API.APIPackage {
     static var example: Self {
         .init(activity: .init(openIssuesCount: 12, openPullRequestsCount: 12, lastIssueClosedAt: .example, lastPullRequestClosedAt: .example),
               authors: .fromGitRepository(.init(authors: [.init(name: "Foo Bar")], numberOfContributors: 5)),

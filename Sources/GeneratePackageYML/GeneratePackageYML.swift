@@ -27,13 +27,13 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var packageIDs: [PackageID]
 
     public func run() async throws {
-        var packages = [SPI.Package]()
+        var packages = [API.YMLPackage]()
         for packageID in packageIDs {
             print("Fetching package: \(packageID)...")
-            let apiPackage = try await SPI(baseURL: apiBaseURL, apiToken: apiToken)
+            let apiPackage = try await API(baseURL: apiBaseURL, apiToken: apiToken)
                 .fetchPackage(owner: packageID.owner, repository: packageID.repository)
             print("OK")
-            let pkg = SPI.Package(from: apiPackage)
+            let pkg = API.YMLPackage(from: apiPackage)
             packages.append(pkg)
         }
         print(try YAMLEncoder().encode(PackageList(packages: packages)))
@@ -48,7 +48,7 @@ struct PackageList: Codable {
     //   var name: String
     //   var anchor: String
     //   var description: String
-    var packages: [SPI.Package]
+    var packages: [API.YMLPackage]
 }
 
 

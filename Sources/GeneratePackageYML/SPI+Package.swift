@@ -16,8 +16,8 @@
 import Foundation
 
 
-extension SPI {
-    struct Package: Codable {
+extension API {
+    struct YMLPackage: Codable {
         var name: String
         var description: String
         var swiftCompatibility: String

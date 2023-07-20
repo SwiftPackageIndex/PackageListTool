@@ -16,7 +16,7 @@ import Foundation
 
 
 // Type pulled 1:1 from SwiftPackageIndex-Server
-extension SPI {
+extension API {
     struct Activity: Codable, Equatable {
         var openIssuesCount: Int
         var openIssuesURL: String?

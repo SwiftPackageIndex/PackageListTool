@@ -16,7 +16,7 @@
 import Foundation
 
 
-struct SPI {
+struct API {
     var baseURL: String
     var apiToken: String
 
