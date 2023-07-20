@@ -20,15 +20,15 @@ let package = Package(
     name: "GeneratePackageYML",
     platforms: [.macOS(.v13)],
     products: [
-        .executable(name: "generate-package-yml", targets: ["Executable"])
+        .executable(name: "package-list-tool", targets: ["Executable"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0"),
         .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.5")
     ],
     targets: [
-        .executableTarget(name: "Executable", dependencies: ["GeneratePackageYML"]),
-        .target(name: "GeneratePackageYML", dependencies: [
+        .executableTarget(name: "Executable", dependencies: ["PackageListTool"]),
+        .target(name: "PackageListTool", dependencies: [
             .product(name: "ArgumentParser", package: "swift-argument-parser"),
             .product(name: "Yams", package: "Yams")
         ])

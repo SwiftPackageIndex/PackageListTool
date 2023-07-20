@@ -14,7 +14,7 @@
 
 import Foundation
 
-import GeneratePackageYML
+import PackageListTool
 
 
 let group = DispatchGroup()
@@ -22,7 +22,7 @@ group.enter()
 
 Task {
     defer { group.leave() }
-    await GeneratePackageYML.main()
+    await PackageListTool.main()
 }
 
 group.wait()

@@ -1,11 +1,11 @@
-# GeneratePackageYML
+# PackageListTool
 
 Invoke as follows:
 
 ```
-generate-package-yml -p apple/swift-argument-parser sindresorhus/settings \
+package-list-tool generate-package-yml -p apple/swift-argument-parser sindresorhus/settings \
   --api-token api-token \
-  --api-base-url http:localhost:8080
+  --api-base-url http://localhost:8080
 ```
 
 Example output:
