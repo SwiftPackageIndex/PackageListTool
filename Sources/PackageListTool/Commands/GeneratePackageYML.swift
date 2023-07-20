@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import Foundation
+
 import ArgumentParser
 import Yams
 
@@ -26,20 +28,42 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     @Option(name: .shortAndLong, parsing: .upToNextOption)
     var packageIDs: [PackageID]
 
+    @Option(name: .shortAndLong)
+    var descriptionsDirectory: String = "./descriptions"
+
+    @Option(name: .shortAndLong)
+    var output: String = "packages.yml"
+
     public func run() async throws {
         var packages = [API.YMLPackage]()
         for packageID in packageIDs {
             print("Fetching package: \(packageID)...")
-            let apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
+            var apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
                 .fetchPackage(owner: packageID.owner, repository: packageID.repository)
-            print("OK")
+            guard let summary = getSummary(for: packageID) else {
+                throw Error.summaryNotFound(for: packageID)
+            }
+            apiPackage.summary = summary
             let pkg = API.YMLPackage(from: apiPackage)
             packages.append(pkg)
         }
-        print(try YAMLEncoder().encode(PackageList(packages: packages)))
+        let content = try YAMLEncoder().encode(PackageList(packages: packages))
+        try Data(content.utf8).write(to: URL(filePath: output))
     }
 
     public init() { }
+
+    enum Error: Swift.Error {
+        case summaryNotFound(for: PackageID)
+    }
+}
+
+
+extension GeneratePackageYML {
+    func getSummary(for packageID: PackageID) -> String? {
+        let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
+        return FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
+    }
 }
 
 
@@ -65,5 +89,5 @@ struct PackageID: ExpressibleByArgument, CustomStringConvertible {
 
     var description: String { "\(owner)/\(repository)" }
 
-    var filename: String { "\(owner)-\(repository)".lowercased() }
+    var descriptionFilename: String { "\(owner)-\(repository)".lowercased() + ".txt" }
 }
