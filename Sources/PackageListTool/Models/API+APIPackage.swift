@@ -15,7 +15,7 @@
 
 extension API {
     struct APIPackage: Codable {
-        var activity: Activity
+        var activity: Activity?
         var authors: AuthorMetadata
         var history: History
         var platformCompatibility: [PlatformCompatibility]
@@ -32,7 +32,7 @@ extension API {
 extension API.APIPackage {
     var activityClause: String {
         let clause = "In development for \(relativeDate: history.createdAt)"
-        if let latest = [activity.lastIssueClosedAt, activity.lastPullRequestClosedAt].compactMap({ $0 }).sorted().last {
+        if let latest = [activity?.lastIssueClosedAt, activity?.lastPullRequestClosedAt].compactMap({ $0 }).sorted().last {
             return clause + ", with activity as late as \(latest)."  // TODO: make relative date
         } else {
             return clause + "."
