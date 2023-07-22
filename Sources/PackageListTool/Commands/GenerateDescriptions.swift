@@ -28,17 +28,17 @@ public struct GenerateDescriptions: AsyncParsableCommand {
     var openAIApiToken: String
 
     @Option(name: .shortAndLong)
-    var outdir: String = "./descriptions"
+    var descriptionsDirectory: String = "./descriptions"
 
     public func run() async throws {
         let openAIAPIConnection = OpenAIAPIConnection(apiKey: openAIApiToken)
 
-        if FileManager.default.fileExists(atPath: outdir) == false {
-            try FileManager.default.createDirectory(atPath: outdir, withIntermediateDirectories: true)
+        if FileManager.default.fileExists(atPath: descriptionsDirectory) == false {
+            try FileManager.default.createDirectory(atPath: descriptionsDirectory, withIntermediateDirectories: true)
         }
 
         for packageID in packageIDs {
-            let filepath = outdir + "/" + packageID.descriptionFilename
+            let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
             if FileManager.default.fileExists(atPath: filepath) {
                 print("Description exists at path '\(filepath)', skipping generation ...")
             } else {

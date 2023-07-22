@@ -12,7 +12,7 @@ Steps 1+2:
 package-list-tool generate-descriptions -p apple/swift-argument-parser sindresorhus/settings \
     --open-ai-api-token $OPENAI_TOKEN \
     --github-api-token $GITHUB_TOKEN \
-    -o ./descriptions
+    --descriptions-directory ./descriptions
 ```
 
 Step 3:
