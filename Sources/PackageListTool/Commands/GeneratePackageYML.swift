@@ -35,12 +35,20 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var output: String = "packages.yml"
 
     public func run() async throws {
+        try await Self.run(apiBaseURL: apiBaseURL,
+                           descriptionsDirectory: descriptionsDirectory,
+                           output: output,
+                           packageIds: packageIds,
+                           spiApiToken: spiApiToken)
+    }
+
+    static func run(apiBaseURL: String, descriptionsDirectory: String, output: String, packageIds: [PackageId], spiApiToken: String) async throws {
         var packages = [API.YMLPackage]()
         for packageId in packageIds {
             print("Fetching package: \(packageId)...")
             var apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
                 .fetchPackage(owner: packageId.owner, repository: packageId.repository)
-            guard let summary = getSummary(for: packageId) else {
+            guard let summary = getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
                 throw Error.summaryNotFound(for: packageId)
             }
             apiPackage.summary = summary
@@ -60,7 +68,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
 
 
 extension GeneratePackageYML {
-    func getSummary(for packageID: PackageId) -> String? {
+    static func getSummary(for packageID: PackageId, descriptionsDirectory: String) -> String? {
         let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
         return FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
     }

@@ -31,6 +31,13 @@ public struct GenerateDescriptions: AsyncParsableCommand {
     var descriptionsDirectory: String = "./descriptions"
 
     public func run() async throws {
+        try await Self.run(descriptionsDirectory: descriptionsDirectory,
+                           githubApiToken: githubApiToken,
+                           openAIApiToken: openAIApiToken,
+                           packageIds: packageIds)
+    }
+
+    static func run(descriptionsDirectory: String, githubApiToken: String, openAIApiToken: String, packageIds: [PackageId]) async throws {
         let openAIAPIConnection = OpenAIAPIConnection(apiKey: openAIApiToken)
 
         if FileManager.default.fileExists(atPath: descriptionsDirectory) == false {
@@ -62,7 +69,6 @@ public struct GenerateDescriptions: AsyncParsableCommand {
             }
         }
     }
-
 
     public init() { }
 }

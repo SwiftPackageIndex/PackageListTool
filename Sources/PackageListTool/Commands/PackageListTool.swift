@@ -21,7 +21,9 @@ public struct PackageListTool: AsyncParsableCommand {
         subcommands: [
             GenerateDescriptions.self,
             GeneratePackageYML.self,
-        ]
+            RunAll.self,
+        ],
+        defaultSubcommand: RunAll.self
     )
 
     public init() { }
