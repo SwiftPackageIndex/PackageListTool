@@ -30,13 +30,13 @@ extension API {
 
         init(from package: APIPackage) {
             self.name = package.title
-            self.description = package.summary // TODO: populate from GPT
+            self.description = package.summary
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
             self.platformCompatibility = package.platformCompatibility.map(\.rawValue)
             self.activity = package.activityClause
             self.authors = package.authorClause
             self.license = package.license.shortName
-            self.stars = "\(package.stars)" // TODO: thousand separator formatting
+            self.stars =  NumberFormatter.spiDefault.string(for: package.stars) ?? ""
             self.url = package.url
         }
     }

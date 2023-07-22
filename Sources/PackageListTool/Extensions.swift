@@ -57,7 +57,7 @@ extension DefaultStringInterpolation {
         appendInterpolation(Self.localizedString(for: date, relativeTo: referenceDate))
     }
 
-    mutating func appendingInterpolation(since date: Date) {
+    mutating func appendInterpolation(since date: Date) {
         appendInterpolation(inWords: Date.now.timeIntervalSince(date))
     }
 

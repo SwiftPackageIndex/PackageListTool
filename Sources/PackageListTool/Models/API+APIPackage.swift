@@ -22,7 +22,7 @@ extension API {
         var license: License
         var stars: Int
         var swiftVersionCompatibility: [SwiftVersion]
-        var summary: String  // FIXME: use GPT
+        var summary: String
         var title: String
         var url: String
     }
@@ -31,9 +31,9 @@ extension API {
 
 extension API.APIPackage {
     var activityClause: String {
-        let clause = "In development for \(relativeDate: history.createdAt)"
+        let clause = "In development for \(since: history.createdAt)"
         if let latest = [activity?.lastIssueClosedAt, activity?.lastPullRequestClosedAt].compactMap({ $0 }).sorted().last {
-            return clause + ", with activity as late as \(latest)."  // TODO: make relative date
+            return clause + ", with activity as late as \(relativeDate: latest)."
         } else {
             return clause + "."
         }
@@ -42,7 +42,7 @@ extension API.APIPackage {
     var authorClause: String {
         switch authors {
             case let .fromGitRepository(authors):
-                return "Written by \(authors.authors.map(\.name).joined(separator: ", ")) and \(authors.numberOfContributors) other contributors."  // TODO: pluralize
+                return "Written by \(authors.authors.map(\.name).joined(separator: ", ")) and \(pluralizedCount: authors.numberOfContributors, singular: "other contributor")."
             case let .fromSPIManifest(string):
                 return "Written by \(string)"
         }
