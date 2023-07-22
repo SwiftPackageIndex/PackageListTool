@@ -26,7 +26,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     var spiApiToken: String
 
     @Option(name: .shortAndLong, parsing: .upToNextOption)
-    var packageIDs: [PackageID]
+    var packageIds: [PackageId]
 
     @Option(name: .shortAndLong)
     var descriptionsDirectory: String = "./descriptions"
@@ -36,12 +36,12 @@ public struct GeneratePackageYML: AsyncParsableCommand {
 
     public func run() async throws {
         var packages = [API.YMLPackage]()
-        for packageID in packageIDs {
-            print("Fetching package: \(packageID)...")
+        for packageId in packageIds {
+            print("Fetching package: \(packageId)...")
             var apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
-                .fetchPackage(owner: packageID.owner, repository: packageID.repository)
-            guard let summary = getSummary(for: packageID) else {
-                throw Error.summaryNotFound(for: packageID)
+                .fetchPackage(owner: packageId.owner, repository: packageId.repository)
+            guard let summary = getSummary(for: packageId) else {
+                throw Error.summaryNotFound(for: packageId)
             }
             apiPackage.summary = summary
             let pkg = API.YMLPackage(from: apiPackage)
@@ -54,13 +54,13 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     public init() { }
 
     enum Error: Swift.Error {
-        case summaryNotFound(for: PackageID)
+        case summaryNotFound(for: PackageId)
     }
 }
 
 
 extension GeneratePackageYML {
-    func getSummary(for packageID: PackageID) -> String? {
+    func getSummary(for packageID: PackageId) -> String? {
         let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
         return FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
     }
@@ -76,7 +76,7 @@ struct PackageList: Codable {
 }
 
 
-struct PackageID: ExpressibleByArgument, CustomStringConvertible {
+struct PackageId: ExpressibleByArgument, CustomStringConvertible {
     var owner: String
     var repository: String
 

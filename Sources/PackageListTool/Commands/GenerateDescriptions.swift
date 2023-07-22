@@ -19,7 +19,7 @@ import Foundation
 
 public struct GenerateDescriptions: AsyncParsableCommand {
     @Option(name: .shortAndLong, parsing: .upToNextOption)
-    var packageIDs: [PackageID]
+    var packageIds: [PackageId]
 
     @Option(name: .long)
     var githubApiToken: String
@@ -37,14 +37,14 @@ public struct GenerateDescriptions: AsyncParsableCommand {
             try FileManager.default.createDirectory(atPath: descriptionsDirectory, withIntermediateDirectories: true)
         }
 
-        for packageID in packageIDs {
-            let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
+        for packageId in packageIds {
+            let filepath = descriptionsDirectory + "/" + packageId.descriptionFilename
             if FileManager.default.fileExists(atPath: filepath) {
                 print("Description exists at path '\(filepath)', skipping generation ...")
             } else {
-                print("Generating description: \(packageID) ...")
+                print("Generating description: \(packageId) ...")
 
-                let readme = try await Github.fetchReadme(packageID: packageID, githubApiToken: githubApiToken)
+                let readme = try await Github.fetchReadme(packageID: packageId, githubApiToken: githubApiToken)
                 print("Readme length:", readme.count)
                 print("Message length:", readme.trimmedToMaxMessage.count)
 
