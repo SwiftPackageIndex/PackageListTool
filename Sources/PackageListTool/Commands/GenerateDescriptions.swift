@@ -19,7 +19,7 @@ import Foundation
 
 public struct GenerateDescriptions: AsyncParsableCommand {
     @Option(name: .shortAndLong, parsing: .upToNextOption)
-    var packageIDs: [PackageID]
+    var packageIds: [PackageId]
 
     @Option(name: .long)
     var githubApiToken: String
@@ -28,23 +28,30 @@ public struct GenerateDescriptions: AsyncParsableCommand {
     var openAIApiToken: String
 
     @Option(name: .shortAndLong)
-    var outdir: String = "./descriptions"
+    var descriptionsDirectory: String = "./descriptions"
 
     public func run() async throws {
+        try await Self.run(descriptionsDirectory: descriptionsDirectory,
+                           githubApiToken: githubApiToken,
+                           openAIApiToken: openAIApiToken,
+                           packageIds: packageIds)
+    }
+
+    static func run(descriptionsDirectory: String, githubApiToken: String, openAIApiToken: String, packageIds: [PackageId]) async throws {
         let openAIAPIConnection = OpenAIAPIConnection(apiKey: openAIApiToken)
 
-        if FileManager.default.fileExists(atPath: outdir) == false {
-            try FileManager.default.createDirectory(atPath: outdir, withIntermediateDirectories: true)
+        if FileManager.default.fileExists(atPath: descriptionsDirectory) == false {
+            try FileManager.default.createDirectory(atPath: descriptionsDirectory, withIntermediateDirectories: true)
         }
 
-        for packageID in packageIDs {
-            let filepath = outdir + "/" + packageID.descriptionFilename
+        for packageId in packageIds {
+            let filepath = descriptionsDirectory + "/" + packageId.descriptionFilename
             if FileManager.default.fileExists(atPath: filepath) {
                 print("Description exists at path '\(filepath)', skipping generation ...")
             } else {
-                print("Generating description: \(packageID) ...")
+                print("Generating description: \(packageId) ...")
 
-                let readme = try await Github.fetchReadme(packageID: packageID, githubApiToken: githubApiToken)
+                let readme = try await Github.fetchReadme(packageID: packageId, githubApiToken: githubApiToken)
                 print("Readme length:", readme.count)
                 print("Message length:", readme.trimmedToMaxMessage.count)
 
@@ -62,7 +69,6 @@ public struct GenerateDescriptions: AsyncParsableCommand {
             }
         }
     }
-
 
     public init() { }
 }

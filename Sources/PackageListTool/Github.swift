@@ -20,7 +20,7 @@ enum Github {
         case invalidURL
     }
 
-    static func fetchReadme(packageID: PackageID, githubApiToken: String) async throws -> String {
+    static func fetchReadme(packageID: PackageId, githubApiToken: String) async throws -> String {
         //        return mock
 
         guard let url = URL(string: "https://api.github.com/repos/\(packageID)/readme")
