@@ -24,3 +24,14 @@ package-list-tool generate-package-yml -p apple/swift-argument-parser sindresorh
   -o packages.yml
 ```
 
+## RunAll subcommand
+
+The `RunAll` command (which is also the default command) will run all of these steps consecutively in one go:
+
+```
+package-list-tool 
+    --github-api-token $GITHUB_TOKEN 
+    --open-ai-api-token $OPENAI_TOKEN 
+    --spi-api-token $SPI_API_TOKEN 
+    --package-ids apple/swift-argument-parser sindresorhus/settings
+```
