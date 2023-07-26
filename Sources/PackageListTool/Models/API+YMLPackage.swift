@@ -40,7 +40,7 @@ extension API {
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
             self.platformCompatibility = package.platformCompatibility.map(\.rawValue)
             self.license = package.license.shortName
-            self.url = package.url
+            self.url = "https://swiftpackageindex.com/\(package.repositoryOwner)/\(package.repositoryName)"
         }
     }
 }
