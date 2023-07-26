@@ -33,6 +33,10 @@ let package = Package(
             .product(name: "ArgumentParser", package: "swift-argument-parser"),
             .product(name: "CleverBird", package: "CleverBird"),
             .product(name: "Yams", package: "Yams")
-        ])
+        ]),
+        .testTarget(name: "PackageListToolTests",
+                    dependencies: [
+                        .target(name: "PackageListTool")
+                    ])
     ]
 )
