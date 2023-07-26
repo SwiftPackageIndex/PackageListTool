@@ -51,7 +51,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
             guard let summary = getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
                 throw Error.summaryNotFound(for: packageId)
             }
-            apiPackage.summary = summary
+            apiPackage.summary = summary.trimmingCharacters(in: .whitespacesAndNewlines)
             let pkg = API.YMLPackage(from: apiPackage)
             packages.append(pkg)
         }
