@@ -22,7 +22,7 @@ extension API {
         var license: License
         var stars: Int
         var swiftVersionCompatibility: [SwiftVersion]
-        var summary: String
+        var summary: String?
         var title: String
         var url: String
     }
