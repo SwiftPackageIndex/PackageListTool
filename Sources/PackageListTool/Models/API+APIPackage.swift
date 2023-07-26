@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import Collections
 
 extension API {
     struct APIPackage: Codable {
@@ -23,9 +24,41 @@ extension API {
         var summary: String?
         var title: String
         var url: String
+
+        enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
+            case apple = "Apple"
+            case linux = "Linux"
+
+            var platforms: OrderedSet<PlatformCompatibility> {
+                switch self {
+                    // The order here is important and should match the columns in the compatibility matrix on the SPI website.
+                    case .apple: return [.iOS, .macOS, .visionOS, .watchOS, .tvOS]
+                    case .linux: return [.linux]
+                }
+            }
+        }
     }
 }
 
+extension API.APIPackage {
+    var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
+        PlatformCompatibilityGroup.allCases.filter { group in
+            Set(platformCompatibility).isDisjoint(with: group.platforms) == false
+        }
+    }
+
+    var platformCompatibilityTooltip: String {
+        groupedPlatformCompatibility.map { group in
+            let platforms = group.platforms.intersection(Set(platformCompatibility))
+            if group == .apple {
+                let detail = "(" + platforms.map(\.rawValue).joined(separator: ", ") + ")"
+                return "\(group.rawValue) \(detail)"
+            } else {
+                return group.rawValue
+            }
+        }.joined(separator: " and ")
+    }
+}
 
 extension API.APIPackage {
     static var example: Self {

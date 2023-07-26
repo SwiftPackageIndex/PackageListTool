@@ -26,13 +26,19 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0"),
         .package(url: "https://github.com/btfranklin/CleverBird.git", from: "3.1.1"),
         .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.5"),
+        .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.4")
     ],
     targets: [
         .executableTarget(name: "Executable", dependencies: ["PackageListTool"]),
         .target(name: "PackageListTool", dependencies: [
             .product(name: "ArgumentParser", package: "swift-argument-parser"),
             .product(name: "CleverBird", package: "CleverBird"),
-            .product(name: "Yams", package: "Yams")
-        ])
+            .product(name: "Yams", package: "Yams"),
+            .product(name: "Collections", package: "swift-collections")
+        ]),
+        .testTarget(name: "PackageListToolTests",
+                    dependencies: [
+                        .target(name: "PackageListTool")
+                    ])
     ]
 )
