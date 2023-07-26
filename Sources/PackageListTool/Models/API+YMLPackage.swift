@@ -28,6 +28,18 @@ extension API {
         var stars: String
         var url: String
 
+        enum CodingKeys: String, CodingKey {
+            case name
+            case description
+            case swiftCompatibility = "swift_compatibility"
+            case platformCompatibility = "platform_compatibility"
+            case activity
+            case authors
+            case license
+            case stars
+            case url
+        }
+
         init(from package: APIPackage) {
             self.name = package.title
             self.description = package.summary ?? ""
