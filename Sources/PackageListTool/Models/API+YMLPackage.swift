@@ -22,10 +22,7 @@ extension API {
         var description: String
         var swiftCompatibility: String
         var platformCompatibility: [String]
-        var activity: String
-        var authors: String
         var license: String
-        var stars: String
         var url: String
 
         enum CodingKeys: String, CodingKey {
@@ -33,10 +30,7 @@ extension API {
             case description
             case swiftCompatibility = "swift_compatibility"
             case platformCompatibility = "platform_compatibility"
-            case activity
-            case authors
             case license
-            case stars
             case url
         }
 
@@ -45,10 +39,7 @@ extension API {
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
             self.platformCompatibility = package.platformCompatibility.map(\.rawValue)
-            self.activity = package.activityClause
-            self.authors = package.authorClause
             self.license = package.license.shortName
-            self.stars =  NumberFormatter.spiDefault.string(for: package.stars) ?? ""
             self.url = package.url
         }
     }
