@@ -88,6 +88,7 @@ extension GenerateDescriptions {
         NEVER include details of installation or compatibility.
         NEVER include license information.
         NEVER include code listings.
+        NEVER include links.
         NEVER include any of these words: iOS, macOS, tvOS, watchOS, Linux, CocoaPods, Carthage, Swift Package Manager, SPM.
         """
     }
