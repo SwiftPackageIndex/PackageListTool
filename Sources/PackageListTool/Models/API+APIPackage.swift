@@ -15,6 +15,8 @@
 
 extension API {
     struct APIPackage: Codable {
+        var repositoryOwner: String
+        var repositoryName: String
         var platformCompatibility: [PlatformCompatibility]
         var license: License
         var swiftVersionCompatibility: [SwiftVersion]
@@ -27,7 +29,9 @@ extension API {
 
 extension API.APIPackage {
     static var example: Self {
-        .init(platformCompatibility: [.macOS, .linux],
+        .init(repositoryOwner: "foo",
+              repositoryName: "bar",
+              platformCompatibility: [.macOS, .linux],
               license: .mit,
               swiftVersionCompatibility: [.init(major: 5, minor: 8, patch: 0), .init(major: 5, minor: 7, patch: 0)],
               summary: "Foo bar test package",
