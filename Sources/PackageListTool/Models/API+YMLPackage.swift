@@ -22,6 +22,7 @@ extension API {
         var description: String
         var swiftCompatibility: String
         var platformCompatibility: [String]
+        var platformCompatibilityTooltip: String
         var license: String
         var url: String
 
@@ -30,6 +31,7 @@ extension API {
             case description
             case swiftCompatibility = "swift_compatibility"
             case platformCompatibility = "platform_compatibility"
+            case platformCompatibilityTooltip = "platform_compatibility_tooltip"
             case license
             case url
         }
@@ -39,6 +41,7 @@ extension API {
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
             self.platformCompatibility = package.groupedPlatformCompatibility.map(\.rawValue)
+            self.platformCompatibilityTooltip = package.platformCompatibilityTooltip
             self.license = package.license.shortName
             self.url = "https://swiftpackageindex.com/\(package.repositoryOwner)/\(package.repositoryName)"
         }
