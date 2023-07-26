@@ -30,7 +30,7 @@ extension API {
 
         init(from package: APIPackage) {
             self.name = package.title
-            self.description = package.summary
+            self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
             self.platformCompatibility = package.platformCompatibility.map(\.rawValue)
             self.activity = package.activityClause
