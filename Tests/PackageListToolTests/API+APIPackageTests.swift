@@ -18,8 +18,7 @@ import XCTest
 
 class API_APIPackageTests: XCTestCase {
 
-    @MainActor
-    func test_groupedPlatformCompatibility() async throws {
+    func test_groupedPlatformCompatibility() throws {
         var package = API.APIPackage.example
 
         package.platformCompatibility = [.iOS, .macOS, .watchOS, .tvOS, .visionOS]
@@ -33,5 +32,21 @@ class API_APIPackageTests: XCTestCase {
 
         package.platformCompatibility = [.linux]
         XCTAssertEqual(package.groupedPlatformCompatibility, [.linux])
+    }
+
+    func test_platformCompatibilityTooltip() throws {
+        var package = API.APIPackage.example
+
+        package.platformCompatibility = [.iOS, .macOS, .watchOS, .tvOS, .visionOS]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (iOS, macOS, visionOS, watchOS, tvOS)")
+
+        package.platformCompatibility = [.iOS, .macOS, .watchOS, .tvOS, .visionOS, .linux]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (iOS, macOS, visionOS, watchOS, tvOS) and Linux")
+
+        package.platformCompatibility = [.macOS, .linux]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (macOS) and Linux")
+
+        package.platformCompatibility = [.linux]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Linux")
     }
 }
