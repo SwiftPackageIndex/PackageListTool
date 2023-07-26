@@ -23,9 +23,28 @@ extension API {
         var summary: String?
         var title: String
         var url: String
+
+        enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
+            case apple = "Apple"
+            case linux = "Linux"
+
+            var platforms: Set<PlatformCompatibility> {
+                switch self {
+                    case .apple: return [.iOS, .macOS, .tvOS, .visionOS, .watchOS]
+                    case .linux: return [.linux]
+                }
+            }
+        }
     }
 }
 
+extension API.APIPackage {
+    var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
+        PlatformCompatibilityGroup.allCases.filter { group in
+            Set(platformCompatibility).isDisjoint(with: group.platforms) == false
+        }
+    }
+}
 
 extension API.APIPackage {
     static var example: Self {
