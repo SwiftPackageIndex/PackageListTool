@@ -73,7 +73,8 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                     throw Error.summaryNotFound(for: packageId)
                 }
                 apiPackage.summary = summary
-                outputPackages.append(.init(from: apiPackage))
+
+                outputPackages.append(.init(from: apiPackage, reason: sourcePackage.reason))
             }
 
             outputCategories.append(.init(name: sourceCategory.name,

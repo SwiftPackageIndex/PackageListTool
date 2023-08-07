@@ -46,6 +46,7 @@ struct SwiftOrgPackageLists: Codable {
         var platformCompatibilityTooltip: String
         var license: String
         var url: String
+        var reason: String? = nil
 
         enum CodingKeys: String, CodingKey {
             case name
@@ -55,9 +56,10 @@ struct SwiftOrgPackageLists: Codable {
             case platformCompatibilityTooltip = "platform_compatibility_tooltip"
             case license
             case url
+            case reason = "showcase_reason"
         }
 
-        init(from package: SwiftPackageIndexAPI.Package) {
+        init(from package: SwiftPackageIndexAPI.Package, reason: String? = nil) {
             self.name = package.title
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
@@ -65,6 +67,7 @@ struct SwiftOrgPackageLists: Codable {
             self.platformCompatibilityTooltip = package.platformCompatibilityTooltip
             self.license = package.license.shortName
             self.url = "https://swiftpackageindex.com/\(package.repositoryOwner)/\(package.repositoryName)"
+            self.reason = reason
         }
     }
 }
