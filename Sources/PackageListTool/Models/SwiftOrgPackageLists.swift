@@ -57,7 +57,7 @@ struct SwiftOrgPackageLists: Codable {
             case url
         }
 
-        init(from package: API.APIPackage) {
+        init(from package: SwiftPackageIndexAPI.Package) {
             self.name = package.title
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"

@@ -46,7 +46,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
         var packages = [SwiftOrgPackageLists.Package]()
         for packageId in packageIds {
             print("Fetching package: \(packageId)...")
-            var apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
+            var apiPackage = try await SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
                 .fetchPackage(owner: packageId.owner, repository: packageId.repository)
             guard let summary = getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
                 throw Error.summaryNotFound(for: packageId)

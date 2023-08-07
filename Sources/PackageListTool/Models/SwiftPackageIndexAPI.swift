@@ -16,7 +16,7 @@
 import Foundation
 
 
-struct API {
+struct SwiftPackageIndexAPI {
     var baseURL: String
     var apiToken: String
 
@@ -26,12 +26,11 @@ struct API {
         return decoder
     }
 
-    func fetchPackage(owner: String, repository: String) async throws -> APIPackage {
+    func fetchPackage(owner: String, repository: String) async throws -> Package {
         let url = URL(string: "\(baseURL)/api/packages/\(owner)/\(repository)")!
         var req = URLRequest(url: url)
         req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
         let (data, _) = try await URLSession.shared.data(for: req)
-        //        print(String(decoding: data, as: UTF8.self))
-        return try Self.decoder.decode(APIPackage.self, from: data)
+        return try Self.decoder.decode(Package.self, from: data)
     }
 }

@@ -15,7 +15,7 @@
 import Foundation
 
 
-enum Github {
+enum GitHubAPI {
     enum Error: Swift.Error {
         case invalidURL
     }
@@ -42,7 +42,7 @@ enum Github {
 }
 
 
-extension Github {
+extension GitHubAPI {
     static let mock = #"""
     ![The Swift Package Index](.readme-images/swift-package-index.png)
 
