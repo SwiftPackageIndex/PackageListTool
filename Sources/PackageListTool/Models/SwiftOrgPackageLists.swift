@@ -19,12 +19,6 @@ import Foundation
 struct SwiftOrgPackageLists: Codable {
     var categories: [Category]
 
-    init(packages: [Package]) {
-        self.categories = [
-            .init(name: "Test", anchor: "test", description: "Testing", packages: packages)
-        ]
-    }
-
     struct Category: Codable {
         var name: String
         var anchor: String
@@ -35,6 +29,12 @@ struct SwiftOrgPackageLists: Codable {
         struct MoreLink: Codable {
             var title: String
             var url: String
+
+            init?(_ moreLink: SourcePackageLists.Category.MoreLink?) {
+                guard let moreLink else { return nil }
+                self.title = moreLink.title
+                self.url = moreLink.url
+            }
         }
     }
 

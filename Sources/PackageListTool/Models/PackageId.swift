@@ -12,18 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import Foundation
 import ArgumentParser
 
+struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
+    var owner: String
+    var repository: String
 
-public struct PackageListTool: AsyncParsableCommand {
-    public static var configuration = CommandConfiguration(
-        abstract: "Swift.org Package List generation tool",
-        subcommands: [
-            GenerateDescriptions.self,
-            GeneratePackagesYML.self
-        ],
-        defaultSubcommand: GeneratePackagesYML.self
-    )
+    init?(argument: String) {
+        let parts = argument.split(separator: "/").map(String.init)
+        guard parts.count == 2 else { return nil }
+        self.owner = parts[0]
+        self.repository = parts[1]
+    }
 
-    public init() { }
+    var description: String {
+        "\(owner)/\(repository)"
+    }
+
+    var descriptionFilename: String {
+        "\(owner)-\(repository)".lowercased() + ".txt"
+    }
 }

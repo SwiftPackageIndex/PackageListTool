@@ -13,79 +13,92 @@
 // limitations under the License.
 
 import Foundation
-
 import ArgumentParser
 import Yams
 
 
-public struct GeneratePackageYML: AsyncParsableCommand {
+public struct GeneratePackagesYML: AsyncParsableCommand {
     @Option(name: .long)
     var apiBaseURL: String = "https://swiftpackageindex.com"
-
-    @Option(name: .long)
-    var spiApiToken: String
-
-    @Option(name: .shortAndLong, parsing: .upToNextOption)
-    var packageIds: [PackageId]
 
     @Option(name: .shortAndLong)
     var descriptionsDirectory: String = "./descriptions"
 
+    @Option(name: .long)
+    var githubApiToken: String
+
+    @Option(name: .long)
+    var openAIApiToken: String
+
+    @Option(name: .shortAndLong)
+    var source: String = "source.yml"
+
     @Option(name: .shortAndLong)
     var output: String = "packages.yml"
 
+    @Option(name: .long)
+    var spiApiToken: String
+
     public func run() async throws {
-        try await Self.run(apiBaseURL: apiBaseURL,
-                           descriptionsDirectory: descriptionsDirectory,
-                           output: output,
-                           packageIds: packageIds,
-                           spiApiToken: spiApiToken)
+        let sourceYaml = try String(contentsOfFile: source, encoding: .utf8)
+        let sourcePackageLists = try YAMLDecoder().decode(SourcePackageLists.self, from: sourceYaml)
+
+        let packageIds = sourcePackageLists.categories.flatMap { category in
+            category.packages.compactMap { $0.packageId }
+        }
+        try await GenerateDescriptions.run(descriptionsDirectory: descriptionsDirectory,
+                                           githubApiToken: githubApiToken,
+                                           openAIApiToken: openAIApiToken,
+                                           packageIds: packageIds)
+        try await generateOutputYaml(sourceCategories: sourcePackageLists.categories)
     }
 
-    static func run(apiBaseURL: String, descriptionsDirectory: String, output: String, packageIds: [PackageId], spiApiToken: String) async throws {
-        var packages = [SwiftOrgPackageLists.Package]()
-        for packageId in packageIds {
-            print("Fetching package: \(packageId)...")
-            var apiPackage = try await SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
-                .fetchPackage(owner: packageId.owner, repository: packageId.repository)
-            guard let summary = getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
-                throw Error.summaryNotFound(for: packageId)
+    func generateOutputYaml(sourceCategories: [SourcePackageLists.Category]) async throws {
+        var outputCategories = [SwiftOrgPackageLists.Category]()
+        for sourceCategory in sourceCategories {
+            print("Processing category: \(sourceCategory.name)...")
+
+            var outputPackages = [SwiftOrgPackageLists.Package]()
+            for sourcePackage in sourceCategory.packages {
+                guard let packageId = sourcePackage.packageId
+                else {
+                    print("Invalid package identifier \(sourcePackage.identifier). Skipping...")
+                    continue
+                }
+
+                print("Fetching package: \(packageId)...")
+                var apiPackage = try await SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
+                    .fetchPackage(owner: packageId.owner, repository: packageId.repository)
+                guard let summary = Self.getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
+                    throw Error.summaryNotFound(for: packageId)
+                }
+                apiPackage.summary = summary
+                outputPackages.append(.init(from: apiPackage))
             }
-            apiPackage.summary = summary.trimmingCharacters(in: .whitespacesAndNewlines)
-            packages.append(.init(from: apiPackage))
+
+            outputCategories.append(.init(name: sourceCategory.name,
+                                          anchor: sourceCategory.anchor,
+                                          description: sourceCategory.description,
+                                          more: .init(sourceCategory.more),
+                                          packages: outputPackages)
+            )
         }
-        let content = try YAMLEncoder().encode(SwiftOrgPackageLists(packages: packages))
+        let content = try YAMLEncoder().encode(SwiftOrgPackageLists(categories: outputCategories))
         try Data(content.utf8).write(to: URL(filePath: output))
     }
-
-    public init() { }
 
     enum Error: Swift.Error {
         case summaryNotFound(for: PackageId)
     }
+
+    public init() { }
 }
 
-
-extension GeneratePackageYML {
+extension GeneratePackagesYML {
     static func getSummary(for packageID: PackageId, descriptionsDirectory: String) -> String? {
         let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
-        return FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
+        let description = FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
+        guard let description else { return nil }
+        return description.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-}
-
-
-struct PackageId: ExpressibleByArgument, CustomStringConvertible {
-    var owner: String
-    var repository: String
-
-    init?(argument: String) {
-        let parts = argument.split(separator: "/").map(String.init)
-        guard parts.count == 2 else { return nil }
-        self.owner = parts[0]
-        self.repository = parts[1]
-    }
-
-    var description: String { "\(owner)/\(repository)" }
-
-    var descriptionFilename: String { "\(owner)-\(repository)".lowercased() + ".txt" }
 }

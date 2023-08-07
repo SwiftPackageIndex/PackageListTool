@@ -12,18 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import ArgumentParser
+
+import Foundation
 
 
-public struct PackageListTool: AsyncParsableCommand {
-    public static var configuration = CommandConfiguration(
-        abstract: "Swift.org Package List generation tool",
-        subcommands: [
-            GenerateDescriptions.self,
-            GeneratePackagesYML.self
-        ],
-        defaultSubcommand: GeneratePackagesYML.self
-    )
+struct SourcePackageLists: Codable {
+    var categories: [Category]
 
-    public init() { }
+    struct Category: Codable {
+        var name: String
+        var anchor: String
+        var description: String
+        var more: MoreLink? = nil
+        var packages: [Package]
+
+        struct MoreLink: Codable {
+            var title: String
+            var url: String
+        }
+    }
+
+    struct Package: Codable {
+        var identifier: String
+        var reason: String? = nil
+
+        var packageId: PackageId? {
+            PackageId(argument: identifier)
+        }
+    }
 }
