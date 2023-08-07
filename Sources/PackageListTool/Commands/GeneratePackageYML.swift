@@ -43,7 +43,7 @@ public struct GeneratePackageYML: AsyncParsableCommand {
     }
 
     static func run(apiBaseURL: String, descriptionsDirectory: String, output: String, packageIds: [PackageId], spiApiToken: String) async throws {
-        var packages = [API.YMLPackage]()
+        var packages = [SwiftOrgPackageLists.Package]()
         for packageId in packageIds {
             print("Fetching package: \(packageId)...")
             var apiPackage = try await API(baseURL: apiBaseURL, apiToken: spiApiToken)
@@ -52,10 +52,9 @@ public struct GeneratePackageYML: AsyncParsableCommand {
                 throw Error.summaryNotFound(for: packageId)
             }
             apiPackage.summary = summary.trimmingCharacters(in: .whitespacesAndNewlines)
-            let pkg = API.YMLPackage(from: apiPackage)
-            packages.append(pkg)
+            packages.append(.init(from: apiPackage))
         }
-        let content = try YAMLEncoder().encode(PackageList(packages: packages))
+        let content = try YAMLEncoder().encode(SwiftOrgPackageLists(packages: packages))
         try Data(content.utf8).write(to: URL(filePath: output))
     }
 
@@ -72,15 +71,6 @@ extension GeneratePackageYML {
         let filepath = descriptionsDirectory + "/" + packageID.descriptionFilename
         return FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
     }
-}
-
-
-struct PackageList: Codable {
-    // Extend with additional properties as needed (and make configurable via CLI args or so)
-    //   var name: String
-    //   var anchor: String
-    //   var description: String
-    var packages: [API.YMLPackage]
 }
 
 

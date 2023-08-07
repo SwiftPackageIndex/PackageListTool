@@ -16,8 +16,29 @@
 import Foundation
 
 
-extension API {
-    struct YMLPackage: Codable {
+struct SwiftOrgPackageLists: Codable {
+    var categories: [Category]
+
+    init(packages: [Package]) {
+        self.categories = [
+            .init(name: "Test", anchor: "test", description: "Testing", packages: packages)
+        ]
+    }
+
+    struct Category: Codable {
+        var name: String
+        var anchor: String
+        var description: String
+        var more: MoreLink? = nil
+        var packages: [Package]
+
+        struct MoreLink: Codable {
+            var title: String
+            var url: String
+        }
+    }
+
+    struct Package: Codable {
         var name: String
         var description: String
         var swiftCompatibility: String
@@ -36,7 +57,7 @@ extension API {
             case url
         }
 
-        init(from package: APIPackage) {
+        init(from package: API.APIPackage) {
             self.name = package.title
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
