@@ -11,3 +11,4 @@ DerivedData/
 .swiftpm/
 descriptions/
 packages.yml
+source.yml
