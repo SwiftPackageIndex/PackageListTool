@@ -49,4 +49,24 @@ class API_APIPackageTests: XCTestCase {
         package.platformCompatibility = [.linux]
         XCTAssertEqual(package.platformCompatibilityTooltip, "Linux")
     }
+
+    func test_reformatYMLToSwiftOrgStyle() {
+        let yml = """
+            categories:
+            - description: The community showcase celebrates new and innovative packages discussed
+                on recent community podcasts, blogs, and newsletters. If you would like to submit
+                a package for inclusion here, please [message the Swift Website
+              name: Community Showcase
+            """
+        let res = GeneratePackagesYML.reformatYMLToSwiftOrgStyle(yml)
+        XCTAssertEqual(res, """
+            categories:
+              - description:
+                  The community showcase celebrates new and innovative packages discussed
+                  on recent community podcasts, blogs, and newsletters. If you would like to submit
+                  a package for inclusion here, please [message the Swift Website
+                name: Community Showcase
+            
+            """)
+    }
 }

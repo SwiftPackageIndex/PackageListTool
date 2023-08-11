@@ -116,6 +116,7 @@ extension GeneratePackagesYML {
         return yml
         #else
         let fmt = PrettierFormatter(plugins: [YAMLPlugin()], parser: YAMLParser())
+        fmt.prepare()
         switch fmt.format(yml) {
             case let .success(output):
                 return output
