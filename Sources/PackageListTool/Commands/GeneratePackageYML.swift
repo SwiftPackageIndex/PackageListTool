@@ -16,6 +16,10 @@ import Foundation
 import ArgumentParser
 import Yams
 
+#if !os(Linux)
+import Prettier
+import PrettierYAML
+#endif
 
 public struct GeneratePackagesYML: AsyncParsableCommand {
     @Option(name: .long)
@@ -85,7 +89,8 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
             )
         }
         let content = try YAMLEncoder().encode(SwiftOrgPackageLists(categories: outputCategories))
-        try Data(content.utf8).write(to: URL(filePath: output))
+        let reformatted = Self.reformatYMLToSwiftOrgStyle(content)
+        try Data(content.utf8).write(to: URL(filePath: reformatted))
     }
 
     enum Error: Swift.Error {
@@ -101,5 +106,23 @@ extension GeneratePackagesYML {
         let description = FileManager.default.contents(atPath: filepath).map { String(decoding: $0, as: UTF8.self) }
         guard let description else { return nil }
         return description.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+
+extension GeneratePackagesYML {
+    static func reformatYMLToSwiftOrgStyle(_ yml: String) -> String {
+        #if os(Linux)
+        // Prettier isn't Linux compatible, because it uses JavaScriptCore
+        return yml
+        #else
+        let fmt = PrettierFormatter(plugins: [YAMLPlugin()], parser: YAMLParser())
+        switch fmt.format(yml) {
+            case let .success(output):
+                return output
+            case let .failure(error):
+                print("Reformatting failed: \(error)")
+                return yml
+        }
+        #endif
     }
 }
