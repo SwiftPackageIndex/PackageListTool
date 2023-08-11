@@ -14,8 +14,8 @@
 
 import Collections
 
-extension API {
-    struct APIPackage: Codable {
+extension SwiftPackageIndexAPI {
+    struct Package: Codable {
         var repositoryOwner: String
         var repositoryName: String
         var platformCompatibility: [PlatformCompatibility]
@@ -40,7 +40,7 @@ extension API {
     }
 }
 
-extension API.APIPackage {
+extension SwiftPackageIndexAPI.Package {
     var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
         PlatformCompatibilityGroup.allCases.filter { group in
             Set(platformCompatibility).isDisjoint(with: group.platforms) == false
@@ -60,7 +60,7 @@ extension API.APIPackage {
     }
 }
 
-extension API.APIPackage {
+extension SwiftPackageIndexAPI.Package {
     static var example: Self {
         .init(repositoryOwner: "foo",
               repositoryName: "bar",

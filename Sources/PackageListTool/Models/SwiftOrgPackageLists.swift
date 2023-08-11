@@ -16,8 +16,29 @@
 import Foundation
 
 
-extension API {
-    struct YMLPackage: Codable {
+struct SwiftOrgPackageLists: Codable {
+    var categories: [Category]
+
+    struct Category: Codable {
+        var name: String
+        var anchor: String
+        var description: String
+        var more: MoreLink? = nil
+        var packages: [Package]
+
+        struct MoreLink: Codable {
+            var title: String
+            var url: String
+
+            init?(_ moreLink: SourcePackageLists.Category.MoreLink?) {
+                guard let moreLink else { return nil }
+                self.title = moreLink.title
+                self.url = moreLink.url
+            }
+        }
+    }
+
+    struct Package: Codable {
         var name: String
         var description: String
         var swiftCompatibility: String
@@ -25,6 +46,7 @@ extension API {
         var platformCompatibilityTooltip: String
         var license: String
         var url: String
+        var reason: String? = nil
 
         enum CodingKeys: String, CodingKey {
             case name
@@ -34,9 +56,10 @@ extension API {
             case platformCompatibilityTooltip = "platform_compatibility_tooltip"
             case license
             case url
+            case reason = "showcase_reason"
         }
 
-        init(from package: APIPackage) {
+        init(from package: SwiftPackageIndexAPI.Package, reason: String? = nil) {
             self.name = package.title
             self.description = package.summary ?? ""
             self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" } ?? "unknown"
@@ -44,6 +67,7 @@ extension API {
             self.platformCompatibilityTooltip = package.platformCompatibilityTooltip
             self.license = package.license.shortName
             self.url = "https://swiftpackageindex.com/\(package.repositoryOwner)/\(package.repositoryName)"
+            self.reason = reason
         }
     }
 }

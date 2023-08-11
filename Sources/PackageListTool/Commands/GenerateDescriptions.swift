@@ -51,7 +51,7 @@ public struct GenerateDescriptions: AsyncParsableCommand {
             } else {
                 print("Generating description: \(packageId) ...")
 
-                let readme = try await Github.fetchReadme(packageID: packageId, githubApiToken: githubApiToken)
+                let readme = try await GitHubAPI.fetchReadme(packageID: packageId, githubApiToken: githubApiToken)
                 print("Readme length:", readme.count)
                 print("Message length:", readme.trimmedToMaxMessage.count)
 
