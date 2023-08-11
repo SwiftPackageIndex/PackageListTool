@@ -19,7 +19,7 @@ import XCTest
 class API_APIPackageTests: XCTestCase {
 
     func test_groupedPlatformCompatibility() throws {
-        var package = SwiftPackageIndexAPI.APIPackage.example
+        var package = SwiftPackageIndexAPI.Package.example
 
         package.platformCompatibility = [.iOS, .macOS, .watchOS, .tvOS, .visionOS]
         XCTAssertEqual(package.groupedPlatformCompatibility, [.apple])
@@ -35,7 +35,7 @@ class API_APIPackageTests: XCTestCase {
     }
 
     func test_platformCompatibilityTooltip() throws {
-        var package = SwiftPackageIndexAPI.APIPackage.example
+        var package = SwiftPackageIndexAPI.Package.example
 
         package.platformCompatibility = [.iOS, .macOS, .watchOS, .tvOS, .visionOS]
         XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (iOS, macOS, visionOS, watchOS, tvOS)")
