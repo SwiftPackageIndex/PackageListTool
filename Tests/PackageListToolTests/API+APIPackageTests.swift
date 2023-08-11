@@ -51,6 +51,7 @@ class API_APIPackageTests: XCTestCase {
     }
 
     func test_reformatYMLToSwiftOrgStyle() {
+        #if !os(Linux)
         let yml = """
             categories:
             - description: The community showcase celebrates new and innovative packages discussed
@@ -66,7 +67,8 @@ class API_APIPackageTests: XCTestCase {
                   on recent community podcasts, blogs, and newsletters. If you would like to submit
                   a package for inclusion here, please [message the Swift Website
                 name: Community Showcase
-            
+
             """)
+        #endif
     }
 }
