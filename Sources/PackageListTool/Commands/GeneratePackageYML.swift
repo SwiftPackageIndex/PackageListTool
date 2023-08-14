@@ -78,7 +78,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                 }
                 apiPackage.summary = summary
 
-                outputPackages.append(.init(from: apiPackage, reason: sourcePackage.reason))
+                outputPackages.append(.init(from: apiPackage, note: sourcePackage.note))
             }
 
             outputCategories.append(.init(name: sourceCategory.name,

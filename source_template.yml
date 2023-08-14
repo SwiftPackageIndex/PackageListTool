@@ -9,9 +9,9 @@ categories:
       - identifier: owner/repo1
       - identifier: owner/repo2
       - identifier: owner/repo3
-        reason: "Reasons are optional and per-package, not per-category."
+        note: "Notes are optional and per-package, not per-category."
       - identifier: owner/repo4
-        reason: "Reasons can also include [Markdown](https://example.com)."
+        note: "Notes can also include [Markdown](https://example.com)."
   - name: Networking
     anchor: networking
     description: "Descriptions are required, but 'more' links are optional."
