@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "prettier",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonbs/Prettier",
+      "state" : {
+        "revision" : "266dac500bded844a56771bc1fb2abaa60f6e7b6",
+        "version" : "0.2.1"
+      }
+    },
+    {
       "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser.git",
