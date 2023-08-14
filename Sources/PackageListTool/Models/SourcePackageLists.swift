@@ -34,7 +34,7 @@ struct SourcePackageLists: Codable {
 
     struct Package: Codable {
         var identifier: String
-        var reason: String? = nil
+        var note: String? = nil
 
         var packageId: PackageId? {
             PackageId(argument: identifier)
