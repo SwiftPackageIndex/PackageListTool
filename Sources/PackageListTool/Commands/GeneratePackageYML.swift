@@ -90,7 +90,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
         }
         let content = try YAMLEncoder().encode(SwiftOrgPackageLists(categories: outputCategories))
         let reformatted = Self.reformatYMLToSwiftOrgStyle(content)
-        try Data(content.utf8).write(to: URL(filePath: reformatted))
+        try Data(reformatted.utf8).write(to: URL(filePath: output))
     }
 
     enum Error: Swift.Error {
