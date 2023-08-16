@@ -115,9 +115,23 @@ extension GeneratePackagesYML {
         // Prettier isn't Linux compatible, because it uses JavaScriptCore
         return yml
         #else
-        let fmt = PrettierFormatter(plugins: [YAMLPlugin()], parser: YAMLParser())
-        fmt.prepare()
-        switch fmt.format(yml) {
+        let formatter = PrettierFormatter(plugins: [YAMLPlugin()], parser: YAMLParser())
+        formatter.printWidth = 120
+        formatter.tabWidth = 2
+        formatter.useTabs = false
+        formatter.semicolons = false
+        formatter.singleQuote = false
+        formatter.quoteProperties = .asNeeded
+        formatter.jsxSingleQuote = false
+        formatter.trailingCommas = .es5
+        formatter.bracketSpacing = true
+        formatter.bracketSameLine = true
+        formatter.arrowFunctionParentheses = .always
+        formatter.proseWrap = .preserve
+        formatter.htmlWhitespaceSensitivity = .css
+        formatter.endOfLine = .lf
+        formatter.prepare()
+        switch formatter.format(yml) {
             case let .success(output):
                 return output
             case let .failure(error):
