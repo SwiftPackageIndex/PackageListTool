@@ -61,18 +61,16 @@ struct SourcePackageLists: Codable {
         }
         
         init(from decoder: Decoder) throws {
-            let container: KeyedDecodingContainer<SourcePackageLists.Package.CodingKeys> = try decoder.container(keyedBy: SourcePackageLists.Package.CodingKeys.self)
-            
-            self.identifier = try container.decode(String.self, forKey: SourcePackageLists.Package.CodingKeys.identifier)
-            self.note = try container.decodeIfPresent(String.self, forKey: SourcePackageLists.Package.CodingKeys.note)
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.identifier = try container.decode(String.self, forKey: CodingKeys.identifier)
+            self.note = try container.decodeIfPresent(String.self, forKey: CodingKeys.note)
             
         }
         
         func encode(to encoder: Encoder) throws {
-            var container: KeyedEncodingContainer<SourcePackageLists.Package.CodingKeys> = encoder.container(keyedBy: SourcePackageLists.Package.CodingKeys.self)
-            
-            try container.encode(self.identifier, forKey: SourcePackageLists.Package.CodingKeys.identifier)
-            try container.encodeIfPresent(self.note, forKey: SourcePackageLists.Package.CodingKeys.note)
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(self.identifier, forKey: CodingKeys.identifier)
+            try container.encodeIfPresent(self.note, forKey: CodingKeys.note)
         }
     }
 }
