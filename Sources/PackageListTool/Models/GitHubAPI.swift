@@ -33,7 +33,7 @@ enum GitHubAPI {
         request.addValue("application/vnd.github.raw+json", forHTTPHeaderField: "Accept")
 
         let (data, response) = try await URLSession.shared.data(for: request)
-        assert((response as? HTTPURLResponse)?.statusCode == 200)
+        assert((response as? HTTPURLResponse)?.statusCode == 200, "expected 200, received \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
         let readme = String(decoding: data, as: UTF8.self)
 
         return readme

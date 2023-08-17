@@ -19,6 +19,11 @@ struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
     var owner: String
     var repository: String
 
+    init(owner: String, repository: String) {
+        self.owner = owner
+        self.repository = repository
+    }
+
     init?(argument: String) {
         let parts = argument.split(separator: "/").map(String.init)
         guard parts.count == 2 else { return nil }

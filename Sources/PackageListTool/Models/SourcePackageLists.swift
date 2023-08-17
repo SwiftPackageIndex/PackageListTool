@@ -75,14 +75,16 @@ struct SourcePackageLists: Codable {
 
 extension SourcePackageLists.Category {
     static var searchCache = [String: [SourcePackageLists.Package]]()
-    var packages: [SourcePackageLists.Package] {
+    func packageIds(api: SwiftPackageIndexAPI) async throws -> [SourcePackageLists.Package] {
         switch source {
             case let .searchQuery(query):
                 if let packages = Self.searchCache[query] {
                     return packages
                 }
-                // FIXME: make search query
-                return []
+                let ids = try await api.search(query: query)
+                let packages = ids.map { SourcePackageLists.Package("\($0.owner)/\($0.repository)") }
+                Self.searchCache[query] = packages
+                return packages
             case let .packages(packages):
                 return packages
         }
