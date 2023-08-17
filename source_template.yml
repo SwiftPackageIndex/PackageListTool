@@ -5,15 +5,22 @@ categories:
     more:
       title: More packages
       url: https://example.com/more/packages
-    packages:
-      - identifier: pointfreeco/swift-composable-architecture
-      - identifier: groue/Semaphore
-        note: "Notes are optional and per-package, not per-category."
-      - identifier: QuickBirdEng/DataKit
-        note: "Notes can also include [Markdown](https://example.com)."
+    source:
+        packages:
+          - identifier: pointfreeco/swift-composable-architecture
+          - identifier: groue/Semaphore
+            note: "Notes are optional and per-package, not per-category."
+          - identifier: QuickBirdEng/DataKit
+            note: "Notes can also include [Markdown](https://example.com)."
   - name: Networking
     anchor: networking
     description: "Descriptions are required, but 'more' links are optional."
-    packages:
-      - identifier: apple/swift-nio
-      - identifier: Alamofire/Alamofire
+    source:
+        packages:
+          - identifier: apple/swift-nio
+          - identifier: Alamofire/Alamofire
+  - name: Testing
+    anchor: testing
+    description: "This list is driven by a live keyword search on SPI."
+    source:
+        searchQuery: 'testing'

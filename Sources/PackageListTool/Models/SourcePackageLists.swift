@@ -24,7 +24,12 @@ struct SourcePackageLists: Codable {
         var anchor: String
         var description: String
         var more: MoreLink? = nil
-        var packages: [Package]
+        var source: Source
+
+        enum Source {
+            case searchQuery(String)
+            case packages([Package])
+        }
 
         struct MoreLink: Codable {
             var title: String
@@ -38,6 +43,76 @@ struct SourcePackageLists: Codable {
 
         var packageId: PackageId? {
             PackageId(argument: identifier)
+        }
+        
+        enum CodingKeys: CodingKey {
+            case identifier
+            case note
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container: KeyedDecodingContainer<SourcePackageLists.Package.CodingKeys> = try decoder.container(keyedBy: SourcePackageLists.Package.CodingKeys.self)
+            
+            self.identifier = try container.decode(String.self, forKey: SourcePackageLists.Package.CodingKeys.identifier)
+            self.note = try container.decodeIfPresent(String.self, forKey: SourcePackageLists.Package.CodingKeys.note)
+            
+        }
+        
+        func encode(to encoder: Encoder) throws {
+            var container: KeyedEncodingContainer<SourcePackageLists.Package.CodingKeys> = encoder.container(keyedBy: SourcePackageLists.Package.CodingKeys.self)
+            
+            try container.encode(self.identifier, forKey: SourcePackageLists.Package.CodingKeys.identifier)
+            try container.encodeIfPresent(self.note, forKey: SourcePackageLists.Package.CodingKeys.note)
+        }
+    }
+}
+
+
+extension SourcePackageLists.Category {
+    static var searchCache = [String: [SourcePackageLists.Package]]()
+    var packages: [SourcePackageLists.Package] {
+        switch source {
+            case let .searchQuery(query):
+                if let packages = Self.searchCache[query] {
+                    return packages
+                }
+                // FIXME: make search query
+                return []
+            case let .packages(packages):
+                return packages
+        }
+    }
+}
+
+
+extension SourcePackageLists.Category.Source: Codable {
+    enum CodingKeys: CodingKey {
+        case searchQuery
+        case packages
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let searchQuery = try? container.decode(String.self, forKey: .searchQuery) {
+            self = .searchQuery(searchQuery)
+            return
+        }
+        if let packages = try? container.decode([SourcePackageLists.Package].self, forKey: .packages) {
+            self = .packages(packages)
+            return
+        }
+        throw DecodingError.dataCorrupted(.init(codingPath: container.codingPath,
+                                                debugDescription: "Invalid number of keys found, expected one."))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        switch self {
+            case let .searchQuery(query):
+                try container.encode(query, forKey: .searchQuery)
+            case let .packages(packages):
+                try container.encode(packages, forKey: .packages)
         }
     }
 }
