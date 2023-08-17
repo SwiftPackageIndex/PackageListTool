@@ -62,8 +62,7 @@ class API_APIPackageTests: XCTestCase {
         let res = GeneratePackagesYML.reformatYMLToSwiftOrgStyle(yml)
         XCTAssertEqual(res, """
             categories:
-              - description:
-                  The community showcase celebrates new and innovative packages discussed
+              - description: The community showcase celebrates new and innovative packages discussed
                   on recent community podcasts, blogs, and newsletters. If you would like to submit
                   a package for inclusion here, please [message the Swift Website
                 name: Community Showcase
