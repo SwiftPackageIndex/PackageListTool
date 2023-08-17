@@ -16,6 +16,8 @@ import XCTest
 
 @testable import PackageListTool
 
+import Yams
+
 class API_APIPackageTests: XCTestCase {
 
     func test_groupedPlatformCompatibility() throws {
@@ -70,4 +72,27 @@ class API_APIPackageTests: XCTestCase {
             """)
         #endif
     }
+
+    func test_Source_Codable() throws {
+        do {
+            let yml = """
+                packages:
+                - identifier: apple/swift-nio
+
+                """
+            let res = try YAMLDecoder().decode(SourcePackageLists.Category.Source.self, from: yml)
+            XCTAssertEqual(res, .packages([SourcePackageLists.Package("apple/swift-nio")]))
+            XCTAssertEqual(try YAMLEncoder().encode(res), yml)
+        }
+        do {
+            let yml = """
+                searchQuery: some query
+
+                """
+            let res = try YAMLDecoder().decode(SourcePackageLists.Category.Source.self, from: yml)
+            XCTAssertEqual(res, .searchQuery("some query"))
+            XCTAssertEqual(try YAMLEncoder().encode(res), yml)
+        }
+    }
+
 }

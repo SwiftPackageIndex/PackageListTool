@@ -26,7 +26,7 @@ struct SourcePackageLists: Codable {
         var more: MoreLink? = nil
         var source: Source
 
-        enum Source {
+        enum Source: Equatable {
             case searchQuery(String)
             case packages([Package])
         }
@@ -37,7 +37,7 @@ struct SourcePackageLists: Codable {
         }
     }
 
-    struct Package: Codable {
+    struct Package: Codable, Equatable {
         var identifier: String
         var note: String? = nil
 
@@ -45,6 +45,11 @@ struct SourcePackageLists: Codable {
             PackageId(argument: identifier)
         }
         
+        init(_ identifier: String, note: String? = nil) {
+            self.identifier = identifier
+            self.note = note
+        }
+
         enum CodingKeys: CodingKey {
             case identifier
             case note
