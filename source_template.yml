@@ -6,16 +6,14 @@ categories:
       title: More packages
       url: https://example.com/more/packages
     packages:
-      - identifier: owner/repo1
-      - identifier: owner/repo2
-      - identifier: owner/repo3
+      - identifier: pointfreeco/swift-composable-architecture
+      - identifier: groue/Semaphore
         note: "Notes are optional and per-package, not per-category."
-      - identifier: owner/repo4
+      - identifier: QuickBirdEng/DataKit
         note: "Notes can also include [Markdown](https://example.com)."
   - name: Networking
     anchor: networking
     description: "Descriptions are required, but 'more' links are optional."
     packages:
-      - identifier: owner/repo1
-      - identifier: owner/repo2
-      - identifier: owner/repo3
+      - identifier: apple/swift-nio
+      - identifier: Alamofire/Alamofire
