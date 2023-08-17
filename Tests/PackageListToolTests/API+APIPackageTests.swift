@@ -86,11 +86,13 @@ class API_APIPackageTests: XCTestCase {
         }
         do {
             let yml = """
-                searchQuery: some query
-
+                search:
+                  query: some query
+                  limit: 6
+                
                 """
             let res = try YAMLDecoder().decode(SourcePackageLists.Category.Source.self, from: yml)
-            XCTAssertEqual(res, .searchQuery("some query"))
+            XCTAssertEqual(res, .search(.init(query: "some query", limit: 6)))
             XCTAssertEqual(try YAMLEncoder().encode(res), yml)
         }
     }

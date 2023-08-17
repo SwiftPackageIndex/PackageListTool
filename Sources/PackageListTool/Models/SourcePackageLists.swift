@@ -27,13 +27,18 @@ struct SourcePackageLists: Codable {
         var source: Source
 
         enum Source: Equatable {
-            case searchQuery(String)
+            case search(Search)
             case packages([Package])
         }
 
         struct MoreLink: Codable {
             var title: String
             var url: String
+        }
+
+        struct Search: Codable, Equatable {
+            var query: String
+            var limit: Int
         }
     }
 
@@ -77,13 +82,13 @@ extension SourcePackageLists.Category {
     static var searchCache = [String: [SourcePackageLists.Package]]()
     func packageIds(api: SwiftPackageIndexAPI) async throws -> [SourcePackageLists.Package] {
         switch source {
-            case let .searchQuery(query):
-                if let packages = Self.searchCache[query] {
+            case let .search(search):
+                if let packages = Self.searchCache[search.query] {
                     return packages
                 }
-                let ids = try await api.search(query: query)
+                let ids = try await api.search(query: search.query).prefix(search.limit)
                 let packages = ids.map { SourcePackageLists.Package("\($0.owner)/\($0.repository)") }
-                Self.searchCache[query] = packages
+                Self.searchCache[search.query] = packages
                 return packages
             case let .packages(packages):
                 return packages
@@ -94,14 +99,14 @@ extension SourcePackageLists.Category {
 
 extension SourcePackageLists.Category.Source: Codable {
     enum CodingKeys: CodingKey {
-        case searchQuery
+        case search
         case packages
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        if let searchQuery = try? container.decode(String.self, forKey: .searchQuery) {
-            self = .searchQuery(searchQuery)
+        if let search = try? container.decode(SourcePackageLists.Category.Search.self, forKey: .search) {
+            self = .search(search)
             return
         }
         if let packages = try? container.decode([SourcePackageLists.Package].self, forKey: .packages) {
@@ -116,8 +121,8 @@ extension SourcePackageLists.Category.Source: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         switch self {
-            case let .searchQuery(query):
-                try container.encode(query, forKey: .searchQuery)
+            case let .search(search):
+                try container.encode(search, forKey: .search)
             case let .packages(packages):
                 try container.encode(packages, forKey: .packages)
         }

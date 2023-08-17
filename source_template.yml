@@ -23,4 +23,6 @@ categories:
     anchor: testing
     description: "This list is driven by a live keyword search on SPI."
     source:
-        searchQuery: 'testing'
+        search:
+            query: 'testing'
+            limit: 6
