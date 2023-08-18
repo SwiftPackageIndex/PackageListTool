@@ -44,11 +44,14 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
     var spiApiToken: String
 
     public func run() async throws {
+        let api = SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
         let sourceYaml = try String(contentsOfFile: source, encoding: .utf8)
         let sourcePackageLists = try YAMLDecoder().decode(SourcePackageLists.self, from: sourceYaml)
 
-        let packageIds = sourcePackageLists.categories.flatMap { category in
-            category.packages.compactMap { $0.packageId }
+        var packageIds = [PackageId]()
+        for category in sourcePackageLists.categories {
+            let ids = try await category.packageIds(api: api).compactMap(\.packageId)
+            packageIds.append(contentsOf: ids)
         }
         try await GenerateDescriptions.run(descriptionsDirectory: descriptionsDirectory,
                                            githubApiToken: githubApiToken,
@@ -58,12 +61,13 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
     }
 
     func generateOutputYaml(sourceCategories: [SourcePackageLists.Category]) async throws {
+        let api = SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
         var outputCategories = [SwiftOrgPackageLists.Category]()
         for sourceCategory in sourceCategories {
             print("Processing category: \(sourceCategory.name)...")
 
             var outputPackages = [SwiftOrgPackageLists.Package]()
-            for sourcePackage in sourceCategory.packages {
+            for sourcePackage in try await sourceCategory.packageIds(api: api) {
                 guard let packageId = sourcePackage.packageId
                 else {
                     print("Invalid package identifier \(sourcePackage.identifier). Skipping...")
@@ -71,8 +75,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                 }
 
                 print("Fetching package: \(packageId)...")
-                var apiPackage = try await SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
-                    .fetchPackage(owner: packageId.owner, repository: packageId.repository)
+                var apiPackage = try await api.fetchPackage(owner: packageId.owner, repository: packageId.repository)
                 guard let summary = Self.getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
                     throw Error.summaryNotFound(for: packageId)
                 }

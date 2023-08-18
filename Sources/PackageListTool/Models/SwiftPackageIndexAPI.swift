@@ -20,6 +20,10 @@ struct SwiftPackageIndexAPI {
     var baseURL: String
     var apiToken: String
 
+    struct Error: Swift.Error {
+        var message: String
+    }
+
     static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -32,5 +36,54 @@ struct SwiftPackageIndexAPI {
         req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
         let (data, _) = try await URLSession.shared.data(for: req)
         return try Self.decoder.decode(Package.self, from: data)
+    }
+
+    func search(query: String, limit: Int) async throws -> [PackageId] {
+        var urlComponents = URLComponents(string: "\(baseURL)/api/search")
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "pageSize", value: "\(limit)"),
+        ]
+        guard let url = urlComponents?.url else {
+            throw Error(message: "Failed to construct search query URL")
+        }
+        var req = URLRequest(url: url)
+        req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
+        let (data, _) = try await URLSession.shared.data(for: req)
+        let results = try Self.decoder.decode(SearchResponse.self, from: data)
+        var ids = [PackageId]()
+        for res in results.results {
+            switch res {
+                case .author, .keyword:
+                    break
+                case let .package(pkg):
+                    ids.append(.init(owner: pkg.repositoryOwner, repository: pkg.packageName))
+            }
+        }
+        return ids
+    }
+
+    struct SearchResponse: Decodable {
+        var hasMoreResults: Bool
+        var results: [Result]
+
+        enum Result: Decodable {
+            case author(Author)
+            case keyword(Keyword)
+            case package(Package)
+
+            struct Author: Decodable {
+                var name: String
+            }
+            struct Keyword: Decodable {
+                var keyword: String
+            }
+            struct Package: Decodable {
+                var packageURL: String
+                var repositoryOwner: String
+                var packageName: String
+            }
+        }
     }
 }
