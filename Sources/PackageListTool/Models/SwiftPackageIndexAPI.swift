@@ -38,10 +38,13 @@ struct SwiftPackageIndexAPI {
         return try Self.decoder.decode(Package.self, from: data)
     }
 
-    func search(query: String) async throws -> [PackageId] {
-        let queryItem = URLQueryItem(name: "query", value: query)
+    func search(query: String, limit: Int) async throws -> [PackageId] {
         var urlComponents = URLComponents(string: "\(baseURL)/api/search")
-        urlComponents?.queryItems = [queryItem]
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "page", value: "1"),
+            URLQueryItem(name: "pageSize", value: "\(limit)"),
+        ]
         guard let url = urlComponents?.url else {
             throw Error(message: "Failed to construct search query URL")
         }

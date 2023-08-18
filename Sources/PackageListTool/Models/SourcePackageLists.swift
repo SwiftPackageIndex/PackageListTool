@@ -71,7 +71,7 @@ extension SourcePackageLists.Category {
                 if let packages = Self.searchCache[search.query] {
                     return packages
                 }
-                let ids = try await api.search(query: search.query).prefix(search.limit)
+                let ids = try await api.search(query: search.query, limit: search.limit)
                 let packages = ids.map { SourcePackageLists.Package("\($0.owner)/\($0.repository)") }
                 Self.searchCache[search.query] = packages
                 return packages
