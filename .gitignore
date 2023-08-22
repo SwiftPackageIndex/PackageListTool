@@ -9,6 +9,4 @@ DerivedData/
 .netrc
 .vscode/
 .swiftpm/
-descriptions/
 packages.yml
-source.yml
