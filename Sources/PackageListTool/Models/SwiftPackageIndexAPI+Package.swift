@@ -18,6 +18,7 @@ extension SwiftPackageIndexAPI {
     struct Package: Codable {
         var repositoryOwner: String
         var repositoryName: String
+        var repositoryOwnerName: String?
         var platformCompatibility: [PlatformCompatibility]?
         var license: License
         var swiftVersionCompatibility: [SwiftVersion]?
@@ -65,6 +66,7 @@ extension SwiftPackageIndexAPI.Package {
     static var example: Self {
         .init(repositoryOwner: "foo",
               repositoryName: "bar",
+              repositoryOwnerName: "Foo",
               platformCompatibility: [.macOS, .linux],
               license: .mit,
               swiftVersionCompatibility: [.init(major: 5, minor: 8, patch: 0), .init(major: 5, minor: 7, patch: 0)],
