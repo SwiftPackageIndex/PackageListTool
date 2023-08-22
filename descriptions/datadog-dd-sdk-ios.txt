@@ -1,0 +1,1 @@
+This library provides Swift and Objective-C SDKs to interact with Datadog. It includes features for log collection, trace collection, and RUM events collection.

@@ -1,0 +1,1 @@
+Pulse is a powerful logging system for Apple platforms. It records and inspects logs and network requests, and allows for real-time viewing and sharing.

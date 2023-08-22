@@ -1,0 +1,1 @@
+Stores provides a typed key-value storage solution for Codable types, supporting various persistence layers such as User Defaults, File System, Core Data, and the Keychain.

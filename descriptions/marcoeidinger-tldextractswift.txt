@@ -1,0 +1,1 @@
+TLDExtract can extract the root domain, TLD, second-level domain, and subdomain from URLs or hostnames. It provides an up-to-date Public Suffix List and supports string and URL inputs.

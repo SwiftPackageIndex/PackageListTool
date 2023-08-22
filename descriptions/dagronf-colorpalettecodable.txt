@@ -1,0 +1,1 @@
+ColorPaletteCodable provides functionality for reading, editing, and writing color palettes in various formats, including Adobe Swatch Exchange, Adobe Photoshop Color Swatch, and more. It also supports gradients in formats like GIMP gradient and JSON.

@@ -1,0 +1,1 @@
+SwiftRequest is a lightweight HTTP client that simplifies constructing and executing HTTP requests in Swift. It supports various HTTP methods and provides parameters for headers, query parameters, path parameters, and request bodies.

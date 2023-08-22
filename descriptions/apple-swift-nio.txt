@@ -1,0 +1,1 @@
+SwiftNIO is a cross-platform networking framework for building high-performance protocol servers and clients. It uses non-blocking I/O for efficient handling of multiple connections.

@@ -1,0 +1,1 @@
+FileMonitor provides a unified API to detect file changes in a directory on Linux and macOS. It detects file creations, modifications, and deletions and then propagates events through a delegate function.

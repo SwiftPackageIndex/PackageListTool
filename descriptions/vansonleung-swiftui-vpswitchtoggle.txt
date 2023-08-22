@@ -1,0 +1,1 @@
+A customisable SwiftUI toggle control with transition animations between states.

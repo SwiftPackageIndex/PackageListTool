@@ -1,0 +1,1 @@
+SwiftyBeaver is a flexible, colorful, lightweight logging library for Swift. It supports console, file, and cloud destinations and is ideal for server-side Swift.

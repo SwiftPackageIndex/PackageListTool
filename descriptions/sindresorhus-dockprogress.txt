@@ -1,0 +1,1 @@
+DockProgress that allows you to show progress in your macOS app's Dock icon. It comes with five different styles and supports custom drawing.

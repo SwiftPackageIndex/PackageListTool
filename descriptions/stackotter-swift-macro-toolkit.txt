@@ -1,0 +1,1 @@
+Swift Macro Toolkit is a library that provides tools and utilities for working with Swift macros. It simplifies tasks such as parsing floating point literals, type destructuring, type normalization, and getting the value of string literals.

@@ -1,0 +1,1 @@
+OCMockito is an Objective-C implementation of Mockito, allowing you to create, verify, and stub mock objects. It has some key differences from other mocking frameworks, making tests less fragile and more readable.

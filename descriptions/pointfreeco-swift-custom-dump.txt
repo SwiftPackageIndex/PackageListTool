@@ -1,0 +1,1 @@
+A collection of tools for debugging, diffing, and testing data structures in Swift. Includes `customDump` for refined output, `diff` for textual diffs, and `XCTAssertNoDifference` for test assertions.

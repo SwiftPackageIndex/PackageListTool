@@ -1,0 +1,1 @@
+The Composable Architecture is a library for building applications with state management, composition, side effects, and testing in mind. It can be used with SwiftUI, UIKit, and more.

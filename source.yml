@@ -1,0 +1,88 @@
+categories:
+  - name: Community Showcase
+    anchor: community
+    description: "The community showcase celebrates new and innovative packages discussed on recent community podcasts, blogs, and newsletters. If you would like to submit a package for inclusion here, please [message the Swift Website Workgroup](https://forums.swift.org/new-message?groupname=swift-website-workgroup)."
+    source:
+      packages:
+        - identifier: pointfreeco/swift-composable-architecture
+          note: "Featured on [Episode 159](https://www.empowerapps.show/159){:target='_blank'} of the [Empower Apps podcast](https://www.empowerapps.show/){:target='_blank'}."
+        - identifier: groue/Semaphore
+          note: "Featured on [Episode 158](https://www.empowerapps.show/158){:target='_blank'} of the [Empower Apps podcast](https://www.empowerapps.show/){:target='_blank'}."
+        - identifier: QuickBirdEng/DataKit
+          note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
+        - identifier: exPHAT/SwiftWhisper
+          note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
+        - identifier: btfranklin/CleverBird
+          note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
+        - identifier: omaralbeik/Stores
+          note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
+  - name: Macro packages
+    anchor: macros
+    description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
+    more:
+      title: "More packages that include macros ›"
+      url: https://swiftpackageindex.com/search?query=product:macro
+    source:
+      packages:
+        - identifier: kishikawakatsumi/swift-power-assert
+        - identifier: Matejkob/swift-spyable
+        - identifier: ailtonvivaz/swift-request
+        - identifier: lukepistrol/SFSymbolsMacro
+        - identifier: p-x9/AssociatedObject
+        - identifier: stackotter/swift-macro-toolkit
+  - name: Swift on server
+    anchor: server
+    description: "What packages can help you build a top-class back-end server for your app or a website built with HTML? Swift has several mature back-end frameworks, ORM, database connection packages, and more."
+    more:
+      title: "More Swift on server packages ›"
+      url: https://swiftpackageindex.com/keywords/server-side-swift
+    source:
+      packages:
+        - identifier: vapor/vapor
+        - identifier: vapor/fluent
+        - identifier: orlandos-nl/MongoKitten
+        - identifier: vapor/console-kit
+        - identifier: vapor/fluent-kit
+        - identifier: hummingbird-project/hummingbird
+  - name: Networking packages
+    anchor: networking
+    description: "Covering everything from abstractions on top of core networking libraries to full-featured HTTP clients to low-level networking libraries. If you need a little more on top of URLSession, or a lot more, you’ll find it here."
+    more:
+      title: "More networking packages ›"
+      url: https://swiftpackageindex.com/keywords/networking
+    source:
+      packages:
+        - identifier: apple/swift-nio
+        - identifier: Alamofire/Alamofire
+        - identifier: kean/Pulse
+        - identifier: Moya/Moya
+        - identifier: immobiliare/RealHTTP
+        - identifier: Kitura/BlueSocket
+  - name: Testing packages
+    anchor: testing
+    description: "Whether you're looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help."
+    more:
+      title: "More testing packages ›"
+      url: https://swiftpackageindex.com/keywords/testing
+    source:
+      packages:
+        - identifier: Quick/Quick
+        - identifier: Quick/Nimble
+        - identifier: hamcrest/OCHamcrest
+        - identifier: pointfreeco/combine-schedulers
+        - identifier: pointfreeco/swift-custom-dump
+        - identifier: jonreid/OCMockito
+  - name: Debug logging packages
+    anchor: logging
+    description: "Whether you want to log something to the console or to disk, or something higher level that automates logging of network requests for debugging, there's a package to help."
+    more:
+      title: "More debug logging packages ›"
+      url: https://swiftpackageindex.com/keywords/logging
+    source:
+      packages:
+        - identifier: CocoaLumberjack/CocoaLumberjack
+        - identifier: DataDog/dd-sdk-ios
+        - identifier: kean/Pulse
+        - identifier: apple/swift-log
+        - identifier: SwiftyBeaver/SwiftyBeaver
+        - identifier: pmusolino/Wormholy
