@@ -18,12 +18,13 @@ extension SwiftPackageIndexAPI {
     struct Package: Codable {
         var repositoryOwner: String
         var repositoryName: String
-        var platformCompatibility: [PlatformCompatibility]
+        var platformCompatibility: [PlatformCompatibility]?
         var license: License
-        var swiftVersionCompatibility: [SwiftVersion]
+        var swiftVersionCompatibility: [SwiftVersion]?
         var summary: String?
         var title: String
         var url: String
+
 
         enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
             case apple = "Apple"
@@ -43,13 +44,13 @@ extension SwiftPackageIndexAPI {
 extension SwiftPackageIndexAPI.Package {
     var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
         PlatformCompatibilityGroup.allCases.filter { group in
-            Set(platformCompatibility).isDisjoint(with: group.platforms) == false
+            Set(platformCompatibility ?? []).isDisjoint(with: group.platforms) == false
         }
     }
 
     var platformCompatibilityTooltip: String {
         groupedPlatformCompatibility.map { group in
-            let platforms = group.platforms.intersection(Set(platformCompatibility))
+            let platforms = group.platforms.intersection(Set(platformCompatibility ?? []))
             if group == .apple {
                 let detail = "(" + platforms.map(\.rawValue).joined(separator: ", ") + ")"
                 return "\(group.rawValue) \(detail)"

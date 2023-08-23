@@ -60,11 +60,11 @@ struct SwiftOrgPackageLists: Codable {
         }
 
         init(from package: SwiftPackageIndexAPI.Package, note: String? = nil) {
-            let hasPlatformCompatibility = package.platformCompatibility.count > 0
+            let hasPlatformCompatibility = (package.platformCompatibility ?? []).count > 0
 
             self.name = package.title
             self.description = package.summary ?? ""
-            self.swiftCompatibility = package.swiftVersionCompatibility.sorted().first.map { "\($0.major).\($0.minor)+" }
+            self.swiftCompatibility = (package.swiftVersionCompatibility ?? []).sorted().first.map { "\($0.major).\($0.minor)+" }
             self.platformCompatibility = if hasPlatformCompatibility { package.groupedPlatformCompatibility.map(\.rawValue) } else { nil }
             self.platformCompatibilityTooltip = if hasPlatformCompatibility { package.platformCompatibilityTooltip } else { nil }
             self.license = package.license.shortName
