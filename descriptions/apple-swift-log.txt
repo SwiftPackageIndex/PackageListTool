@@ -1,0 +1,1 @@
+SwiftLog is a community-driven logging API package for server-side Swift applications. It provides easy logging of messages to a shared destination and supports various logging backends for customization and integration.

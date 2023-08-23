@@ -1,0 +1,1 @@
+MongoKitten is a fast, pure Swift MongoDB driver built for Server Side Swift. It supports both MongoDB in server and embedded environments, and can be used with Vapor or Hummingbird.

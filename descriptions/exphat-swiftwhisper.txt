@@ -1,0 +1,1 @@
+SwiftWhisper provides an easy way to add transcription functionality to your Swift app or package. It is powered by `whisper.cpp` and supports CoreML and audio conversion.

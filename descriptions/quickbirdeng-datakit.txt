@@ -1,0 +1,1 @@
+DataKit is helps you read and write binary formatted data, providing a simple and declarative interface for encoding and decoding data structures into binary format.

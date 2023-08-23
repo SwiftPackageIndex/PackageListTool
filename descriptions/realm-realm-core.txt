@@ -1,0 +1,1 @@
+Realm is a mobile database that runs directly on devices. This repository contains the core database component used by all Realm Mobile Database products. It is not an end-user product with a stable API.

@@ -1,0 +1,1 @@
+BlueSocket is a Socket framework for Swift. It provides functionality for creating, closing, and listening on sockets, as well as accepting connections.

@@ -1,0 +1,1 @@
+Swift HTTP Types provides version-independent HTTP currency types for clients and servers, including `HTTPRequest` and `HTTPResponse`. It also offers convenience methods for working with Foundation and SwiftNIO.

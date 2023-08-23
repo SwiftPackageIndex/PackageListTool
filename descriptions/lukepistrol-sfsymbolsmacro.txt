@@ -1,0 +1,1 @@
+This Swift Macro enables type-safe usage of SF Symbols. Create an enum to hold symbols, import `SFSymbolsMacro`, and use the `@SFSymbol` annotation.

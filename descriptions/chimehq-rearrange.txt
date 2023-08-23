@@ -1,0 +1,1 @@
+Rearrange is a utility library for working with `NSRange` and `NSTextRange` in the Cocoa text system. It provides convenience methods, extensions, and types for manipulating and transforming ranges.

@@ -1,0 +1,1 @@
+Quick is a behavior-driven development framework for Swift and Objective-C. It is inspired by RSpec, Specta, and Ginkgo. It comes with Nimble, a matcher framework for tests.

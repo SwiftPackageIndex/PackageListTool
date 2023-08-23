@@ -1,0 +1,1 @@
+FluentKit provides a powerful, type-safe ORM (Object-Relational Mapping) for Swift. It allows you to work with databases using a fluent and expressive API.

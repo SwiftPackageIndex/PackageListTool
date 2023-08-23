@@ -1,0 +1,1 @@
+Semaphore provides a Swift concurrency primitive for synchronizing tasks. It allows tasks to suspend and resume using signals, preventing concurrent execution and limiting resource access. Ideal for controlling task concurrency.

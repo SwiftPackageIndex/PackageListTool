@@ -1,0 +1,1 @@
+Swift macro for adding variable declarations in class extensions by wrapping `objc_getAssociatedObject`/`objc_setAssociatedObject`. Can be used to add stored properties to classes.

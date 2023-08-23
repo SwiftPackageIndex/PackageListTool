@@ -1,0 +1,1 @@
+Swifter is a lightweight HTTP server engine written in Swift. It supports routing, serving static files, redirects, HTML rendering, and WebSockets. It can be used with CocoaPods, Carthage, or Swift Package Manager.

@@ -1,0 +1,1 @@
+Hummingbird is a lightweight, flexible server framework written in Swift. It consists of an HTTP server, a web application framework, and extension modules.

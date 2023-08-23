@@ -1,0 +1,1 @@
+Nimble is a testing library for Swift and Objective-C. It provides a more expressive way to write assertions and supports operator overloads and asynchronous testing.

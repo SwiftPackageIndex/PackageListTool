@@ -1,0 +1,1 @@
+ConsoleKit provides a set of tools and utilities for working with the command-line interface (CLI) in Swift applications. It includes features such as input handling, output formatting, and command execution.

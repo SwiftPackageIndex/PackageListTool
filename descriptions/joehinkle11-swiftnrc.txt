@@ -1,0 +1,1 @@
+Swift No Reference Counting (NRC) provides a way to create Swift objects without the overhead of reference counting. By using macros and pointers, it offers a more performant alternative to traditional classes in performance-critical applications.
