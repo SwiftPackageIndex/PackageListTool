@@ -41,6 +41,7 @@ struct SwiftOrgPackageLists: Codable {
     struct Package: Codable {
         var name: String
         var description: String
+        var owner: String
         var swiftCompatibility: String?
         var platformCompatibility: [String]?
         var platformCompatibilityTooltip: String?
@@ -51,6 +52,7 @@ struct SwiftOrgPackageLists: Codable {
         enum CodingKeys: String, CodingKey {
             case name
             case description
+            case owner
             case swiftCompatibility = "swift_compatibility"
             case platformCompatibility = "platform_compatibility"
             case platformCompatibilityTooltip = "platform_compatibility_tooltip"
@@ -64,6 +66,7 @@ struct SwiftOrgPackageLists: Codable {
 
             self.name = package.title
             self.description = package.summary ?? ""
+            self.owner = package.repositoryOwnerName ?? package.repositoryOwner
             self.swiftCompatibility = (package.swiftVersionCompatibility ?? []).sorted().first.map { "\($0.major).\($0.minor)+" }
             self.platformCompatibility = if hasPlatformCompatibility { package.groupedPlatformCompatibility.map(\.rawValue) } else { nil }
             self.platformCompatibilityTooltip = if hasPlatformCompatibility { package.platformCompatibilityTooltip } else { nil }
