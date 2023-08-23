@@ -1,0 +1,1 @@
+SwifterSwift is a collection of over 500 Swift extensions for iOS, macOS, tvOS, watchOS, and Linux. It provides handy methods and performance improvements for a wide range of data types and UIKit and Cocoa classes.
