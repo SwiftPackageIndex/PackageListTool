@@ -1,6 +1,6 @@
 categories:
   - name: Community Showcase
-    anchor: community
+    slug: community
     description: "Descriptions can include [Markdown links](https://example.com) and **basic formatting**."
     more:
       title: More packages
@@ -13,14 +13,14 @@ categories:
           - identifier: QuickBirdEng/DataKit
             note: "Notes can also include [Markdown](https://example.com)."
   - name: Networking
-    anchor: networking
+    slug: networking
     description: "Descriptions are required, but 'more' links are optional."
     source:
         packages:
           - identifier: apple/swift-nio
           - identifier: Alamofire/Alamofire
   - name: Testing
-    anchor: testing
+    slug: testing
     description: "This list is driven by a live keyword search on SPI."
     source:
         search:

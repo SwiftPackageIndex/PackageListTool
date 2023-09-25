@@ -1,6 +1,6 @@
 categories:
   - name: Community Showcase
-    anchor: community
+    slug: community
     description: "This showcase celebrates new and innovative packages discussed on recent community podcasts, blogs, and newsletters. Package selection in the Community Showcase is an editorial process organised via [the Swift Forums](https://example.com/) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
@@ -17,7 +17,7 @@ categories:
         - identifier: omaralbeik/Stores
           note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
   - name: Macro packages
-    anchor: macros
+    slug: macros
     description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
     more:
       title: "More packages that include macros"
@@ -31,7 +31,7 @@ categories:
         - identifier: p-x9/AssociatedObject
         - identifier: stackotter/swift-macro-toolkit
   - name: Swift on server
-    anchor: server
+    slug: server
     description: "What packages can help you build a top-class back-end server for your app or a website built with HTML? Swift has several mature back-end frameworks, ORM, database connection packages, and more."
     more:
       title: "More Swift on server packages"
@@ -45,7 +45,7 @@ categories:
         - identifier: vapor/fluent-kit
         - identifier: hummingbird-project/hummingbird
   - name: Networking packages
-    anchor: networking
+    slug: networking
     description: "Covering everything from abstractions on top of core networking libraries to full-featured HTTP clients to low-level networking libraries. If you need a little more on top of URLSession, or a lot more, you’ll find it here."
     more:
       title: "More networking packages"
@@ -59,7 +59,7 @@ categories:
         - identifier: immobiliare/RealHTTP
         - identifier: Kitura/BlueSocket
   - name: Testing packages
-    anchor: testing
+    slug: testing
     description: "Whether you're looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help."
     more:
       title: "More testing packages"
@@ -73,7 +73,7 @@ categories:
         - identifier: pointfreeco/swift-custom-dump
         - identifier: jonreid/OCMockito
   - name: Debug logging packages
-    anchor: logging
+    slug: logging
     description: "Whether you want to log something to the console or to disk, or something higher level that automates logging of network requests for debugging, there's a package to help."
     more:
       title: "More debug logging packages"

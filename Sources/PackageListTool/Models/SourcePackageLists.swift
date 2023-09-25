@@ -21,7 +21,7 @@ struct SourcePackageLists: Codable {
 
     struct Category: Codable {
         var name: String
-        var anchor: String
+        var slug: String
         var description: String
         var more: MoreLink? = nil
         var source: Source
