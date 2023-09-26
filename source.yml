@@ -16,7 +16,7 @@ categories:
           note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
         - identifier: omaralbeik/Stores
           note: "Featured on [Episode 32](https://share.transistor.fm/s/661ad422){:target='_blank'} of the [Swift Package Indexing](https://swiftpackageindexing.transistor.fm/){:target='_blank'} podcast."
-  - name: Macro packages
+  - name: Packages with Macros
     slug: macros
     description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
     more:
@@ -44,7 +44,7 @@ categories:
         - identifier: vapor/console-kit
         - identifier: vapor/fluent-kit
         - identifier: hummingbird-project/hummingbird
-  - name: Networking packages
+  - name: Networking
     slug: networking
     description: "Covering everything from abstractions on top of core networking libraries to full-featured HTTP clients to low-level networking libraries. If you need a little more on top of URLSession, or a lot more, you’ll find it here."
     more:
@@ -58,7 +58,7 @@ categories:
         - identifier: Moya/Moya
         - identifier: immobiliare/RealHTTP
         - identifier: Kitura/BlueSocket
-  - name: Testing packages
+  - name: Testing
     slug: testing
     description: "Whether you're looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help."
     more:
@@ -72,7 +72,7 @@ categories:
         - identifier: pointfreeco/combine-schedulers
         - identifier: pointfreeco/swift-custom-dump
         - identifier: jonreid/OCMockito
-  - name: Debug logging packages
+  - name: Debug logging
     slug: logging
     description: "Whether you want to log something to the console or to disk, or something higher level that automates logging of network requests for debugging, there's a package to help."
     more:
