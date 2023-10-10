@@ -86,6 +86,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
 
             outputCategories.append(.init(name: sourceCategory.name,
                                           slug: sourceCategory.slug,
+                                          brief: sourceCategory.brief,
                                           description: sourceCategory.description,
                                           more: .init(sourceCategory.more),
                                           packages: outputPackages)
