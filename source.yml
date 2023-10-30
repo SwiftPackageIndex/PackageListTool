@@ -1,8 +1,8 @@
 categories:
   - name: Community Showcase
     slug: showcase
-    brief: "A hand-curated selection of new and interesting packages the members of the Swift community are currently discussing. Browse the list to find out what's new and how to nominate packages for consideration in this section."
-    description: "This showcase celebrates new and interesting packages discussed on recent community podcasts, or written about in blogs and newsletters. Package selection in this section is an editorial process organised via [the Swift Forums](https://example.com/) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
+    brief: "A hand-curated selection of new and interesting packages being discussed by the Swift community. Browse the list to find out what's new and how to nominate packages for consideration in this section."
+    description: 'This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://example.com/) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/).'
     source:
       packages:
         - identifier: pointfreeco/swift-composable-architecture
