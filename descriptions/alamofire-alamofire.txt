@@ -1,1 +1,1 @@
-Alamofire is an HTTP networking library written in Swift. It provides features such as request/response handling, parameter encoding, authentication, progress tracking, and more. It also offers additional component libraries for image handling and network activity indicator control.
+Alamofire is an HTTP networking library written in Swift. It provides features such as request/response handling, parameter encoding, authentication, progress tracking, and more.

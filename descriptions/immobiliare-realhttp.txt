@@ -1,1 +1,1 @@
-RealHTTP is a lightweight, async-based HTTP library for Swift. It aims to provide an easy-to-use, powerful HTTP client with features like async/await support, request customization, response validation, and more. It also includes an integrated stubber for testing purposes.
+RealHTTP is a lightweight, async-based HTTP library for Swift. It aims to provide an easy-to-use, powerful HTTP client with features like async/await support, request customization, response validation, and more.

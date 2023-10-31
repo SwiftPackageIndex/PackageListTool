@@ -1,1 +1,1 @@
-Generate Swift client and server code from an OpenAPI document using the Swift OpenAPI Generator package. Includes multiple repositories for extensibility and supports various transports.
+Generate Swift client and server code from an OpenAPI document. Includes multiple repositories for extensibility and supports various transports.

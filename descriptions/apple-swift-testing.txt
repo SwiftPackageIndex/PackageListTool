@@ -1,1 +1,1 @@
-A powerful new testing library for Swift, providing a modern and flexible testing library for Swift with powerful and expressive capabilities. It gives developers more confidence with less code.
+A powerful testing library for Swift, providing a modern and flexible testing library for Swift with powerful and expressive capabilities. It gives developers more confidence with less code.

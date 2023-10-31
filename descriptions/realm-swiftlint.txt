@@ -1,1 +1,1 @@
-SwiftLint is a tool that enforces Swift style and conventions. It uses AST representation of source files to provide accurate results and can be integrated into Xcode projects and Swift packages.
+SwiftLint is a tool that enforces Swift style and conventions. It uses the AST representation of source files to provide accurate results and can be integrated into both Xcode projects and Swift packages.

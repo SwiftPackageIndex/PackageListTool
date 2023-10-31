@@ -1,1 +1,1 @@
-Networking is a Swift library for making network requests with a straightforward API. It supports faking requests, caching images, and various types of authentication. It is lightweight, fully tested, and has no external dependencies.
+Networking is a Swift library for making network requests with a straightforward API. It supports faking requests, caching images, and various types of authentication.

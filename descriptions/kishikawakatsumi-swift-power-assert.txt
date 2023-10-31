@@ -1,1 +1,1 @@
-Swift Power Assert is a library that provides descriptive assertion messages for tests. It augments assertion failures with information about the values produced during the evaluation of a condition.
+Swift Power Assert provides descriptive assertion messages for tests. It augments assertion failures with information about the values produced during the evaluation of a condition.

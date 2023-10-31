@@ -1,1 +1,1 @@
-Simplify serialization with Property Wrappers. Customize encoding and decoding for Codable types with annotations. Supports various coding strategies and cross-platform usage.
+Simplify serialization with Property Wrappers. Customize encoding and decoding for Codable types with annotations.

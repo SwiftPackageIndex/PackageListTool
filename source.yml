@@ -37,7 +37,7 @@ categories:
       url: https://swiftpackageindex.com/keywords/server-side-swift
     source:
       search:
-        query: 'server-side-swift'
+        query: 'keyword:server-side-swift'
         limit: 6
   - name: Networking
     slug: networking
@@ -48,7 +48,7 @@ categories:
       url: https://swiftpackageindex.com/keywords/networking
     source:
       search:
-        query: 'networking'
+        query: 'keyword:networking'
         limit: 6
   - name: Testing
     slug: testing
@@ -59,7 +59,7 @@ categories:
       url: https://swiftpackageindex.com/keywords/testing
     source:
       search:
-        query: 'testing'
+        query: 'keyword:testing'
         limit: 6
   - name: Debug logging
     slug: logging
@@ -70,5 +70,5 @@ categories:
       url: https://swiftpackageindex.com/keywords/logging
     source:
       search:
-        query: 'logging'
+        query: 'keyword:logging'
         limit: 6
