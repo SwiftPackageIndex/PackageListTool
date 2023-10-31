@@ -1,1 +1,1 @@
-CleverBird simplifies interaction with OpenAI's chat APIs. It focuses on chat-based interactions, supports async calls, token counting/encoding, customization, and streaming responses.
+CleverBird simplifies interaction with OpenAI’s chat APIs. It focuses on chat-based interactions, supports async calls, token counting/encoding, customization, and streaming responses.

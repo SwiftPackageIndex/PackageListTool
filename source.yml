@@ -1,7 +1,7 @@
 categories:
   - name: Community Showcase
     slug: showcase
-    brief: "A hand-curated selection of new and interesting packages being discussed by the Swift community. Browse the list to find out what's new and how to nominate packages for consideration in this section."
+    brief: 'A hand-curated selection of new and interesting packages being discussed by the Swift community. Browse the list to find out what’s new and how to nominate packages for consideration in this section.'
     description: 'This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/).'
     source:
       packages:
@@ -20,7 +20,7 @@ categories:
   - name: Packages with Macros
     slug: macros
     brief: 'New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature.'
-    description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
+    description: Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets.'
     more:
       title: 'More packages that include macros'
       url: https://swiftpackageindex.com/search?query=product:macro
@@ -52,8 +52,8 @@ categories:
         limit: 6
   - name: Testing
     slug: testing
-    brief: "If you want to level up your project's tests, take a look at a selection of packages that might come in useful."
-    description: "Whether you're looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help."
+    brief: 'If you want to level up your project’s tests, take a look at a selection of packages that might come in useful.'
+    description: 'Whether you’re looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help.'
     more:
       title: 'More testing packages'
       url: https://swiftpackageindex.com/keywords/testing
@@ -63,7 +63,7 @@ categories:
         limit: 6
   - name: Debug logging
     slug: logging
-    brief: "Are you looking for something more than Swift's built-in logging? Start with this list of logging-related packages."
+    brief: 'Are you looking for something more than Swift’s built-in logging? Start with this list of logging-related packages.'
     description: 'Swift has [great logging built-in](https://developer.apple.com/documentation/os/logging), but start with this list of packages if you want to extend or find something specific to your needs.'
     more:
       title: 'More debug logging packages'

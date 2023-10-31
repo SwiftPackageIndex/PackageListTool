@@ -1,1 +1,1 @@
-GRDB is a SQLite toolkit for application development. It provides SQL generation, database observation, robust concurrency, migrations, and raw SQL access. Use it to save your app's data into SQLite databases.
+GRDB is a SQLite toolkit for application development. It provides SQL generation, database observation, robust concurrency, migrations, and raw SQL access. Use it to save your app’s data into SQLite databases.

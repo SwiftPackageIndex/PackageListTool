@@ -1,1 +1,1 @@
-An SDK for developing video applications on iOS with Daily's real-time audio, video, and vision platform.
+An SDK for developing video applications on iOS with Daily’s real-time audio, video, and vision platform.
