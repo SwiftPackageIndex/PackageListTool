@@ -58,7 +58,7 @@ struct SwiftPackageIndexAPI {
                 case .author, .keyword:
                     break
                 case let .package(pkg):
-                    ids.append(.init(owner: pkg.repositoryOwner, repository: pkg.packageName))
+                    ids.append(.init(owner: pkg.repositoryOwner, repository: pkg.repositoryName))
             }
         }
         return ids
@@ -82,6 +82,7 @@ struct SwiftPackageIndexAPI {
             struct Package: Decodable {
                 var packageURL: String
                 var repositoryOwner: String
+                var repositoryName: String
                 var packageName: String
             }
         }
