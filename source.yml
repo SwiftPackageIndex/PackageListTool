@@ -20,7 +20,7 @@ categories:
   - name: Packages with Macros
     slug: macros
     brief: 'New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature.'
-    description: Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets.'
+    description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
     more:
       title: 'More packages that include macros'
       url: https://swiftpackageindex.com/search?query=product:macro
