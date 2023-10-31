@@ -34,7 +34,9 @@ struct SwiftPackageIndexAPI {
         let url = URL(string: "\(baseURL)/api/packages/\(owner)/\(repository)")!
         var req = URLRequest(url: url)
         req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
-        let (data, _) = try await URLSession.shared.data(for: req)
+        let (data, response) = try await URLSession.shared.data(for: req)
+        assert((response as? HTTPURLResponse)?.statusCode == 200,
+               "expected 200, received \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
         return try Self.decoder.decode(Package.self, from: data)
     }
 
@@ -58,7 +60,7 @@ struct SwiftPackageIndexAPI {
                 case .author, .keyword:
                     break
                 case let .package(pkg):
-                    ids.append(.init(owner: pkg.repositoryOwner, repository: pkg.packageName))
+                    ids.append(.init(owner: pkg.repositoryOwner, repository: pkg.repositoryName))
             }
         }
         return ids
@@ -82,6 +84,7 @@ struct SwiftPackageIndexAPI {
             struct Package: Decodable {
                 var packageURL: String
                 var repositoryOwner: String
+                var repositoryName: String
                 var packageName: String
             }
         }
