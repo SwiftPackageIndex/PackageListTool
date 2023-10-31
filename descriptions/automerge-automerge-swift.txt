@@ -1,0 +1,1 @@
+Automerge-swift is a low-level library that provides an implementation of Automerge in Swift. Automerge is a library of data structures for building collaborative applications.

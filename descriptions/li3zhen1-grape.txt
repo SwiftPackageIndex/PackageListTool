@@ -1,0 +1,1 @@
+Grape is a Swift library for force simulation and graph visualization. It provides classes for creating simulations and forces and supports both 2D and 3D graphs.

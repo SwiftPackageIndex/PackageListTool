@@ -1,0 +1,1 @@
+SwiftGodot provides Swift language bindings for the Godot game engine. Developers can use it to build extensions or embed Godot directly into Swift applications.

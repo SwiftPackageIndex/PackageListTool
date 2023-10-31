@@ -1,0 +1,1 @@
+Firefly is a syntax highlighter for iOS and macOS. It uses regular expressions to detect tokens and color them based on the current theme and supports line numbers, customizable themes, and multiple languages.

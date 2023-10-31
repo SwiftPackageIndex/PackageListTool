@@ -1,0 +1,1 @@
+SwiftTUI is a library that brings SwiftUI-like functionality to the terminal, allowing developers to build text-based user interfaces. It supports many features from SwiftUI, such as property wrappers, view builders, and modifiers.
