@@ -25,13 +25,9 @@ categories:
       title: 'More packages that include macros'
       url: https://swiftpackageindex.com/search?query=product:macro
     source:
-      packages:
-        - identifier: kishikawakatsumi/swift-power-assert
-        - identifier: Matejkob/swift-spyable
-        - identifier: ailtonvivaz/swift-request
-        - identifier: lukepistrol/SFSymbolsMacro
-        - identifier: p-x9/AssociatedObject
-        - identifier: stackotter/swift-macro-toolkit
+      search:
+        query: 'product:macro'
+        limit: 6
   - name: Swift on server
     slug: server
     brief: 'Do you need a hand putting together a Swift app for the server? Browse some packages that get you started.'
@@ -40,13 +36,9 @@ categories:
       title: 'More Swift on server packages'
       url: https://swiftpackageindex.com/keywords/server-side-swift
     source:
-      packages:
-        - identifier: vapor/vapor
-        - identifier: vapor/fluent
-        - identifier: orlandos-nl/MongoKitten
-        - identifier: vapor/console-kit
-        - identifier: vapor/fluent-kit
-        - identifier: hummingbird-project/hummingbird
+      search:
+        query: 'server-side-swift'
+        limit: 6
   - name: Networking
     slug: networking
     brief: 'Browse a selection of packages that can extend and enhance the Swift core networking libraries.'
@@ -55,13 +47,9 @@ categories:
       title: 'More networking packages'
       url: https://swiftpackageindex.com/keywords/networking
     source:
-      packages:
-        - identifier: apple/swift-nio
-        - identifier: Alamofire/Alamofire
-        - identifier: kean/Pulse
-        - identifier: Moya/Moya
-        - identifier: immobiliare/RealHTTP
-        - identifier: Kitura/BlueSocket
+      search:
+        query: 'networking'
+        limit: 6
   - name: Testing
     slug: testing
     brief: "If you want to level up your project's tests, take a look at a selection of packages that might come in useful."
@@ -70,13 +58,9 @@ categories:
       title: 'More testing packages'
       url: https://swiftpackageindex.com/keywords/testing
     source:
-      packages:
-        - identifier: Quick/Quick
-        - identifier: Quick/Nimble
-        - identifier: hamcrest/OCHamcrest
-        - identifier: pointfreeco/combine-schedulers
-        - identifier: pointfreeco/swift-custom-dump
-        - identifier: jonreid/OCMockito
+      search:
+        query: 'testing'
+        limit: 6
   - name: Debug logging
     slug: logging
     brief: "Are you looking for something more than Swift's built-in logging? Start with this list of logging-related packages."
@@ -85,10 +69,6 @@ categories:
       title: 'More debug logging packages'
       url: https://swiftpackageindex.com/keywords/logging
     source:
-      packages:
-        - identifier: CocoaLumberjack/CocoaLumberjack
-        - identifier: DataDog/dd-sdk-ios
-        - identifier: kean/Pulse
-        - identifier: apple/swift-log
-        - identifier: SwiftyBeaver/SwiftyBeaver
-        - identifier: pmusolino/Wormholy
+      search:
+        query: 'logging'
+        limit: 6

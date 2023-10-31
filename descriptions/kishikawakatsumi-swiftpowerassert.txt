@@ -1,0 +1,1 @@
+Power Assertions for Swift enhances assertion failures with detailed information about evaluated values, improving test readability. It is inspired by Spock, ScalaTest, and Expecty.
