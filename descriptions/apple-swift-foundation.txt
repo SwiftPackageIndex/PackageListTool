@@ -1,0 +1,1 @@
+Foundation is a Swift package providing basic utility types and functionality for numbers, data, collections, dates, and more. It aims to be platform-independent, support internationalization, and improve performance over previous implementations.

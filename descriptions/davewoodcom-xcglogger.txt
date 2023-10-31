@@ -1,0 +1,1 @@
+XCGLogger is a debug log module for Swift projects that allows you to log details to the console (and optionally a file) with additional information such as date, function name, and line number.

@@ -1,0 +1,1 @@
+Verge is a state management library for iOS development. It offers a lightweight and efficient way to manage application state using a store-pattern, supporting both UIKit and SwiftUI. Verge supports concurrent processing and includes an ORM for efficient entity management.

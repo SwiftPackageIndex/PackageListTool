@@ -1,0 +1,1 @@
+SnapshotTesting is a delightful Swift snapshot testing library. It allows you to easily compare snapshots of views, view controllers, URL requests, and encodable values. It supports a wide range of snapshot strategies and is highly configurable.

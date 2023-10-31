@@ -1,0 +1,1 @@
+ViewInspector is a library for unit testing SwiftUI views. It allows for traversing a view hierarchy at runtime and accessing the underlying `View` structs.

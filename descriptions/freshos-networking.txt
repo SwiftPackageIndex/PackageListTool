@@ -1,0 +1,1 @@
+Networking is a Swift package that simplifies connecting to a JSON API by combining URLSession, async-await (or Combine), Decodable, and Generics. It automates boilerplate code and provides a simple API for fetching data.

@@ -1,0 +1,1 @@
+Networking is a Swift library that provides a network abstraction layer built on top of Alamofire. It offers features like making requests, supporting various response types, cancelling requests, and handling errors. It also includes features like endpoint customization, reachability monitoring, request adapting, and automatic token refreshing.
