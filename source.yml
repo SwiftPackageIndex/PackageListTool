@@ -6,7 +6,7 @@ categories:
     source:
       packages:
         - identifier: rensbreur/SwiftTUI
-          note: "Discussed on [Episode 163 of the Empower Apps Podcast](https://brightdigit.com/episodes/163-swiftly-tooling-with-pol-piella-abadia/){:target='_blank'} podcast."
+          note: "Discussed on [Episode 163 of the Empower Apps Podcast](https://brightdigit.com/episodes/163-swiftly-tooling-with-pol-piella-abadia/){:target='_blank'}."
         - identifier: migueldeicaza/SwiftGodot
           note: "Discussed on [Season 5 Episode 28 of Compile Swift](https://www.compileswift.com/podcast/s05e28/){:target='_blank'} podcast."
         - identifier: automerge/automerge-swift
@@ -16,7 +16,7 @@ categories:
         - identifier: ActuallyTaylor/Firefly
           note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
         - identifier: daily-co/daily-client-ios
-          note: "Discussed on [Episode 162 of the Empower Apps Podcast](https://brightdigit.com/episodes/162-building-a-video-sdk-with-marc-schwieterman/){:target='_blank'} podcast."
+          note: "Discussed on [Episode 162 of the Empower Apps Podcast](https://brightdigit.com/episodes/162-building-a-video-sdk-with-marc-schwieterman/){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
     brief: 'New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature.'
