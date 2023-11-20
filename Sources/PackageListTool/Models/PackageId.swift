@@ -15,7 +15,7 @@
 import Foundation
 import ArgumentParser
 
-struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
+public struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
     var owner: String
     var repository: String
 
@@ -24,14 +24,14 @@ struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
         self.repository = repository
     }
 
-    init?(argument: String) {
+    public init?(argument: String) {
         let parts = argument.split(separator: "/").map(String.init)
         guard parts.count == 2 else { return nil }
         self.owner = parts[0]
         self.repository = parts[1]
     }
 
-    var description: String {
+    public var description: String {
         "\(owner)/\(repository)"
     }
 
