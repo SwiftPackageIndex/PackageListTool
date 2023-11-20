@@ -17,7 +17,7 @@ import Foundation
 
 // Type pulled 1:1 from SwiftPackageIndex-Server
 extension SwiftPackageIndexAPI {
-    struct Activity: Codable, Equatable {
+    public struct Activity: Codable, Equatable {
         var openIssuesCount: Int
         var openIssuesURL: String?
         var openPullRequestsCount: Int
@@ -26,16 +26,16 @@ extension SwiftPackageIndexAPI {
         var lastPullRequestClosedAt: Date?
     }
 
-    struct Author: Codable, Equatable {
+    public struct Author: Codable, Equatable {
         var name: String
     }
 
-    enum AuthorMetadata : Codable, Equatable {
+    public enum AuthorMetadata : Codable, Equatable {
         case fromSPIManifest(String)
         case fromGitRepository(PackageAuthors)
     }
 
-    struct History: Codable, Equatable {
+    public struct History: Codable, Equatable {
         var createdAt: Date
         var commitCount: Int
         var commitCountURL: String
@@ -43,7 +43,7 @@ extension SwiftPackageIndexAPI {
         var releaseCountURL: String
     }
 
-    enum License: String, Codable, Equatable, CaseIterable {
+    public enum License: String, Codable, Equatable, CaseIterable {
         // This is not an exhaustive list, but includes most commonly used license types
         case afl_3_0 = "afl-3.0"
         case apache_2_0 = "apache-2.0"
@@ -176,7 +176,7 @@ extension SwiftPackageIndexAPI {
             }
         }
 
-        enum Kind: String {
+        public enum Kind: String {
             case none
             case other
             case incompatibleWithAppStore = "incompatible"
@@ -193,26 +193,26 @@ extension SwiftPackageIndexAPI {
         }
     }
 
-    struct PackageAuthors: Codable, Equatable {
+    public struct PackageAuthors: Codable, Equatable {
         var authors: [Author]
         var numberOfContributors: Int
     }
 
-    enum PlatformCompatibility: String, Codable, Comparable {
+    public enum PlatformCompatibility: String, Codable, Comparable {
         case iOS
         case linux
         case macOS
         case tvOS
         case visionOS
         case watchOS
-        static func < (lhs: Self, rhs: Self) -> Bool { lhs.rawValue < rhs.rawValue }
+        public static func < (lhs: Self, rhs: Self) -> Bool { lhs.rawValue < rhs.rawValue }
     }
 
-    struct SwiftVersion: Codable, Comparable {
+    public struct SwiftVersion: Codable, Comparable {
         var major: Int
         var minor: Int
         var patch: Int
-        static func < (lhs: Self, rhs: Self) -> Bool {
+        public static func < (lhs: Self, rhs: Self) -> Bool {
             if lhs.major != rhs.major { return lhs.major < rhs.major }
             if lhs.minor != rhs.minor { return lhs.minor < rhs.minor }
             return lhs.patch < rhs.patch

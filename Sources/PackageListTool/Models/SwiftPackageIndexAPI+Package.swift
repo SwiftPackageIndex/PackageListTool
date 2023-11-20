@@ -15,7 +15,7 @@
 import Collections
 
 extension SwiftPackageIndexAPI {
-    struct Package: Codable {
+    public struct Package: Codable {
         var repositoryOwner: String
         var repositoryName: String
         var repositoryOwnerName: String?
@@ -27,7 +27,7 @@ extension SwiftPackageIndexAPI {
         var url: String
 
 
-        enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
+        public enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
             case apple = "Apple"
             case linux = "Linux"
 
@@ -43,13 +43,13 @@ extension SwiftPackageIndexAPI {
 }
 
 extension SwiftPackageIndexAPI.Package {
-    var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
+    public var groupedPlatformCompatibility: [PlatformCompatibilityGroup] {
         PlatformCompatibilityGroup.allCases.filter { group in
             Set(platformCompatibility ?? []).isDisjoint(with: group.platforms) == false
         }
     }
 
-    var platformCompatibilityTooltip: String {
+    public var platformCompatibilityTooltip: String {
         groupedPlatformCompatibility.map { group in
             let platforms = group.platforms.intersection(Set(platformCompatibility ?? []))
             if group == .apple {

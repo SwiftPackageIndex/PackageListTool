@@ -16,7 +16,7 @@
 import Foundation
 
 
-struct SwiftPackageIndexAPI {
+public struct SwiftPackageIndexAPI {
     var baseURL: String
     var apiToken: String
 
@@ -30,7 +30,7 @@ struct SwiftPackageIndexAPI {
         return decoder
     }
 
-    func fetchPackage(owner: String, repository: String) async throws -> Package {
+    public func fetchPackage(owner: String, repository: String) async throws -> Package {
         let url = URL(string: "\(baseURL)/api/packages/\(owner)/\(repository)")!
         var req = URLRequest(url: url)
         req.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
@@ -40,7 +40,7 @@ struct SwiftPackageIndexAPI {
         return try Self.decoder.decode(Package.self, from: data)
     }
 
-    func search(query: String, limit: Int) async throws -> [PackageId] {
+    public func search(query: String, limit: Int) async throws -> [PackageId] {
         var urlComponents = URLComponents(string: "\(baseURL)/api/search")
         urlComponents?.queryItems = [
             URLQueryItem(name: "query", value: query),
@@ -66,7 +66,7 @@ struct SwiftPackageIndexAPI {
         return ids
     }
 
-    struct SearchResponse: Decodable {
+    public struct SearchResponse: Decodable {
         var hasMoreResults: Bool
         var results: [Result]
 
