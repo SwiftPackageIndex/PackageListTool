@@ -16,8 +16,8 @@ import Foundation
 import ArgumentParser
 
 public struct PackageId: ExpressibleByArgument, Codable, CustomStringConvertible {
-    var owner: String
-    var repository: String
+    public var owner: String
+    public var repository: String
 
     init(owner: String, repository: String) {
         self.owner = owner

@@ -16,16 +16,15 @@ import Collections
 
 extension SwiftPackageIndexAPI {
     public struct Package: Codable {
-        var repositoryOwner: String
-        var repositoryName: String
-        var repositoryOwnerName: String?
-        var platformCompatibility: [PlatformCompatibility]?
-        var license: License
-        var swiftVersionCompatibility: [SwiftVersion]?
-        var summary: String?
-        var title: String
-        var url: String
-
+        public var repositoryOwner: String
+        public var repositoryName: String
+        public var repositoryOwnerName: String?
+        public var platformCompatibility: [PlatformCompatibility]?
+        public var license: License
+        public var swiftVersionCompatibility: [SwiftVersion]?
+        public var summary: String?
+        public var title: String
+        public var url: String
 
         public enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
             case apple = "Apple"

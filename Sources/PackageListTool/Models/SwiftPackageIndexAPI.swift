@@ -20,6 +20,11 @@ public struct SwiftPackageIndexAPI {
     var baseURL: String
     var apiToken: String
 
+    public init(baseURL: String, apiToken: String) {
+        self.baseURL = baseURL
+        self.apiToken = apiToken
+    }
+    
     struct Error: Swift.Error {
         var message: String
     }
@@ -38,6 +43,10 @@ public struct SwiftPackageIndexAPI {
         assert((response as? HTTPURLResponse)?.statusCode == 200,
                "expected 200, received \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
         return try Self.decoder.decode(Package.self, from: data)
+    }
+
+    public func fetchPackage(packageId: PackageId) async throws -> Package {
+        try await self.fetchPackage(owner: packageId.owner, repository: packageId.repository)
     }
 
     public func search(query: String, limit: Int) async throws -> [PackageId] {
