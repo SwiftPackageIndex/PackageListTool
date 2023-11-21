@@ -18,16 +18,16 @@ import Foundation
 // Type pulled 1:1 from SwiftPackageIndex-Server
 extension SwiftPackageIndexAPI {
     public struct Activity: Codable, Equatable {
-        var openIssuesCount: Int
-        var openIssuesURL: String?
-        var openPullRequestsCount: Int
-        var openPullRequestsURL: String?
-        var lastIssueClosedAt: Date?
-        var lastPullRequestClosedAt: Date?
+        public var openIssuesCount: Int
+        public var openIssuesURL: String?
+        public var openPullRequestsCount: Int
+        public var openPullRequestsURL: String?
+        public var lastIssueClosedAt: Date?
+        public var lastPullRequestClosedAt: Date?
     }
 
     public struct Author: Codable, Equatable {
-        var name: String
+        public var name: String
     }
 
     public enum AuthorMetadata : Codable, Equatable {
@@ -36,11 +36,11 @@ extension SwiftPackageIndexAPI {
     }
 
     public struct History: Codable, Equatable {
-        var createdAt: Date
-        var commitCount: Int
-        var commitCountURL: String
-        var releaseCount: Int
-        var releaseCountURL: String
+        public var createdAt: Date
+        public var commitCount: Int
+        public var commitCountURL: String
+        public var releaseCount: Int
+        public var releaseCountURL: String
     }
 
     public enum License: String, Codable, Equatable, CaseIterable {
@@ -81,7 +81,7 @@ extension SwiftPackageIndexAPI {
         case other // An unknown or unidentified license
         case none // Actually unlicensed code!
 
-        var fullName: String {
+        public var fullName: String {
             switch self {
                 case .afl_3_0: return "Academic Free License v3.0"
                 case .apache_2_0: return "Apache License 2.0"
@@ -120,7 +120,7 @@ extension SwiftPackageIndexAPI {
             }
         }
 
-        var shortName: String {
+        public var shortName: String {
             switch self {
                 case .afl_3_0: return "AFL 3.0"
                 case .apache_2_0: return "Apache 2.0"
@@ -182,7 +182,7 @@ extension SwiftPackageIndexAPI {
             case incompatibleWithAppStore = "incompatible"
             case compatibleWithAppStore = "compatible"
 
-            var userFacingString: String {
+            public var userFacingString: String {
                 switch self {
                     case .none: return "not defined"
                     case .other: return "unknown"
@@ -194,8 +194,8 @@ extension SwiftPackageIndexAPI {
     }
 
     public struct PackageAuthors: Codable, Equatable {
-        var authors: [Author]
-        var numberOfContributors: Int
+        public var authors: [Author]
+        public var numberOfContributors: Int
     }
 
     public enum PlatformCompatibility: String, Codable, Comparable {
@@ -209,9 +209,9 @@ extension SwiftPackageIndexAPI {
     }
 
     public struct SwiftVersion: Codable, Comparable {
-        var major: Int
-        var minor: Int
-        var patch: Int
+        public var major: Int
+        public var minor: Int
+        public var patch: Int
         public static func < (lhs: Self, rhs: Self) -> Bool {
             if lhs.major != rhs.major { return lhs.major < rhs.major }
             if lhs.minor != rhs.minor { return lhs.minor < rhs.minor }
