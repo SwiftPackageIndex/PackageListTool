@@ -20,7 +20,8 @@ let package = Package(
     name: "PackageListTool",
     platforms: [.macOS(.v13)],
     products: [
-        .executable(name: "package-list-tool", targets: ["Executable"])
+        .executable(name: "package-list-tool", targets: ["Executable"]),
+        .library(name: "PackageListTool", targets: ["PackageListTool"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.0.0"),
