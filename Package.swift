@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.7
 
 // Copyright Dave Verwer, Sven A. Schmidt, and other contributors.
 //
@@ -18,7 +18,10 @@ import PackageDescription
 
 let package = Package(
     name: "PackageListTool",
-    platforms: [.macOS(.v13)],
+    platforms: [
+        .macOS(.v13),
+        .iOS(.v16)
+    ],
     products: [
         .executable(name: "package-list-tool", targets: ["Executable"]),
         .library(name: "PackageListTool", targets: ["PackageListTool"])
