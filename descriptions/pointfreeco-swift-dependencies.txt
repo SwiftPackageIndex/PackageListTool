@@ -1,0 +1,1 @@
+A dependency management library for controlling and overriding dependencies in Swift applications. Helps with testing, SwiftUI previews, and compile-time performance.

@@ -1,0 +1,1 @@
+SwiftyGPIO is a Swift library for interacting with external sensors and devices on Linux/ARM boards. It supports GPIOs, SPI, I2C, PWM, UART, and 1-Wire interfaces. It is specifically designed for Raspberry Pis and other ARM boards running Linux.

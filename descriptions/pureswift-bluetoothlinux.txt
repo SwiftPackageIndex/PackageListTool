@@ -1,0 +1,1 @@
+BluetoothLinux makes working with Bluetooth from Swift easier without needing to wrap underlying libraries from other languages.
