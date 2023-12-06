@@ -1,0 +1,1 @@
+Variablur creates variable blur effects in a SwiftUI view using a mask. It supports gradient or progressive blurs, vignettes, and more.

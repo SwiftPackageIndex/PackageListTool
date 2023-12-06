@@ -1,0 +1,10 @@
+history:
+  - month: 11
+    year: 2023
+    packages:
+      - identifier: rensbreur/SwiftTUI
+      - identifier: migueldeicaza/SwiftGodot
+      - identifier: automerge/automerge-swift
+      - identifier: li3zhen1/Grape
+      - identifier: ActuallyTaylor/Firefly
+      - identifier: daily-co/daily-client-ios

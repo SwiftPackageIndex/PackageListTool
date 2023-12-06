@@ -1,74 +1,74 @@
 categories:
   - name: Community Showcase
     slug: showcase
-    brief: 'A hand-curated selection of new and interesting packages being discussed by the Swift community. Browse the list to find out what’s new and how to nominate packages for consideration in this section.'
-    description: 'This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/).'
+    brief: "A hand-curated selection of new and interesting packages being discussed by the Swift community. Browse the list to find out what’s new and how to nominate packages for consideration in this section."
+    description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: rensbreur/SwiftTUI
-          note: "Discussed on [Episode 163 of the Empower Apps Podcast](https://brightdigit.com/episodes/163-swiftly-tooling-with-pol-piella-abadia/){:target='_blank'}."
-        - identifier: migueldeicaza/SwiftGodot
-          note: "Discussed on [Season 5 Episode 28 of Compile Swift](https://www.compileswift.com/podcast/s05e28/){:target='_blank'} podcast."
-        - identifier: automerge/automerge-swift
-          note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
-        - identifier: li3zhen1/Grape
-          note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
-        - identifier: ActuallyTaylor/Firefly
-          note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
-        - identifier: daily-co/daily-client-ios
-          note: "Discussed on [Episode 162 of the Empower Apps Podcast](https://brightdigit.com/episodes/162-building-a-video-sdk-with-marc-schwieterman/){:target='_blank'}."
+        - identifier: pointfreeco/swift-composable-architecture
+          note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/3){:target='_blank'}."
+        - identifier: davedelong/time
+          note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/7){:target='_blank'}."
+        - identifier: PureSwift/BluetoothLinux
+          note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/4){:target='_blank'}."
+        - identifier: gohanlon/swift-memberwise-init-macro
+          note: "Discussed in [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
+        - identifier: uraimo/SwiftyGPIO
+          note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/4){:target='_blank'}."
+        - identifier: daprice/Variablur
+          note: "Linked in [Issue 637 of iOS Dev Weekly](https://iosdevweekly.com/issues/637#txS8ASr){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
-    brief: 'New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature.'
+    brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
     description: "Macros are new in Swift 5.9 and transform your source code when you compile it, letting you avoid writing repetitive code. [Read more about creating macros](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'} or check out these packages that include macro targets."
     more:
-      title: 'More packages that include macros'
+      title: "More packages that include macros"
       url: https://swiftpackageindex.com/search?query=product:macro
     source:
       search:
-        query: 'product:macro'
+        query: "product:macro"
         limit: 6
   - name: Server
     slug: server
-    brief: 'Do you need a hand putting together a Swift app for the server? Browse some packages that get you started.'
-    description: 'What packages can help you build a top-class back-end server for your app or a website built with HTML? Swift has several mature back-end frameworks, ORM, database connection packages, and more.'
+    brief: "Do you need a hand putting together a Swift app for the server? Browse some packages that get you started."
+    description: "What packages can help you build a top-class back-end server for your app or a website built with HTML? Swift has several mature back-end frameworks, ORM, database connection packages, and more."
     more:
-      title: 'More server packages'
+      title: "More server packages"
       url: https://swiftpackageindex.com/keywords/server-side-swift
     source:
       search:
-        query: 'keyword:server-side-swift'
+        query: "keyword:server-side-swift"
         limit: 6
   - name: Networking
     slug: networking
-    brief: 'Browse a selection of packages that can extend and enhance the Swift core networking libraries.'
-    description: 'Covering everything from abstractions on top of core networking libraries to full-featured HTTP clients to low-level networking libraries. If you need a little more on top of URLSession, or a lot more, you’ll find it here.'
+    brief: "Browse a selection of packages that can extend and enhance the Swift core networking libraries."
+    description: "Covering everything from abstractions on top of core networking libraries to full-featured HTTP clients to low-level networking libraries. If you need a little more on top of URLSession, or a lot more, you’ll find it here."
     more:
-      title: 'More networking packages'
+      title: "More networking packages"
       url: https://swiftpackageindex.com/keywords/networking
     source:
       search:
-        query: 'keyword:networking'
+        query: "keyword:networking"
         limit: 6
   - name: Testing
     slug: testing
-    brief: 'If you want to level up your project’s tests, take a look at a selection of packages that might come in useful.'
-    description: 'Whether you’re looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help.'
+    brief: "If you want to level up your project’s tests, take a look at a selection of packages that might come in useful."
+    description: "Whether you’re looking for an extension on top of XCTest or a completely different way to approach testing, these packages are here to help."
     more:
-      title: 'More testing packages'
+      title: "More testing packages"
       url: https://swiftpackageindex.com/keywords/testing
     source:
       search:
-        query: 'keyword:testing'
+        query: "keyword:testing"
         limit: 6
   - name: Debug logging
     slug: logging
-    brief: 'Are you looking for something more than Swift’s built-in logging? Start with this list of logging-related packages.'
-    description: 'Swift has [great logging built-in](https://developer.apple.com/documentation/os/logging), but start with this list of packages if you want to extend or find something specific to your needs.'
+    brief: "Are you looking for something more than Swift’s built-in logging? Start with this list of logging-related packages."
+    description: "Swift has [great logging built-in](https://developer.apple.com/documentation/os/logging), but start with this list of packages if you want to extend or find something specific to your needs."
     more:
-      title: 'More debug logging packages'
+      title: "More debug logging packages"
       url: https://swiftpackageindex.com/keywords/logging
     source:
       search:
-        query: 'keyword:logging'
+        query: "keyword:logging"
         limit: 6

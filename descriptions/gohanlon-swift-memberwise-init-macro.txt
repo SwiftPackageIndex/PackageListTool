@@ -1,0 +1,1 @@
+MemberwiseInit is a Swift Macro that enhances automatic memberwise initializers, reducing boilerplate code. It supports customizable parameter labels and inferring types from property initialization expressions.

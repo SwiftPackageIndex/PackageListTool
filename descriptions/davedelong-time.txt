@@ -1,0 +1,1 @@
+Time simplifies working with calendars in Swift, providing type-safe APIs for retrieving and formatting time values. It also allows converting between time zones and calculating differences between dates.

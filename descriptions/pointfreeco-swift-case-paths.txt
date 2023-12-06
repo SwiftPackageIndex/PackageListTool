@@ -1,0 +1,1 @@
+CasePaths extends the functionality of key paths to enum cases, allowing for the extraction, modification, and testing of associated values in enums.
