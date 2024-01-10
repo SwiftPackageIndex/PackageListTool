@@ -1,0 +1,1 @@
+Provides a convenient way to chain multiple Core Image filters to CIImage instances and render them into SwiftUI or any other context. It can also be used without SwiftUI.

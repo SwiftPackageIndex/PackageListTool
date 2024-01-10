@@ -1,0 +1,1 @@
+Pow provides delightful SwiftUI animations and effects for your app. It includes transitions and change effects which can trigger every time a value is updated.

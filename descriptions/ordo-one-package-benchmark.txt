@@ -1,0 +1,1 @@
+Benchmark helps measure and track performance metrics for apps and frameworks. It supports automated regression checks, manual comparisons, and benchmark result exports in multiple formats.
