@@ -1,0 +1,1 @@
+VersionedCodable allows you to version your Codable types and handle incremental migrations. It provides easy encoding and decoding with support for JSON and property list formats. Suitable for handling complex types in storage.

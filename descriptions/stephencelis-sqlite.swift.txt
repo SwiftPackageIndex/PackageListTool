@@ -1,0 +1,1 @@
+SQLite.swift is a type-safe, pure-Swift layer over SQLite3. It provides a compile-time confident SQL syntax and intent, with features like type-safe SQL expression builder, query layer, data access, and more.
