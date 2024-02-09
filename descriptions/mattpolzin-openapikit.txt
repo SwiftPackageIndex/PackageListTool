@@ -1,0 +1,1 @@
+OpenAPIKit allows encoding and decoding of OpenAPI 3.0.x and 3.1.x documents and their components in Swift.

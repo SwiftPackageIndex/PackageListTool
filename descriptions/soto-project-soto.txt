@@ -1,0 +1,1 @@
+Soto for AWS is a Swift language SDK for Amazon Web Services (AWS). It provides access to all AWS services via a direct mapping of the REST APIs Amazon publishes for each of its services.

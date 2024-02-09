@@ -1,0 +1,1 @@
+RxAlamofire is a wrapper around Alamofire that adds RxSwift functionality, simplifying network requests and allowing responses to be composed in a more streamlined way.

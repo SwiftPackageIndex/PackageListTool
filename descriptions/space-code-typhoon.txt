@@ -1,0 +1,1 @@
+Typhoon provides retry policies for handling errors in asynchronous operations. It offers three retry strategy options: constant, exponential, and exponential with jitter.
