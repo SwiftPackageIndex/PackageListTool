@@ -1,0 +1,1 @@
+MultipartKit is a multipart parsing and serializing library. It provides Codable support for the special case of the multipart/form-data media type and delivers its output as it is parsed through callbacks suitable for streaming.
