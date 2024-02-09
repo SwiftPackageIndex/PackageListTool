@@ -1,0 +1,1 @@
+CalendarKit is a Swift calendar UI library for iOS and Mac Catalyst. It looks similar to the Apple Calendar app out-of-the-box, while allowing customization when needed.

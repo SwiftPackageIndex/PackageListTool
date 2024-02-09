@@ -1,0 +1,1 @@
+Vortex is a powerful particle system library for SwiftUI, enabling the creation of various effects like fire, rain, and snow. It supports iOS, macOS, tvOS, watchOS, and visionOS.

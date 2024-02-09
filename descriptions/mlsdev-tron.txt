@@ -1,0 +1,1 @@
+TRON is a lightweight network abstraction layer, built on top of Alamofire. It can be used to dramatically simplify interacting with RESTful JSON web-services.
