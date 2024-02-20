@@ -62,10 +62,10 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                                            githubApiToken: githubApiToken,
                                            openAIApiToken: openAIApiToken,
                                            packageIds: packageIds)
-        try await generateOutputYaml(sourceCategories: sourcePackageLists.categories)
+        try await generatePackagesYaml(sourceCategories: sourcePackageLists.categories)
     }
 
-    func generateOutputYaml(sourceCategories: [SourcePackageLists.Category]) async throws {
+    func generatePackagesYaml(sourceCategories: [SourcePackageLists.Category]) async throws {
         let api = SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
         var outputCategories = [SwiftOrgPackageLists.Category]()
         for sourceCategory in sourceCategories {
