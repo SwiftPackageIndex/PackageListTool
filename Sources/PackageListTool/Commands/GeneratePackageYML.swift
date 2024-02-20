@@ -53,6 +53,11 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
             let ids = try await category.packageIds(api: api).compactMap(\.packageId)
             packageIds.append(contentsOf: ids)
         }
+        for month in sourcePackageLists.history {
+            let ids = month.packages.compactMap(\.packageId)
+            packageIds.append(contentsOf: ids)
+        }
+
         try await GenerateDescriptions.run(descriptionsDirectory: descriptionsDirectory,
                                            githubApiToken: githubApiToken,
                                            openAIApiToken: openAIApiToken,
