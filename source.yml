@@ -6,17 +6,17 @@ categories:
     source:
       packages:
         - identifier: jrothwell/VersionedCodable
-          note: Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}.
+          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
         - identifier: richardtop/CalendarKit
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}."
         - identifier: stephencelis/SQLite.swift
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}."
         - identifier: gonzalezreal/swift-markdown-ui
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
         - identifier: twostraws/Vortex
-          note: Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}.
+          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
         - identifier: StefKors/SwiftSummarize
-          note: Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}.
+          note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -77,17 +77,17 @@ history:
     slug: january-2024
     packages:
       - identifier: soto-project/soto
-        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/13){:target='_blank'}.
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/13){:target='_blank'}."
       - identifier: EmergeTools/Pow
-        note: Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}.
+        note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
       - identifier: mattpolzin/OpenAPIKit
-        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/12){:target='_blank'}.
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/12){:target='_blank'}."
       - identifier: ordo-one/package-benchmark
-        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/11){:target='_blank'}.
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/11){:target='_blank'}."
       - identifier: space-code/typhoon
-        note: Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}.
+        note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
       - identifier: danwood/SwiftUICoreImage
-        note: Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}.
+        note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
   - name: December 2023
     slug: december-2023
     packages:
