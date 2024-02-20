@@ -15,7 +15,7 @@
 
 import Foundation
 
-struct SwiftOrgCommunityShowcaseHistory: Codable {
+struct SwiftOrgShowcaseHistory: Codable {
     var months: [Month]
 
     struct Month: Codable {

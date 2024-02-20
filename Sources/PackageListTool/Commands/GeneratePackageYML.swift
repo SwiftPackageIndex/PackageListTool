@@ -38,7 +38,10 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
     var source: String = "source.yml"
 
     @Option(name: .shortAndLong)
-    var output: String = "packages.yml"
+    var packagesOutput: String = "packages.yml"
+
+    @Option(name: .shortAndLong)
+    var historyOutput: String = "history.yml"
 
     @Option(name: .long)
     var spiApiToken: String
@@ -63,6 +66,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                                            openAIApiToken: openAIApiToken,
                                            packageIds: packageIds)
         try await generatePackagesYaml(sourceCategories: sourcePackageLists.categories)
+        try await generateHistoryYaml(sourceMonths: sourcePackageLists.history)
     }
 
     func generatePackagesYaml(sourceCategories: [SourcePackageLists.Category]) async throws {
@@ -99,8 +103,40 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
         }
         let content = try YAMLEncoder().encode(SwiftOrgPackageLists(categories: outputCategories))
         let reformatted = Self.reformatYMLToSwiftOrgStyle(content)
-        try Data(reformatted.utf8).write(to: URL(filePath: output))
+        try Data(reformatted.utf8).write(to: URL(filePath: packagesOutput))
     }
+
+    func generateHistoryYaml(sourceMonths: [SourcePackageLists.Month]) async throws {
+        let api = SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
+        var outputMonths = [SwiftOrgShowcaseHistory.Month]()
+        for month in sourceMonths {
+            print("Processing history: \(month.name)...")
+
+            var outputPackages = [SwiftOrgPackageLists.Package]()
+            for sourcePackage in month.packages {
+                guard let packageId = sourcePackage.packageId
+                else {
+                    print("Invalid package identifier \(sourcePackage.identifier). Skipping...")
+                    continue
+                }
+
+                print("Fetching package: \(packageId)...")
+                var apiPackage = try await api.fetchPackage(owner: packageId.owner, repository: packageId.repository)
+                guard let summary = Self.getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
+                    throw Error.summaryNotFound(for: packageId)
+                }
+                apiPackage.summary = summary
+
+                outputPackages.append(.init(from: apiPackage, note: sourcePackage.note))
+            }
+
+            outputMonths.append(.init(name: month.name, slug: month.slug, packages: outputPackages))
+        }
+        let content = try YAMLEncoder().encode(SwiftOrgShowcaseHistory(months: outputMonths))
+        let reformatted = Self.reformatYMLToSwiftOrgStyle(content)
+        try Data(reformatted.utf8).write(to: URL(filePath: historyOutput))
+    }
+
 
     enum Error: Swift.Error {
         case summaryNotFound(for: PackageId)
