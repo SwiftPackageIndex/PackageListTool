@@ -6,17 +6,17 @@ categories:
     source:
       packages:
         - identifier: jrothwell/VersionedCodable
-          note: Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}.
+          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
         - identifier: richardtop/CalendarKit
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}."
         - identifier: stephencelis/SQLite.swift
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}."
         - identifier: gonzalezreal/swift-markdown-ui
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}.
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
         - identifier: twostraws/Vortex
-          note: Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}.
+          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
         - identifier: StefKors/SwiftSummarize
-          note: Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}.
+          note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -72,3 +72,49 @@ categories:
       search:
         query: "keyword:logging"
         limit: 6
+history:
+  - name: January 2024
+    slug: january-2024
+    packages:
+      - identifier: soto-project/soto
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/13){:target='_blank'}."
+      - identifier: EmergeTools/Pow
+        note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
+      - identifier: mattpolzin/OpenAPIKit
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/12){:target='_blank'}."
+      - identifier: ordo-one/package-benchmark
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/11){:target='_blank'}."
+      - identifier: space-code/typhoon
+        note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
+      - identifier: danwood/SwiftUICoreImage
+        note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
+  - name: December 2023
+    slug: december-2023
+    packages:
+      - identifier: pointfreeco/swift-composable-architecture
+        note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/3){:target='_blank'}."
+      - identifier: davedelong/time
+        note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/7){:target='_blank'}."
+      - identifier: PureSwift/BluetoothLinux
+        note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/4){:target='_blank'}."
+      - identifier: gohanlon/swift-memberwise-init-macro
+        note: "Discussed in [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
+      - identifier: uraimo/SwiftyGPIO
+        note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/4){:target='_blank'}."
+      - identifier: daprice/Variablur
+        note: "Linked in [Issue 637 of iOS Dev Weekly](https://iosdevweekly.com/issues/637#txS8ASr){:target='_blank'}."
+  - name: November 2023
+    slug: november-2023
+    packages:
+      - identifier: rensbreur/SwiftTUI
+        note: "Discussed on [Episode 163 of the Empower Apps Podcast](https://brightdigit.com/episodes/163-swiftly-tooling-with-pol-piella-abadia/){:target='_blank'}."
+      - identifier: migueldeicaza/SwiftGodot
+        note: "Discussed on [Season 5 Episode 28 of Compile Swift](https://www.compileswift.com/podcast/s05e28/){:target='_blank'} podcast."
+      - identifier: automerge/automerge-swift
+        note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
+      - identifier: li3zhen1/Grape
+        note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
+      - identifier: ActuallyTaylor/Firefly
+        note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
+      - identifier: daily-co/daily-client-ios
+        note: "Discussed on [Episode 162 of the Empower Apps Podcast](https://brightdigit.com/episodes/162-building-a-video-sdk-with-marc-schwieterman/){:target='_blank'}."

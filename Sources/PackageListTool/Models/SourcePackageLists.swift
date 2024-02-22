@@ -18,6 +18,7 @@ import Foundation
 
 struct SourcePackageLists: Codable {
     var categories: [Category]
+    var history: [Month]
 
     struct Category: Codable {
         var name: String
@@ -42,6 +43,13 @@ struct SourcePackageLists: Codable {
             var limit: Int
         }
     }
+
+    struct Month: Codable {
+        var name: String
+        var slug: String
+        var packages: [Package]
+    }
+
 
     struct Package: Codable, Equatable {
         var identifier: String
