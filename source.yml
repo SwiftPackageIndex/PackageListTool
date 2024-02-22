@@ -72,7 +72,7 @@ categories:
       search:
         query: "keyword:logging"
         limit: 6
-history:
+showcase_history:
   - name: January 2024
     slug: january-2024
     packages:

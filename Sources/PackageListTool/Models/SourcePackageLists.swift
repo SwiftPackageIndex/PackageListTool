@@ -18,7 +18,12 @@ import Foundation
 
 struct SourcePackageLists: Codable {
     var categories: [Category]
-    var history: [Month]
+    var showcaseHistory: [Month]
+
+    enum CodingKeys: String, CodingKey {
+        case categories
+        case showcaseHistory = "showcase_history"
+    }
 
     struct Category: Codable {
         var name: String

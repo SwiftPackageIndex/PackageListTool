@@ -56,7 +56,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
             let ids = try await category.packageIds(api: api).compactMap(\.packageId)
             packageIds.append(contentsOf: ids)
         }
-        for month in sourcePackageLists.history {
+        for month in sourcePackageLists.showcaseHistory {
             let ids = month.packages.compactMap(\.packageId)
             packageIds.append(contentsOf: ids)
         }
@@ -72,7 +72,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                                            to: packagesOutputFile)
         }
         if let historyOutputFile {
-            try await generateHistoryYaml(sourceMonths: sourcePackageLists.history,
+            try await generateHistoryYaml(sourceMonths: sourcePackageLists.showcaseHistory,
                                           to: historyOutputFile)
         }
     }
