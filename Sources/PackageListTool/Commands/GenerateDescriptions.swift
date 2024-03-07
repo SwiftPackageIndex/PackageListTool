@@ -56,7 +56,7 @@ public struct GenerateDescriptions: AsyncParsableCommand {
                 print("Message length:", readme.trimmedToMaxMessage.count)
 
                 let chatThread = ChatThread(connection: openAIAPIConnection,
-                                            model: .gpt35Turbo)
+                                            model: .specific("gpt-4-turbo-preview"))
                     .addSystemMessage(Self.systemPrompt)
                     .addUserMessage(readme.trimmedToMaxMessage)
                 let result = try await chatThread.complete()
