@@ -40,7 +40,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
     @Option(name: .shortAndLong, help: "The full path to the packages.yml file in the Swift.org repository")
     var packagesOutputFile: String?
 
-    @Option(name: .shortAndLong, help: "The full path to the history.yml file in the Swift.org repository")
+    @Option(name: .shortAndLong, help: "The full path to the showcase-history.yml file in the Swift.org repository")
     var historyOutputFile: String?
 
     @Option(name: .long)
