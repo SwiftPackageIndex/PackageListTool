@@ -1,0 +1,1 @@
+Enables effortless rendering and manipulation of 3D models within SwiftUI applications, supporting features like glTF, interactive camera controls, and environment-based lighting.

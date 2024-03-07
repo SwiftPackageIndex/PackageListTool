@@ -1,0 +1,1 @@
+Adwaita for Swift enables the creation of user interfaces for GNOME, offering an API similar to SwiftUI, focusing on simplicity and extensive widget support.

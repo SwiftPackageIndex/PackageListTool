@@ -1,0 +1,1 @@
+Fork allows for parallelizing multiple async functions. It takes a single input and splits it into two separate async functions that return different outputs that can be merged back into a single output.

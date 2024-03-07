@@ -1,1 +1,1 @@
-JWTKit is a Swift library for signing and verifying JSON Web Tokens (JWTs) using various algorithms (HMAC, RSA, ECDSA, EdDSA). It supports parsing, serialization, claim validation, and JSON Web Keys.
+Enables SwiftCrypto-based signing and verification of JSON Web Tokens using various algorithms such as HMAC, RSA, ECDSA, and EdDSA. Supports custom headers, key management, and predefined claims.
