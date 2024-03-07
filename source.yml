@@ -5,18 +5,18 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: jrothwell/VersionedCodable
-          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
-        - identifier: richardtop/CalendarKit
-          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}."
-        - identifier: stephencelis/SQLite.swift
-          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}."
-        - identifier: gonzalezreal/swift-markdown-ui
-          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
-        - identifier: twostraws/Vortex
-          note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
-        - identifier: StefKors/SwiftSummarize
-          note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
+        - identifier: AparokshaUI/adwaita-swift
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/30){:target='_blank'}."
+        - identifier: davedelong/time
+          note: "Nominated via two posts in the Swift forums ([1](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/7){:target='_blank'}, [2](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/35){:target='_blank'})."
+        - identifier: 0xLeif/Fork
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/29){:target='_blank'}."
+        - identifier: kean/Nuke
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/27){:target='_blank'}."
+        - identifier: BarredEwe/Prefire
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/33){:target='_blank'}."
+        - identifier: frzi/swiftui-model3dview
+          note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -73,6 +73,21 @@ categories:
         query: "keyword:logging"
         limit: 6
 showcase_history:
+  - name: February 2024
+    slug: february-2024
+    packages:
+      - identifier: jrothwell/VersionedCodable
+        note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
+      - identifier: richardtop/CalendarKit
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/6){:target='_blank'}."
+      - identifier: stephencelis/SQLite.swift
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/19){:target='_blank'}."
+      - identifier: gonzalezreal/swift-markdown-ui
+        note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
+      - identifier: twostraws/Vortex
+        note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
+      - identifier: StefKors/SwiftSummarize
+        note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
   - name: January 2024
     slug: january-2024
     packages:
