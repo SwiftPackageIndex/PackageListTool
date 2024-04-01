@@ -72,6 +72,17 @@ categories:
       search:
         query: "keyword:logging"
         limit: 6
+  - name: Database access
+    slug: database
+    brief: "We all need to store data somewhere! Find everything from local SQLite databases to connections to server-based databases from your Swift on server apps."
+    description: "When looking for something as an alternative to [Core Data](https://developer.apple.com/documentation/coredata) or [SwiftData](https://developer.apple.com/xcode/swiftdata/), look no further than this list of popular database packages."
+    more:
+      title: "More database packages"
+      url: https://swiftpackageindex.com/keywords/database
+    source:
+      search:
+        query: "keyword:database"
+        limit: 6
 showcase_history:
   - name: February 2024
     slug: february-2024

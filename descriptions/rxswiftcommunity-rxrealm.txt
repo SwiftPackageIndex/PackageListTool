@@ -1,1 +1,1 @@
-RxRealm is a library that provides reactive extensions for RealmSwift, allowing you to observe and manipulate Realm object collections. It also provides bindings for table and collection views.
+RxRealm provides reactive extensions for RealmSwift, allowing you to observe and manipulate objects and collections of objects, bind to table and collection views, and write transactions.
