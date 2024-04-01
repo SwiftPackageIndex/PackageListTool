@@ -1,0 +1,1 @@
+Prefire automates generation of SwiftUI Preview Playbook views and Snapshot tests, enhancing UI component, screen, and flow visualization and testing.
