@@ -1,0 +1,1 @@
+FlyingFox enables the creation of lightweight, concurrent HTTP servers with support for WebSockets and static file serving. It uses non blocking BSD sockets to handle each connection with Swift concurrency.
