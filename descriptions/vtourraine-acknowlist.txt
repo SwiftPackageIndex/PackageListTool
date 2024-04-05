@@ -1,0 +1,1 @@
+Creates an acknowledgements screen for your app that displays a list of licenses from your CocoaPods or Swift Package Manager dependencies.

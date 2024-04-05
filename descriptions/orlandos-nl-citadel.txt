@@ -1,0 +1,1 @@
+Facilitates easy SSH client and server operations, TCP-IP forwarding, command execution, and SFTP functionality with Swift NIOSSH enhancing its capabilities.

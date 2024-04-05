@@ -1,0 +1,1 @@
+Threadcrumb enhances traceability by simplifying the process of embedding and logging metadata within threads for improved debugging and diagnostic capabilities.

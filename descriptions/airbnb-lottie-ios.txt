@@ -1,0 +1,1 @@
+Enables real-time rendering of vector-based animations from JSON, designed for cross-platform use, enhancing app visuals without heavy manual coding.
