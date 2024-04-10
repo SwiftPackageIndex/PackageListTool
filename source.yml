@@ -73,7 +73,7 @@ categories:
         query: "keyword:logging"
         limit: 6
 showcase_history:
-  - name: 2024
+  - year: 2024
     months:
       - name: March
         slug: march
@@ -120,7 +120,7 @@ showcase_history:
             note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
           - identifier: danwood/SwiftUICoreImage
             note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
-  - name: 2023
+  - year: 2023
     months:
       - name: December
         slug: december
