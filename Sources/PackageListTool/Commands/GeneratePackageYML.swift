@@ -122,7 +122,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
         for year in sourceYears {
             var outputMonths = [SwiftOrgShowcaseHistory.Month]()
             for month in year.months {
-                print("Processing history: \(month.name) \(year.year)...")
+                print("Processing history: \(month.month) \(year.year)...")
 
                 var outputPackages = [SwiftOrgPackageLists.Package]()
                 for sourcePackage in month.packages {
@@ -141,7 +141,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
 
                     outputPackages.append(.init(from: apiPackage, note: sourcePackage.note))
                 }
-                outputMonths.append(.init(name: month.name, slug: month.slug, packages: outputPackages))
+                outputMonths.append(.init(month: month.month, slug: month.slug, packages: outputPackages))
             }
             outputYears.append(.init(year: year.year, months: outputMonths))
         }

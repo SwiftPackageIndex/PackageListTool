@@ -24,7 +24,7 @@ struct SwiftOrgShowcaseHistory: Codable {
     }
 
     struct Month: Codable {
-        var name: String
+        var month: String
         var slug: String
         var packages: [SwiftOrgPackageLists.Package]
     }

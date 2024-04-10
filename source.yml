@@ -75,7 +75,7 @@ categories:
 showcase_history:
   - year: 2024
     months:
-      - name: March
+      - month: March
         slug: march
         packages:
           - identifier: AparokshaUI/adwaita-swift
@@ -90,7 +90,7 @@ showcase_history:
             note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/33){:target='_blank'}."
           - identifier: frzi/swiftui-model3dview
             note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
-      - name: February
+      - month: February
         slug: february
         packages:
           - identifier: jrothwell/VersionedCodable
@@ -105,7 +105,7 @@ showcase_history:
             note: "Discussed on [Episode 40 of Swift Package Indexing](https://share.transistor.fm/s/a452cfcd){:target='_blank'}."
           - identifier: StefKors/SwiftSummarize
             note: "Discussed on [Episode 37 of Swift Package Indexing](https://share.transistor.fm/s/de52cb62){:target='_blank'}."
-      - name: January
+      - month: January
         slug: january
         packages:
           - identifier: soto-project/soto
@@ -122,7 +122,7 @@ showcase_history:
             note: "Discussed on [Episode 38 of Swift Package Indexing](https://share.transistor.fm/s/f744b457){:target='_blank'}."
   - year: 2023
     months:
-      - name: December
+      - month: December
         slug: december
         packages:
           - identifier: pointfreeco/swift-composable-architecture
@@ -137,7 +137,7 @@ showcase_history:
             note: "Linked from [this Swift forums post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/4){:target='_blank'}."
           - identifier: daprice/Variablur
             note: "Linked in [Issue 637 of iOS Dev Weekly](https://iosdevweekly.com/issues/637#txS8ASr){:target='_blank'}."
-      - name: November
+      - month: November
         slug: november
         packages:
           - identifier: rensbreur/SwiftTUI

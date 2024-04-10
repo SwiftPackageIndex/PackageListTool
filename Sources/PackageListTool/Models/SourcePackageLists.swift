@@ -54,7 +54,7 @@ struct SourcePackageLists: Codable {
         var months: [Month]
 
         struct Month: Codable {
-            var name: String
+            var month: String
             var slug: String
             var packages: [Package]
         }
