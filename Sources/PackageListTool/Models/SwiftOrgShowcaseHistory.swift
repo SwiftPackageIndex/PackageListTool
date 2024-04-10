@@ -16,7 +16,12 @@
 import Foundation
 
 struct SwiftOrgShowcaseHistory: Codable {
-    var months: [Month]
+    var years: [Year]
+
+    struct Year: Codable {
+        var name: Int
+        var months: [Month]
+    }
 
     struct Month: Codable {
         var name: String

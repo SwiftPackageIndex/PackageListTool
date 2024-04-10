@@ -56,9 +56,11 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
             let ids = try await category.packageIds(api: api).compactMap(\.packageId)
             packageIds.append(contentsOf: ids)
         }
-        for month in sourcePackageLists.showcaseHistory {
-            let ids = month.packages.compactMap(\.packageId)
-            packageIds.append(contentsOf: ids)
+        for year in sourcePackageLists.showcaseHistory {
+            for month in year.months {
+                let ids = month.packages.compactMap(\.packageId)
+                packageIds.append(contentsOf: ids)
+            }
         }
 
         try await GenerateDescriptions.run(descriptionsDirectory: descriptionsDirectory,
@@ -72,7 +74,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                                            to: packagesOutputFile)
         }
         if let historyOutputFile {
-            try await generateHistoryYaml(sourceMonths: sourcePackageLists.showcaseHistory,
+            try await generateHistoryYaml(sourceYears: sourcePackageLists.showcaseHistory,
                                           to: historyOutputFile)
         }
     }
@@ -114,33 +116,36 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
         try Data(reformatted.utf8).write(to: URL(filePath: packagesOutputFile))
     }
 
-    func generateHistoryYaml(sourceMonths: [SourcePackageLists.Month], to historyOutputFile: String) async throws {
+    func generateHistoryYaml(sourceYears: [SourcePackageLists.HistoryYear], to historyOutputFile: String) async throws {
         let api = SwiftPackageIndexAPI(baseURL: apiBaseURL, apiToken: spiApiToken)
-        var outputMonths = [SwiftOrgShowcaseHistory.Month]()
-        for month in sourceMonths {
-            print("Processing history: \(month.name)...")
+        var outputYears = [SwiftOrgShowcaseHistory.Year]()
+        for year in sourceYears {
+            var outputMonths = [SwiftOrgShowcaseHistory.Month]()
+            for month in year.months {
+                print("Processing history: \(month.name) \(year.name)...")
 
-            var outputPackages = [SwiftOrgPackageLists.Package]()
-            for sourcePackage in month.packages {
-                guard let packageId = sourcePackage.packageId
-                else {
-                    print("Invalid package identifier \(sourcePackage.identifier). Skipping...")
-                    continue
+                var outputPackages = [SwiftOrgPackageLists.Package]()
+                for sourcePackage in month.packages {
+                    guard let packageId = sourcePackage.packageId
+                    else {
+                        print("Invalid package identifier \(sourcePackage.identifier). Skipping...")
+                        continue
+                    }
+
+                    print("Fetching package: \(packageId)...")
+                    var apiPackage = try await api.fetchPackage(owner: packageId.owner, repository: packageId.repository)
+                    guard let summary = Self.getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
+                        throw Error.summaryNotFound(for: packageId)
+                    }
+                    apiPackage.summary = summary
+
+                    outputPackages.append(.init(from: apiPackage, note: sourcePackage.note))
                 }
-
-                print("Fetching package: \(packageId)...")
-                var apiPackage = try await api.fetchPackage(owner: packageId.owner, repository: packageId.repository)
-                guard let summary = Self.getSummary(for: packageId, descriptionsDirectory: descriptionsDirectory) else {
-                    throw Error.summaryNotFound(for: packageId)
-                }
-                apiPackage.summary = summary
-
-                outputPackages.append(.init(from: apiPackage, note: sourcePackage.note))
+                outputMonths.append(.init(name: month.name, slug: month.slug, packages: outputPackages))
             }
-
-            outputMonths.append(.init(name: month.name, slug: month.slug, packages: outputPackages))
+            outputYears.append(.init(name: year.name, months: outputMonths))
         }
-        let content = try YAMLEncoder().encode(SwiftOrgShowcaseHistory(months: outputMonths))
+        let content = try YAMLEncoder().encode(SwiftOrgShowcaseHistory(years: outputYears))
         let reformatted = Self.reformatYMLToSwiftOrgStyle(content)
         try Data(reformatted.utf8).write(to: URL(filePath: historyOutputFile))
     }
