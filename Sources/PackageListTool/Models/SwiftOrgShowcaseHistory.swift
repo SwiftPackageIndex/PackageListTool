@@ -19,7 +19,7 @@ struct SwiftOrgShowcaseHistory: Codable {
     var years: [Year]
 
     struct Year: Codable {
-        var name: Int
+        var year: Int
         var months: [Month]
     }
 

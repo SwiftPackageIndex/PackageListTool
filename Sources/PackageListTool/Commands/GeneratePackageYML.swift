@@ -122,7 +122,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
         for year in sourceYears {
             var outputMonths = [SwiftOrgShowcaseHistory.Month]()
             for month in year.months {
-                print("Processing history: \(month.name) \(year.name)...")
+                print("Processing history: \(month.name) \(year.year)...")
 
                 var outputPackages = [SwiftOrgPackageLists.Package]()
                 for sourcePackage in month.packages {
@@ -143,7 +143,7 @@ public struct GeneratePackagesYML: AsyncParsableCommand {
                 }
                 outputMonths.append(.init(name: month.name, slug: month.slug, packages: outputPackages))
             }
-            outputYears.append(.init(name: year.name, months: outputMonths))
+            outputYears.append(.init(year: year.year, months: outputMonths))
         }
         let content = try YAMLEncoder().encode(SwiftOrgShowcaseHistory(years: outputYears))
         let reformatted = Self.reformatYMLToSwiftOrgStyle(content)

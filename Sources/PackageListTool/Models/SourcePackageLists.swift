@@ -50,7 +50,7 @@ struct SourcePackageLists: Codable {
     }
 
     struct HistoryYear: Codable {
-        var name: Int
+        var year: Int
         var months: [Month]
 
         struct Month: Codable {
