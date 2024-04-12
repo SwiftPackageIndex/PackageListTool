@@ -18,7 +18,7 @@ import Foundation
 
 struct SourcePackageLists: Codable {
     var categories: [Category]
-    var showcaseHistory: [Month]
+    var showcaseHistory: [HistoryYear]
 
     enum CodingKeys: String, CodingKey {
         case categories
@@ -49,12 +49,16 @@ struct SourcePackageLists: Codable {
         }
     }
 
-    struct Month: Codable {
-        var name: String
-        var slug: String
-        var packages: [Package]
-    }
+    struct HistoryYear: Codable {
+        var year: Int
+        var months: [Month]
 
+        struct Month: Codable {
+            var month: String
+            var slug: String
+            var packages: [Package]
+        }
+    }
 
     struct Package: Codable, Equatable {
         var identifier: String
