@@ -1,0 +1,1 @@
+Provides an XCTest assertion for testing asynchronous code by repeatedly evaluating conditions until they are met or time out.
