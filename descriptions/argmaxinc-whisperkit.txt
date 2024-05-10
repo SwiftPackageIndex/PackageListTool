@@ -1,0 +1,1 @@
+Integrates OpenAI's Whisper speech recognition model with CoreML for efficient, local inference on Apple devices.

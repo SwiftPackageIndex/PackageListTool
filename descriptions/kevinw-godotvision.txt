@@ -1,0 +1,1 @@
+Create shared-space experiences in Godot for visionOS, integrating Godot's headless mode with RealityKit for 3D content mirroring.

@@ -1,0 +1,1 @@
+Enables performant, typed communication across Swift async tasks, inspired by Go's channels, including buffered and un-buffered operations.

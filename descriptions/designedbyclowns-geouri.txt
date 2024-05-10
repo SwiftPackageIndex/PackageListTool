@@ -1,0 +1,1 @@
+Implements the geo URI scheme in Swift for identifying RFC 5870 compliant physical locations via URI, including CoreLocation integration.
