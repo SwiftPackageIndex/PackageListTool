@@ -1,0 +1,1 @@
+USearch enhances vector and upcoming text similarity search with faster, smaller, and broadly compatible implementations. It offers extensibility, fewer dependencies, and supports multiple programming languages.
