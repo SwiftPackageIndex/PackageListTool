@@ -5,18 +5,18 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: kevinw/GodotVision
-          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/28){:target='_blank'}."
-        - identifier: argmaxinc/WhisperKit
-          note: "Discussed on [Episode 42 of Swift Package Indexing](https://share.transistor.fm/s/c118cc9c){:target='_blank'}."
-        - identifier: designedbyclowns/GeoURI
-          note: "Discussed on [Episode 43 of Swift Package Indexing](https://share.transistor.fm/s/2d4b1ba7){:target='_blank'}."
-        - identifier: pointfreeco/swift-perception
-          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
-        - identifier: gh123man/Async-Channels
-          note: "Discussed on [Episode 42 of Swift Package Indexing](https://share.transistor.fm/s/c118cc9c){:target='_blank'}."
-        - identifier: jonreid/ExpectToEventuallyEqual
-          note: "Discussed on [Episode 41 of Swift Package Indexing](https://share.transistor.fm/s/861890bb){:target='_blank'}."
+        - identifier: hummingbird-project/hummingbird
+          note: "Discussed on [Episode 45 of Swift Package Indexing](https://share.transistor.fm/s/53ee9157){:target='_blank'}."
+        - identifier: markbattistella/ContrastKit
+          note: "Discussed on [Episode 45 of Swift Package Indexing](https://share.transistor.fm/s/53ee9157){:target='_blank'}."
+        - identifier: kabiroberai/node-swift
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/60){:target='_blank'}."
+        - identifier: m-barthelemy/AcmeSwift
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/63){:target='_blank'}."
+        - identifier: daprice/BlurHashViews
+          note: "Linked to in [Issue 666 of iOS Dev Weekly](https://iosdevweekly.com/issues/666#aCUCaK0){:target='_blank'}."
+        - identifier: mochidev/CodableDatastore
+          note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/63){:target='_blank'}."
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -75,6 +75,36 @@ categories:
 showcase_history:
   - year: 2024
     months:
+      - month: June
+        slug: june
+        packages:
+          - identifier: funcmike/rabbitmq-nio
+            note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/48){:target='_blank'}."
+          - identifier: mattcox/Pack
+            note: "Discussed on [Episode 43 of Swift Package Indexing](https://share.transistor.fm/s/2d4b1ba7){:target='_blank'}."
+          - identifier: adamwulf/HandShadows
+            note: "Linked to in [Issue 645 of iOS Dev Weekly](https://iosdevweekly.com/issues/645#AEv9Pwx){:target='_blank'}."
+          - identifier: swiftwasm/WasmKit
+            note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/53){:target='_blank'}."
+          - identifier: OlehKorchytskyi/Fit
+            note: "Discussed on [Episode 43 of Swift Package Indexing](https://share.transistor.fm/s/2d4b1ba7){:target='_blank'}."
+          - identifier: dm-zharov/swift-security
+            note: "Discussed on [Episode 43 of Swift Package Indexing](https://share.transistor.fm/s/2d4b1ba7){:target='_blank'}."
+      - month: May
+        slug: may
+        packages:
+          - identifier: kevinw/GodotVision
+            note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/28){:target='_blank'}."
+          - identifier: argmaxinc/WhisperKit
+            note: "Discussed on [Episode 42 of Swift Package Indexing](https://share.transistor.fm/s/c118cc9c){:target='_blank'}."
+          - identifier: designedbyclowns/GeoURI
+            note: "Discussed on [Episode 43 of Swift Package Indexing](https://share.transistor.fm/s/2d4b1ba7){:target='_blank'}."
+          - identifier: pointfreeco/swift-perception
+            note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/24){:target='_blank'}."
+          - identifier: gh123man/Async-Channels
+            note: "Discussed on [Episode 42 of Swift Package Indexing](https://share.transistor.fm/s/c118cc9c){:target='_blank'}."
+          - identifier: jonreid/ExpectToEventuallyEqual
+            note: "Discussed on [Episode 41 of Swift Package Indexing](https://share.transistor.fm/s/861890bb){:target='_blank'}."
       - month: April
         slug: april
         packages:
