@@ -1,0 +1,1 @@
+Automates SwiftUI view layouts into lines with customizable alignments, spacings, and line-breaking without manual grouping or measuring.

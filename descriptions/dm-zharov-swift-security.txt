@@ -1,0 +1,1 @@
+Enhances Apple's Security framework usage with compile-time checks and consistent behavior across different platforms, focusing on Keychain, cryptography, and shared web credentials.

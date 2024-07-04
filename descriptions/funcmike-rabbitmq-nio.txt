@@ -1,0 +1,1 @@
+Implements the AMQP 0.9.1 protocol in Swift, providing decoder, encoder, and a non-blocking client for asynchronous messaging operations, with ongoing development for stability and feature enhancements.

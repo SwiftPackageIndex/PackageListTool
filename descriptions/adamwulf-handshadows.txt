@@ -1,0 +1,1 @@
+Make better demo videos for your apps by enabling shadows of a hand hovering over the screen performing taps and gestures while using your app.
