@@ -1,0 +1,1 @@
+WasmKit enables standalone and embeddable WebAssembly runtime execution, supporting command line use and integration as a library, with partial WebAssembly and WASI spec implementation.

@@ -1,0 +1,1 @@
+Serialization and deserialization of binary data, not based on key/value pairs, offering an alternative to `Codable` for efficient storage.

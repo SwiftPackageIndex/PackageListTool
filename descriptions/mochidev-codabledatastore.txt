@@ -1,0 +1,1 @@
+Database-like persistent storage for apps, supporting single-write-multiple-read environments, with a focus on Codable structs for data modeling and indexing.

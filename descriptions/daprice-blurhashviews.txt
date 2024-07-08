@@ -1,0 +1,1 @@
+Decodes BlurHash strings into SwiftUI views, offering customization like contrast control, detail level, and color space adjustments for native placeholders. Supports animations and custom transitions.
