@@ -1,0 +1,1 @@
+Expands `FormatStyle` implementations for various types, enabling advanced formatting and parsing for strings, including extensions for string interpolation.

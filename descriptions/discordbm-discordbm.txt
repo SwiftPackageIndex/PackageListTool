@@ -1,0 +1,1 @@
+A multiplatform Discord library, primarily for making bots. It has full support for Swift concurrency and type-safe APIs with abstractions for easier testability.
