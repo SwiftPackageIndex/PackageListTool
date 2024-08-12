@@ -1,0 +1,1 @@
+A tool to convert XCTest cases to swift-testing format. It includes an Xcode plugin, Swift package plugin, and a command line tool.

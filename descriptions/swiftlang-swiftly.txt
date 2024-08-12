@@ -1,0 +1,1 @@
+Manages Swift toolchain installations, allowing users to easily install, switch between, and update various Swift versions and development snapshots.

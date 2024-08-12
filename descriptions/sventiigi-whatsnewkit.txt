@@ -1,0 +1,1 @@
+WhatsNewKit enables showcasing new app features with full customization, supporting automatic and manual presentation modes across various platforms and frameworks.

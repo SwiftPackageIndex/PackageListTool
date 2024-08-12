@@ -1,0 +1,1 @@
+Enhances Swift code testing with expressive APIs, custom behaviors, flexible organization, scalable execution, and cross-platform support. Compatible with XCTest for easy migration.
