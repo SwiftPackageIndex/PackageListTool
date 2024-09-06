@@ -1,0 +1,1 @@
+Facilitates data sharing by converting spreadsheet data into structured objects, supporting XLSX via CoreXLSX. Not designed for large tables or high-performance needs.

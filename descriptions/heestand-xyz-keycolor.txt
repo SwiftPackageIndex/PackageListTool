@@ -1,0 +1,1 @@
+Extracts dominant colors from images, supporting both UIImage and NSImage. Adjustable saturation, brightness thresholds, and resolution. Uses PixelColor and AsyncGraphics libraries.

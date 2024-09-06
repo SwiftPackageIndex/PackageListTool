@@ -1,0 +1,1 @@
+Swift library for building and training neural networks with customizable architectures. Supports Classifier, GAN, WGAN, and WGANGP models. Uses Tensors for computations and various optimizers for training.
