@@ -1,0 +1,1 @@
+Native Swift implementation for glob pattern matching and file filtering. Features include fast matching, concurrent directory searching, customizable behavior, and an ergonomic API.

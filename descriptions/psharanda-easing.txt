@@ -1,0 +1,1 @@
+Easing provides a comprehensive set of easing functions for interactive transitions and time-based calculations. Features include a swifty API, cubic bezier based easings, interpolation for common types, and an interactive demo app.

@@ -55,8 +55,7 @@ public struct GenerateDescriptions: AsyncParsableCommand {
                 print("Readme length:", readme.count)
                 print("Message length:", readme.trimmedToMaxMessage.count)
 
-                let chatThread = ChatThread(connection: openAIAPIConnection,
-                                            model: .specific("gpt-4-turbo-preview"))
+                let chatThread = ChatThread(connection: openAIAPIConnection, model: .specific("gpt-4o"))
                     .addSystemMessage(Self.systemPrompt)
                     .addUserMessage(readme.trimmedToMaxMessage)
                 let result = try await chatThread.complete()
@@ -103,8 +102,7 @@ private extension String {
 
 
 enum OpenAI {
-    static let maxTokens = 4097.0
+    static let maxTokens = 100_000.0
     static let charactersPerToken = 2.4
-    static let completionMaxLength = 256.0
-    static var maxMessageLength: Int { Int(maxTokens * charactersPerToken - completionMaxLength) }
+    static var maxMessageLength: Int { Int(maxTokens * charactersPerToken) }
 }
