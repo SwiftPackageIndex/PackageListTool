@@ -1,0 +1,1 @@
+Emulates the CHIP-8 system from the 1970s, running programs, processing operations, handling input, and subscribing to screen output and sound updates for frontend applications.
