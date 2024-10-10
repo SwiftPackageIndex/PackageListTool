@@ -1,0 +1,1 @@
+Swift DSL for modifying text buffers declaratively, supporting undo operations and changes across multiple buffers without UI rendering.

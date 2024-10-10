@@ -1,0 +1,1 @@
+HTML rendering library inspired by SwiftUI for web development. Utilizes Swift's generics for type-safe, efficient HTML streaming without dependencies. Supports async rendering and environment values.

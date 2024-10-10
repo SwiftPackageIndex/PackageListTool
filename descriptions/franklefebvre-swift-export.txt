@@ -1,0 +1,1 @@
+Command-line tool for generating signed and notarized macOS installer packages from Swift projects, with support for configuration files, sandboxing, entitlements, and additional payloads.

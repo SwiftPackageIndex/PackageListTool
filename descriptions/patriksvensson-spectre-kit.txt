@@ -1,0 +1,1 @@
+Facilitates the creation of aesthetically pleasing terminal applications in Swift, inspired by Spectre.Console and Python's Rich, currently under development.
