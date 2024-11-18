@@ -168,8 +168,6 @@ showcase_history:
       - month: March
         slug: march
         packages:
-          - identifier: AparokshaUI/adwaita-swift
-            note: "Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/30){:target='_blank'}."
           - identifier: davedelong/time
             note: "Nominated via two posts in the Swift forums ([1](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/7){:target='_blank'}, [2](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/35){:target='_blank'})."
           - identifier: 0xLeif/Fork
