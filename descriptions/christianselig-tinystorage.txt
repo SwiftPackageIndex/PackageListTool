@@ -1,0 +1,1 @@
+TinyStorage replaces `UserDefaults` with a lightweight, reliable storage solution supporting Swift `Codable` types. It's ideal for storing small, non-sensitive data but is not secure for sensitive information.
