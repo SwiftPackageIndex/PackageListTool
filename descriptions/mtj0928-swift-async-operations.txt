@@ -1,0 +1,1 @@
+Enhances Swift concurrency by providing async operations like `asyncMap`, enabling sequential or parallel execution of closures on sequences while preserving order using Ordered Task Group.

@@ -1,0 +1,1 @@
+Displays "What's New" screens for apps, supporting flexible release history, customization, and semantic versioning. Utilizes Markdown for release notes and offers modifiers for design customization.

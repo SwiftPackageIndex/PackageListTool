@@ -1,0 +1,1 @@
+Provides a composable, extensible foundation for working with abstract graphs, supporting various types, algorithms, and traversal strategies. Ideal for constructing, analyzing, and optimizing complex graph structures.
