@@ -97,13 +97,13 @@ showcase_history:
             note: Discussed on [Episode 49 of Swift Package Indexing](https://share.transistor.fm/s/c3ea4e1a){:target='_blank'}.
           - identifier: sliemeobn/elementary
             note: "Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/82){:target='_blank'}."
-          - identifier: apphttps://swiftpackageindex.com/search?query=swift-globle/swift-openapi-generator
+          - identifier: apple/swift-openapi-generator
             note: "Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/84){:target='_blank'}."
           - identifier: franklefebvre/swift-export
             note: "Linked to in [Issue 679 of iOS Dev Weekly](https://iosdevweekly.com/issues/679#DXo4Uf9){:target='_blank'}."
           - identifier: patriksvensson/spectre-kit
             note: Discussed on [Episode 49 of Swift Package Indexing](https://share.transistor.fm/s/c3ea4e1a){:target='_blank'}.
-          - identifier: CleanCocoa/DeclarativeTextKithttps://swiftpackageindex.com/search?query=swift-glob
+          - identifier: CleanCocoa/DeclarativeTextKit
             note: Discussed on [Episode 49 of Swift Package Indexing](https://share.transistor.fm/s/53ee9157){:target='_blank'}.
       - month: September
         slug: september
