@@ -1,0 +1,1 @@
+Defaults is a type-safe wrapper around UserDefaults and supports Codable, NSSecureCoding, change observation, and SwiftUI integration. It offers iCloud synchronization and custom serialization.
