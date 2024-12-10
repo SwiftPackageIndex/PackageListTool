@@ -1,0 +1,1 @@
+Swift μ-framework for creating RFC6902-compliant JSON patch objects, supporting operations like add, remove, replace, move, copy, and test using keypaths.

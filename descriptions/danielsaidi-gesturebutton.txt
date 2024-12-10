@@ -1,0 +1,1 @@
+GestureButton enables multiple gesture-specific actions using a single SwiftUI button. Customize actions for gestures like tap, long press, and drag, with flexible delays and timeouts.

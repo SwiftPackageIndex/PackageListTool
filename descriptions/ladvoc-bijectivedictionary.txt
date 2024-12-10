@@ -1,0 +1,1 @@
+Swift Bijective Dictionary provides efficient bidirectional key-value access with O(1) complexity, suitable for scenarios requiring fast reverse lookups. It mirrors standard dictionary functionality with additional memory usage.

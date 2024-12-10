@@ -1,0 +1,1 @@
+SwiftClaude enables communication with Anthropic's Claude API, supporting conversations, tool use, vision integration, and prompt caching in Swift applications. It offers async and observable APIs for handling messages.

@@ -1,0 +1,1 @@
+Swift Issue Reporting enables reporting issues in code as runtime warnings, breakpoints, or assertions, and converts them into test failures, aiding debugging and ensuring test coverage.
