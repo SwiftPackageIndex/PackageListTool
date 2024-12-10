@@ -1,0 +1,1 @@
+Facilitates app localization by translating string catalogs using OpenAI's GPT models or Google Cloud Translate. Supports multiple languages, complex string variations, and offers a CLI tool and Swift Package Plugin.
