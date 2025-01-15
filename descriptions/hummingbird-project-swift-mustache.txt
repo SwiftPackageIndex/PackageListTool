@@ -1,0 +1,1 @@
+Swift-Mustache enables rendering of Mustache templates, a logic-less templating language. It supports standard Mustache tags, template inheritance, and custom features like transforms, excluding Lambda support.

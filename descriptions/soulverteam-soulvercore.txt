@@ -1,0 +1,1 @@
+SoulverCore provides a natural language math engine for calculations, unit conversions, currency rates, and custom functions, with high performance and extensibility.
