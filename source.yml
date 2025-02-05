@@ -279,7 +279,7 @@ showcase_history:
             note: "Discussed on [Season 5 Episode 28 of Compile Swift](https://www.compileswift.com/podcast/s05e28/){:target='_blank'} podcast."
           - identifier: automerge/automerge-swift
             note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
-          - identifier: li3zhen1/Grape
+          - identifier: SwiftGraphs/Grape
             note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
           - identifier: ActuallyTaylor/Firefly
             note: "Discussed on [Episode 36 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/36-even-though-the-bug-is-fixed-its-not-over){:target='_blank'}."
