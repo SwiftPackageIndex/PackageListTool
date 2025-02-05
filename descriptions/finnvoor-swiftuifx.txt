@@ -1,0 +1,1 @@
+Enhances Final Cut Pro by integrating SwiftUI views as video overlays, allowing dynamic visual content creation and manipulation through a Swift package.
