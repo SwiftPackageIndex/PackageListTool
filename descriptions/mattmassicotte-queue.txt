@@ -1,0 +1,1 @@
+Exposes `AsyncQueue` for managing asynchronous tasks in Swift, ensuring ordered execution without explicit dependencies, and handling errors through an `errorSequence` property.

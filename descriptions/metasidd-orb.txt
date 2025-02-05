@@ -1,0 +1,1 @@
+SwiftUI component for creating customizable animated orbs with effects like glowing, particles, and dynamic animations, inspired by Siri animations. Ideal for interactive and visually appealing UI designs.

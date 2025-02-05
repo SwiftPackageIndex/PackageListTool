@@ -1,0 +1,1 @@
+Wrapper for `Foundation.Process`, inspired by Rust's `std::process::Command`. Facilitates command line program execution and I/O handling using synchronous or `async`/`await` APIs.
