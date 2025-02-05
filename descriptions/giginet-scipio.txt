@@ -1,0 +1,1 @@
+Scipio facilitates dependency management by converting Swift packages into XCFrameworks, ensuring efficient caching and portability. Inspired by Carthage, it merges SwiftPM and XCFramework benefits.

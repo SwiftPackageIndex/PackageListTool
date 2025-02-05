@@ -1,0 +1,1 @@
+Manages shared data by preventing data races and race conditions, using a decentralized model for branching and merging. Supports custom data types, advanced merging, and iCloud synchronization.

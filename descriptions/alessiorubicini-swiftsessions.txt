@@ -1,0 +1,1 @@
+Swift Sessions provides session types for structured communication in concurrent systems, featuring session type inference, binary branches, dynamic linearity checking, and client/server architecture support.

@@ -1,0 +1,1 @@
+ControlKit enables media playback control and device volume adjustment. It supports Spotify integration with authentication through a custom URL scheme and requires a Spotify client ID.
