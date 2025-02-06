@@ -73,7 +73,7 @@ categories:
         query: "keyword:logging"
         limit: 6
 showcase_history:
-  - year: 2024
+  - year: 2025
     months:
       - month: January
         slug: january
@@ -90,6 +90,8 @@ showcase_history:
             note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/114){:target='_blank'}.
           - identifier: metasidd/Orb
             note: Discussed on [Episode 52 of Swift Package Indexing](https://share.transistor.fm/s/687d1170){:target='_blank'}.
+  - year: 2024
+    months:
       - month: December
         slug: december
         packages:
