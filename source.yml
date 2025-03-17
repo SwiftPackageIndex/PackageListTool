@@ -5,18 +5,14 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: GottaGetSwifty/CodableWrappers
-          note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/116){:target='_blank'}.
-        - identifier: drewmccormack/Forked
-          note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/119){:target='_blank'}.
-        - identifier: alessiorubicini/SwiftSessions
-          note: Discussed on [Episode 46 of Swift Package Indexing](https://share.transistor.fm/s/08c0a3f9){:target='_blank'}.
-        - identifier: superturboryan/ControlKit
-          note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/95){:target='_blank'}.
-        - identifier: giginet/Scipio
-          note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/118){:target='_blank'}.
-        - identifier: finnvoor/SwiftUIFX
-          note: Linked to in [Issue 688 of iOS Dev Weekly](https://iosdevweekly.com/issues/688#4ItU5lq){:target='_blank'}.
+        - identifier: aus-der-Technik/FileMonitor
+          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/125){:target='_blank'}.
+        - identifier: elegantchaos/Versionator
+          note: Discussed on [Episode 49 of Swift Package Indexing](https://share.transistor.fm/s/c3ea4e1a){:target='_blank'}.
+        - identifier: wigging/numerix
+          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/119){:target='_blank'}.
+        - identifier: adam-fowler/swift-zip-archive
+          note: Discussed on [Episode 53 of Swift Package Indexing](https://share.transistor.fm/s/56a29e9f){:target='_blank'}.
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -75,6 +71,21 @@ categories:
 showcase_history:
   - year: 2025
     months:
+      - month: February
+        slug: february
+        packages:
+          - identifier: GottaGetSwifty/CodableWrappers
+            note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/116){:target='_blank'}.
+          - identifier: drewmccormack/Forked
+            note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/119){:target='_blank'}.
+          - identifier: alessiorubicini/SwiftSessions
+            note: Discussed on [Episode 46 of Swift Package Indexing](https://share.transistor.fm/s/08c0a3f9){:target='_blank'}.
+          - identifier: superturboryan/ControlKit
+            note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/95){:target='_blank'}.
+          - identifier: giginet/Scipio
+            note: Nominated in [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/118){:target='_blank'}.
+          - identifier: finnvoor/SwiftUIFX
+            note: Linked to in [Issue 688 of iOS Dev Weekly](https://iosdevweekly.com/issues/688#4ItU5lq){:target='_blank'}.
       - month: January
         slug: january
         packages:
