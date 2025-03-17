@@ -1,0 +1,1 @@
+A library for reading and editing zip archives. Supports reading and writing standard or password protected zip files from disk and memory buffers.

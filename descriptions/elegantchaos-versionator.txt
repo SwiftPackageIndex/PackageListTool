@@ -1,0 +1,1 @@
+A plugin to gathers version information and embeds it into a package/executable, allowing retrieval at runtime. Generates `Version.swift`, `Info.plist`, and a header file.

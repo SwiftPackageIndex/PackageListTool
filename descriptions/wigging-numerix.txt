@@ -1,0 +1,1 @@
+Provides Complex, Vector, Matrix, and ShapedArray structures for linear algebra and numerical computations using the Accelerate framework for high-performance calculations.
