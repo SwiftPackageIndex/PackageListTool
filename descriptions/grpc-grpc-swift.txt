@@ -1,0 +1,1 @@
+gRPC is a high performance, open source universal RPC framework. This package is a Swift language implementation of gRPC.

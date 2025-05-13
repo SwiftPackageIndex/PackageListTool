@@ -1,0 +1,1 @@
+Enhances terminal aesthetics for Swift CLIs with a customizable design system, improving consistency and readability in command-line interfaces.

@@ -1,0 +1,1 @@
+Spices facilitates creating in-app debug menus by generating native UI from Swift. It uses the `@Spice` property wrapper and `SpiceStore` protocol to store settings and manage environment configurations.

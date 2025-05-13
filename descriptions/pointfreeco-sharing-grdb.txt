@@ -1,0 +1,1 @@
+SharingGRDB offers a fast, lightweight alternative to SwiftData, utilizing SQLite for data management. It supports SwiftUI and UIKit, providing property wrappers for data fetching and observation.
