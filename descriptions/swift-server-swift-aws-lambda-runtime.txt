@@ -1,0 +1,1 @@
+Facilitates building serverless functions in Swift for AWS Lambda, offering features like JSON handling, response streaming, and background tasks, while emphasizing performance, safety, and developer control.

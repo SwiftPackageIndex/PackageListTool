@@ -1,0 +1,1 @@
+Adds type safety to Metal shaders, enabling Swift to interact with Metal kernels without managing binding indices. Enhances code safety and simplifies GPU kernel integration.
