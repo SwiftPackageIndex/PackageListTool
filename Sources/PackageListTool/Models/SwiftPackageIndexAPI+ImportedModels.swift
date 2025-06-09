@@ -205,6 +205,8 @@ extension SwiftPackageIndexAPI {
         case tvOS
         case visionOS
         case watchOS
+        case wasm
+        case android
         public static func < (lhs: Self, rhs: Self) -> Bool { lhs.rawValue < rhs.rawValue }
     }
 
