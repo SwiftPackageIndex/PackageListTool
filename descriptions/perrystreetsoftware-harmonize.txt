@@ -1,0 +1,1 @@
+Harmonize enhances Swift codebase consistency by allowing developers to write custom linter rules as unit tests, focusing on architectural and structural guidelines over style conventions.
