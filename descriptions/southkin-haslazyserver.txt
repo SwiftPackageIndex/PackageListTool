@@ -1,0 +1,1 @@
+Handles JSON type inconsistencies by providing Codable types that normalize and log type mismatches, aiding in decoding unpredictable data.

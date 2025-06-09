@@ -5,14 +5,14 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: audulus/Anodize
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/123){:target='_blank'}.
-        - identifier: tuist/Noora
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/120){:target='_blank'}.
-        - identifier: swift-server/swift-aws-lambda-runtime
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/127){:target='_blank'}.
-        - identifier: CrowdStrike/swift-package-registry-service
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/128){:target='_blank'}.
+        - identifier: kattouf/package-swift-lsp
+          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/136){:target='_blank'}.
+        - identifier: perrystreetsoftware/Harmonize
+          note: Discussed on [Episode 57 of Swift Package Indexing](https://share.transistor.fm/s/32b618c5){:target='_blank'}.
+        - identifier: southkin/HasLazyServer
+          note: Discussed on [Episode 56 of Swift Package Indexing](https://share.transistor.fm/s/135e7db3){:target='_blank'}.
+        - identifier: robb/Redline
+          note: Discussed on [Episode 57 of Swift Package Indexing](https://share.transistor.fm/s/32b618c5){:target='_blank'}.
   - name: Packages with Macros
     slug: macros
     brief: "New in Swift 5.9, Swift packages can include macro targets. Browse a selection of packages that showcase this feature."
@@ -71,6 +71,17 @@ categories:
 showcase_history:
   - year: 2025
     months:
+      - month: May
+        slug: may
+        packages:
+          - identifier: audulus/Anodize
+            note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/123){:target='_blank'}.
+          - identifier: tuist/Noora
+            note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/120){:target='_blank'}.
+          - identifier: swift-server/swift-aws-lambda-runtime
+            note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/127){:target='_blank'}.
+          - identifier: CrowdStrike/swift-package-registry-service
+            note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/128){:target='_blank'}.
       - month: April
         slug: april
         packages:
