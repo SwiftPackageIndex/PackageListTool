@@ -1,0 +1,1 @@
+Supabase client for Swift, mirroring the design of supabase-js, offering database interaction, authentication, storage, and real-time capabilities. Supports custom options for configuration and connection.
