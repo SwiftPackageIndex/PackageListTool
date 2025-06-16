@@ -1,0 +1,1 @@
+Swift implementation of Protocol Buffers for encoding structured data in an efficient, extensible format. Supports Protocol Buffers 3.0 features, including serialization, deserialization, and JSON conversion.
