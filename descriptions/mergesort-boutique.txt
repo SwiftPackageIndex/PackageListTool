@@ -1,0 +1,1 @@
+Boutique simplifies state-driven app development with a dual-layered memory and disk caching system, offering easy persistence and real-time updates for SwiftUI, UIKit, and AppKit applications.

@@ -68,6 +68,17 @@ categories:
       search:
         query: "keyword:logging"
         limit: 6
+  - name: Databases and Persistence
+    slug: database
+    brief: "Database access packages and related libraries for data storage, retrieval, and persistence."
+    description: "[Core Data](https://developer.apple.com/documentation/coredata) and [SwiftData](https://developer.apple.com/documentation/swiftdata) are built-in options, but if you need additional functionality or want to connect to a remote database, you’ll find plenty of quality packages."
+    more:
+      title: "More database and persistence packages"
+      url: https://swiftpackageindex.com/keywords/database
+    source:
+      search:
+        query: "keyword:database"
+        limit: 6
 showcase_history:
   - year: 2025
     months:
