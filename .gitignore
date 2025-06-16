@@ -10,3 +10,5 @@ DerivedData/
 .vscode/
 .swiftpm/
 packages.yml
+.claude/
+CLAUDE.md
