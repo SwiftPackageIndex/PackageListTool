@@ -34,6 +34,15 @@ class API_APIPackageTests: XCTestCase {
 
         package.platformCompatibility = [.linux]
         XCTAssertEqual(package.groupedPlatformCompatibility, [.linux])
+
+        package.platformCompatibility = [.wasm]
+        XCTAssertEqual(package.groupedPlatformCompatibility, [.wasm])
+
+        package.platformCompatibility = [.android]
+        XCTAssertEqual(package.groupedPlatformCompatibility, [.android])
+
+        package.platformCompatibility = [.macOS, .linux, .wasm, .android]
+        XCTAssertEqual(package.groupedPlatformCompatibility, [.apple, .linux, .wasm, .android])
     }
 
     func test_platformCompatibilityTooltip() throws {
@@ -50,6 +59,24 @@ class API_APIPackageTests: XCTestCase {
 
         package.platformCompatibility = [.linux]
         XCTAssertEqual(package.platformCompatibilityTooltip, "Linux")
+
+        package.platformCompatibility = [.wasm]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Wasm")
+
+        package.platformCompatibility = [.android]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Android")
+
+        package.platformCompatibility = [.linux, .wasm]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Linux and Wasm")
+
+        package.platformCompatibility = [.macOS, .linux, .wasm]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (macOS), Linux, and Wasm")
+
+        package.platformCompatibility = [.macOS, .linux, .wasm, .android]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (macOS), Linux, Wasm, and Android")
+
+        package.platformCompatibility = [.iOS, .macOS, .linux, .wasm, .android]
+        XCTAssertEqual(package.platformCompatibilityTooltip, "Apple (iOS, macOS), Linux, Wasm, and Android")
     }
 
     func test_reformatYMLToSwiftOrgStyle() {
