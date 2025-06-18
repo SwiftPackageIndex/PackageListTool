@@ -1,0 +1,1 @@
+Firebase provides app development tools including authentication, database, cloud messaging, analytics, and storage for building, growing, and monetizing mobile applications.
