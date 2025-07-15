@@ -1,0 +1,1 @@
+Text-to-speech and speech-to-speech library utilizing Apple's MLX framework for efficient speech synthesis. Features include multi-language support, voice customization, adjustable speed, web interface, and REST API.

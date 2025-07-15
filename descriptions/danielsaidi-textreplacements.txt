@@ -1,0 +1,1 @@
+Enhances SwiftUI `Text` view with customizable text replacements and components, enabling styled text and links.
