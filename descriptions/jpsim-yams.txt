@@ -1,0 +1,1 @@
+Yams is a Swift-based YAML parser utilizing LibYAML. It supports conversion between YAML and `Codable`, Swift Standard Library types, and Yams-native Node representations, minimizing computational overhead.

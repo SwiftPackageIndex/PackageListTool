@@ -1,0 +1,1 @@
+`SnapshotTestingMacros` provides a macro-based approach for generating snapshot tests, using annotations to mark functions for Swift views. It supports customization through traits like device sizes and themes.
