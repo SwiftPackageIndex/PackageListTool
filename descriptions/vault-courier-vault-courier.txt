@@ -1,0 +1,1 @@
+Swift client for securely retrieving and provisioning secrets with Hashicorp Vault and OpenBao. Supports key/value storage, credential generation, and AppRole/Token authentication.

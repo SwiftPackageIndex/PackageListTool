@@ -1,0 +1,1 @@
+Highlights differences between texts using `AttributedString` or `NSAttributedString`. Supports customization of appearance, word- and character-level diffing, and is lightweight.

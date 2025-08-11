@@ -1,0 +1,1 @@
+Converts Swift objects to Excel (.xlsx) files with a type-safe, declarative API. Supports styling, multiple worksheets, async data fetching, and real-time progress tracking for professional spreadsheet creation.
