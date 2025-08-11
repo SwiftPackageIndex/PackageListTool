@@ -1,0 +1,1 @@
+Provides macros to generate `Equatable` conformances for structs, optimizing SwiftUI diffing and performance by eliminating boilerplate code and preventing unnecessary re-renders. Ideal for large app scalability.
