@@ -1,0 +1,1 @@
+Swift Email Validator performs robust, RFC-compliant email validation with WordPress-inspired logic, supporting major providers and offering Swift-native APIs for high-performance email handling and processing.

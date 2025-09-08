@@ -5,13 +5,13 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
-        - identifier: ordo-one/equatable
-          note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/148){:target='_blank'}.
-        - identifier: simonbs/TextDiffing
+        - identifier: NSFatalError/Probing
+          note: Discussed on [Episode 58 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/58-people-used-to-hand-code-assembly){:target='_blank'}.
+        - identifier: FlineDev/TranslateKitSDK
           note: Discussed on [Episode 59 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/59-at-least-mine-was-related-to-swift){:target='_blank'}.
-        - identifier: fatbobman/Objects2XLSX
-          note: Discussed on [Episode 59 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/59-at-least-mine-was-related-to-swift){:target='_blank'}.
-        - identifier: vault-courier/vault-courier
+        - identifier: arraypress/swift-email-validator
+          note: Discussed on [Episode 60 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/60-filename-suffixes-in-swift-package-prefixes){:target='_blank'}.
+        - identifier: fetch-rewards/swift-mocking
           note: Discussed on [Episode 57 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/57-how-many-of-the-same-packages-can-we-pick){:target='_blank'}.
   - name: Packages with Macros
     slug: macros
@@ -82,6 +82,17 @@ categories:
 showcase_history:
   - year: 2025
     months:
+      - month: August
+        slug: august
+        packages:
+          - identifier: ordo-one/equatable
+            note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/148){:target='_blank'}.
+          - identifier: simonbs/TextDiffing
+            note: Discussed on [Episode 59 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/59-at-least-mine-was-related-to-swift){:target='_blank'}.
+          - identifier: fatbobman/Objects2XLSX
+            note: Discussed on [Episode 59 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/59-at-least-mine-was-related-to-swift){:target='_blank'}.
+          - identifier: vault-courier/vault-courier
+            note: Discussed on [Episode 57 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/57-how-many-of-the-same-packages-can-we-pick){:target='_blank'}.
       - month: July
         slug: july
         packages:

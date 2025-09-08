@@ -1,0 +1,1 @@
+Swift Mocking generates mock dependencies using macros, supporting various property and method types, concurrency, and protocol conformance, including actors and associated types.

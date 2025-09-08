@@ -1,0 +1,1 @@
+TranslateKit SDK simplifies app localization by providing 2000+ pre-localized strings and semantic key generation. It enhances translation accuracy and consistency using Apple's translations and smart key management.
