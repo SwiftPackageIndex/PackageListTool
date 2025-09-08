@@ -1,0 +1,1 @@
+Probing provides breakpoints for testing Swift code, enabling precise control and observation of state transitions in asynchronous functions, addressing challenges like unobservable states, non-determinism, and limited runtime control.
