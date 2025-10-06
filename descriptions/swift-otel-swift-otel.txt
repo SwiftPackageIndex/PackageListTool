@@ -1,1 +1,1 @@
-Client for server-side Swift, implementing OpenTelemetry for tracing and metrics. Demonstrates usage with examples like a counter service and HTTP server for distributed tracing.
+swift-otel is a client for server-side Swift, implementing OpenTelemetry for tracing and metrics. Demonstrates usage with examples like a counter service and HTTP server for distributed tracing.

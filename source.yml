@@ -5,6 +5,20 @@ categories:
     description: "This showcase celebrates new and interesting packages discussed by the Swift community. Package selection in this section is an editorial process organised via [this thread in the Swift Forums](https://forums.swift.org/t/68168) and curated by the [Swift Website Workgroup](https://www.swift.org/website-workgroup/)."
     source:
       packages:
+        - identifier: fummicc1/swift-complexity
+          note: Placeholder
+        - identifier: apple/swift-configuration
+          note: Placeholder
+        - identifier: swift-otel/swift-otel
+          note: Placeholder
+        - identifier: SimplyDanny/SwiftLintPlugins
+          note: Placeholder
+        - identifier: Aristide021/SwiftQC
+          note: Placeholder
+        - identifier: mattt/Uncertain
+          note: Placeholder
+        - identifier: robb/visualizeTouches
+          note: Placeholder
         - identifier: NSFatalError/Probing
           note: Discussed on [Episode 58 of Swift Package Indexing](https://swiftpackageindexing.transistor.fm/episodes/58-people-used-to-hand-code-assembly){:target='_blank'}.
         - identifier: FlineDev/TranslateKitSDK

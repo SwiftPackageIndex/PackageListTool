@@ -1,0 +1,1 @@
+Visualizes touch interactions in SwiftUI screen recordings or mirroring sessions, including in the Simulator, using a View modifier.
