@@ -1,0 +1,1 @@
+swift-configuration enables applications and libraries to read configuration data via a consistent API. It uses multiple providers like JSON, YAML, and environment variables, and supports hierarchical and hot-reloading configurations.

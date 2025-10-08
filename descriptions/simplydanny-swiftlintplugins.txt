@@ -1,0 +1,1 @@
+Provides SwiftLint plugins separately, eliminating the need to clone the entire repository and avoiding additional dependencies, facilitating streamlined integration and reduced build time.

@@ -1,0 +1,1 @@
+Analyzes Swift code complexity and quality metrics using `swift-syntax`. Supports cyclomatic and cognitive complexity, integrates with Xcode, and provides various output formats for CI/CD pipelines and code quality enforcement.

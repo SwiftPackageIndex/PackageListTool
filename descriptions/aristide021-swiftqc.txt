@@ -1,0 +1,1 @@
+SwiftQC focuses on property-based testing, integrating concepts from QuickCheck and Hedgehog. It supports composable generators, pluggable shrinkers, stateful and parallel testing, and automatic shrinking for minimal counterexamples.

@@ -1,0 +1,1 @@
+Facilitates uncertainty-aware programming in Swift, enabling reliable decisions with noisy or incomplete data by using evidence-based conditionals and various probability distribution models.
