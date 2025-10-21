@@ -133,7 +133,7 @@ showcase_history:
             note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/123){:target='_blank'}.
           - identifier: tuist/Noora
             note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/120){:target='_blank'}.
-          - identifier: swift-server/swift-aws-lambda-runtime
+          - identifier: awslabs/swift-aws-lambda-runtime
             note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/127){:target='_blank'}.
           - identifier: CrowdStrike/swift-package-registry-service
             note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/128){:target='_blank'}.
