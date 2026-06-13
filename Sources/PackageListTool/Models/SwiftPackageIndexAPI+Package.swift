@@ -29,12 +29,16 @@ extension SwiftPackageIndexAPI {
         public enum PlatformCompatibilityGroup: String, CaseIterable, Codable {
             case apple = "Apple"
             case linux = "Linux"
+            case wasm = "Wasm"
+            case android = "Android"
 
             var platforms: OrderedSet<PlatformCompatibility> {
                 switch self {
                     // The order here is important and should match the columns in the compatibility matrix on the SPI website.
                     case .apple: return [.iOS, .macOS, .visionOS, .watchOS, .tvOS]
                     case .linux: return [.linux]
+                    case .wasm: return [.wasm]
+                    case .android: return [.android]
                 }
             }
         }
@@ -49,7 +53,7 @@ extension SwiftPackageIndexAPI.Package {
     }
 
     public var platformCompatibilityTooltip: String {
-        groupedPlatformCompatibility.map { group in
+        let tooltips = groupedPlatformCompatibility.map { group in
             let platforms = group.platforms.intersection(Set(platformCompatibility ?? []))
             if group == .apple {
                 let detail = "(" + platforms.map(\.rawValue).joined(separator: ", ") + ")"
@@ -57,7 +61,20 @@ extension SwiftPackageIndexAPI.Package {
             } else {
                 return group.rawValue
             }
-        }.joined(separator: " and ")
+        }
+        
+        switch tooltips.count {
+        case 0:
+            return ""
+        case 1:
+            return tooltips[0]
+        case 2:
+            return tooltips.joined(separator: " and ")
+        default:
+            let allButLast = tooltips.dropLast().joined(separator: ", ")
+            let last = tooltips.last!
+            return "\(allButLast), and \(last)"
+        }
     }
 }
 
